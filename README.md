@@ -19,4 +19,8 @@ Disponibilizar material útil para a comunidade GeneXus, especialmente para aná
 - Parte deste material foi derivada de observação prática sobre KBs e builds reais.
 - Quando um documento menciona diretórios gerados, eles devem ser lidos como exemplos de saída de modelo, não como dependência de um caminho específico de máquina.
 - Sempre que possível, referências locais de ambiente são neutralizadas para manter o conteúdo reutilizável pela comunidade.
+- No repositório de exemplos extraídos em `ObjetosDaKbEmXml`, os nomes de diretório seguem a convenção compacta sem espaços, como `DataProvider`, `DataSelector`, `ThemeClass`, `WebPanel`, `DataStore` e `WorkWithForWeb`.
+- Quando o nome oficial do tipo de objeto na IDE GeneXus contém espaços, a documentação deve preservar esse nome oficial no texto e tratar o nome compacto do diretório apenas como convenção de organização dos arquivos extraídos.
+- No repositório de exemplos extraídos em `ObjetosDaKbEmXml`, os nomes de diretório seguem a convenção compacta sem espaços, como `DataProvider`, `DataSelector`, `ThemeClass`, `WebPanel`, `DataStore` e `WorkWithForWeb`.
+- Quando o nome oficial do tipo de objeto na IDE GeneXus contém espaços, a documentação deve preservar esse nome oficial no texto e tratar o nome compacto do diretório apenas como convenção de organização dos arquivos extraídos.
 

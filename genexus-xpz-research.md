@@ -10,7 +10,7 @@ Pontos já confirmados:
 - esse XML usa a raiz `<ExportFile>`
 - os objetos GeneXus ficam em nós `<Object ...>`
 - cada objeto é composto por várias partes internas identificadas por `Part type`
-- já foi possível mapear GUIDs de tipos de objeto como `Web Panel`, `Procedure`, `API`, `Dashboard`, `Data Provider`, `Structured Data Type (SDT)`, `Transaction`, `Module`, `Folder`, `File`, `Domain`, `Subtype Group`, `Theme Class`, `Theme Color`, `Color Palette`, `Image`, `Index`, `Panel`, `User Control`, `Design System`, `Stencil`, `Data Selector`, `Document`, `Generator`, `Language`, `Deployment Unit`, `Theme`, `DataStore`, `WorkWithForWeb` e `Pattern Settings`
+- já foi possível mapear GUIDs de tipos de objeto como `Web Panel`, `Procedure`, `API`, `Dashboard`, `Data Provider`, `Structured Data Type (SDT)`, `Transaction`, `Module`, `Folder`, `File`, `Domain`, `Subtype Group`, `Theme Class`, `Theme Color`, `Color Palette`, `Image`, `Index`, `Panel`, `User Control`, `Design System`, `Stencil`, `Data Selector`, `Document`, `Generator`, `Language`, `Deployment Unit`, `Theme`, `Data Store`, `Work With for Web` e `Pattern Settings`
 
 Objetivo deste documento:
 - servir como base genérica para analisar `XPZ`
@@ -31,7 +31,7 @@ Puntos ya confirmados:
 - ese XML usa la raíz `<ExportFile>`
 - los objetos GeneXus aparecen en nodos `<Object ...>`
 - cada objeto está compuesto por varias partes internas identificadas por `Part type`
-- ya fue posible mapear GUIDs de tipos de objeto como `Web Panel`, `Procedure`, `API`, `Dashboard`, `Data Provider`, `Structured Data Type (SDT)`, `Transaction`, `Module`, `Folder`, `File`, `Domain`, `Subtype Group`, `Theme Class`, `Theme Color`, `Color Palette`, `Image`, `Index`, `Panel`, `User Control`, `Design System`, `Stencil`, `Data Selector`, `Document`, `Generator`, `Language`, `Deployment Unit`, `Theme`, `DataStore`, `WorkWithForWeb` y `Pattern Settings`
+- ya fue posible mapear GUIDs de tipos de objeto como `Web Panel`, `Procedure`, `API`, `Dashboard`, `Data Provider`, `Structured Data Type (SDT)`, `Transaction`, `Module`, `Folder`, `File`, `Domain`, `Subtype Group`, `Theme Class`, `Theme Color`, `Color Palette`, `Image`, `Index`, `Panel`, `User Control`, `Design System`, `Stencil`, `Data Selector`, `Document`, `Generator`, `Language`, `Deployment Unit`, `Theme`, `Data Store`, `Work With for Web` y `Pattern Settings`
 
 Objetivo del documento:
 - servir como base genérica para analizar `XPZ`
@@ -101,7 +101,7 @@ Meaning:
 
 The following mappings were confirmed from real objects found in the inspected XML.
 
-Canonical names below follow GeneXus public documentation when available. Entries that do not appear in the official public object table are kept as operational names inferred from exports and should not yet be treated as fully official object names.
+Canonical names below follow the exact object-type names confirmed in the GeneXus IDE when that evidence is available. In the extracted XML repository, directory names follow a compact convention without spaces, such as `DataProvider`, `ThemeClass`, `DataStore`, and `WorkWithForWeb`. When the extracted XML directory name differs from the IDE label, this document prioritizes the IDE label and treats the directory name only as an extraction convenience.
 
 | Object type | GUID |
 |---|---|
@@ -113,7 +113,7 @@ Canonical names below follow GeneXus public documentation when available. Entrie
 | `Dashboard` | `526aba9f-a725-4bc7-b1db-0b9f92ac9550` |
 | `Data Provider` | `2a9e9aba-d2de-4801-ae7f-5e3819222daf` |
 | `Data Selector` | `ffd44be7-3bb4-4d01-9e7e-d1c1a3c095af` |
-| `DataStore` | `dcdcdcdc-dfe0-4a57-ae8f-c6e31b0dcbc0` |
+| `Data Store` | `dcdcdcdc-dfe0-4a57-ae8f-c6e31b0dcbc0` |
 | `Deployment Unit` | `bf08dfb1-361c-4e7e-ad54-391e56e60b49` |
 | `Domain` | `00972a17-9975-449e-aab1-d26165d51393` |
 | `Document` | `faeb588c-dcce-4dad-9af3-cdd11b961a32` |
@@ -134,9 +134,9 @@ Canonical names below follow GeneXus public documentation when available. Entrie
 | `Panel` | `d82625fd-5892-40b0-99c9-5c8559c197fc` |
 | `Color Palette` | `3affc0b3-494b-4d84-9ec1-3a6ab8349cda` |
 | `Web Panel` | `c9584656-94b6-4ccd-890f-332d11fc2c25` |
-| `WorkWithForWeb` | `78cecefe-be7d-4980-86ce-8d6e91fba04b` |
+| `Work With for Web` | `78cecefe-be7d-4980-86ce-8d6e91fba04b` |
 | `External Object` | `c163e562-42c6-4158-ad83-5b21a14cf30e` |
-| `Packaged Module` | `c88fffcd-b6f8-0000-8fec-00b5497e2117` |
+| `Module` | `c88fffcd-b6f8-0000-8fec-00b5497e2117` |
 
 ## Evidence Used For Type Mapping
 
@@ -154,18 +154,20 @@ Examples observed in the inspected XML:
 - objects using `type="ffd44be7-3bb4-4d01-9e7e-d1c1a3c095af"`; per user confirmation in the KB, this object type is `Data Selector`
 - objects using `type="faeb588c-dcce-4dad-9af3-cdd11b961a32"`; per user confirmation in the KB, this object type is `Document`
 - objects using `type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0"`; per user confirmation in the KB, this object type is `Generator`
+- objects using `type="dcdcdcdc-dfe0-4a57-ae8f-c6e31b0dcbc0"` appear in the GeneXus IDE as `Data Store`; in the extracted XML repository the containing directory is currently named `DataStore`
 - `AbrangenciaDaSelecaoDeCorte`, `Aliquota`, `CEST`, `EnderecoEmail`, and `PrecoComZ` use `type="00972a17-9975-449e-aab1-d26165d51393"` and consistently show `Domain`-style properties such as `ATTCUSTOMTYPE`, `Length`, `AttMaxLen`, `Decimals`, `ATT_PICTURE`, `IDEnumDefinedValues`, or `idBasedOn` -> `Domain`
 - objects using `type="1132ac08-290f-4fd1-bd18-64777b7329d1"` match the `File` export set from the KB and show `FileName`, `FileExtension`, embedded binary data, and extraction properties such as `JavaExtract` and `NetExtract` -> `File`
 - objects using `type="9fb193d9-64a4-4d30-b129-ff7c76830f7e"` consistently show image payload under `<Images>` and map directly to generated files under the web model's `Web/Resources` output directory -> `Image`
 - objects using `type="857ca50e-7905-0000-0007-c5d9ff2975ec"` consistently contain `<Index` and no objects outside that type showed the same pattern in the extracted KB object set -> `Index`
 - objects using `type="83476c1e-fa72-4229-9930-f51b954fca2d"` were `WorkWith` and `WorkWithDevices`, each storing `<Data Pattern="...">` configuration for pattern behavior -> `Pattern Settings`
 - objects using `type="87313f43-5eb2-41d7-9b8c-e8d9f5bf9588"` consistently contain `<Subtype guid="...">` entries and no objects outside that type showed the same pattern in the extracted KB object set -> `Subtype Group`
-- objects using `type="d4876646-98dd-419b-8c1c-896f83c48368"` consistently show `ThemeElementInternalType = GxClass` and `ThemeElementThemeTypes = idWeb` or `idSD`, and their names are referenced as generated UI classes in the web output -> operationally classified as `Theme Class`
+- objects using `type="d4876646-98dd-419b-8c1c-896f83c48368"` consistently show `ThemeElementInternalType = GxClass` and `ThemeElementThemeTypes = idWeb` or `idSD`; the GeneXus IDE shows this object type as `Theme Class`
 - objects using `type="5592de59-d30a-499d-9100-a7006d3674f2"` were confirmed by a dedicated export whose `<Dependencies>` entry declared `Name="Theme Color"` for that GUID -> `Theme Color`
-- objects using `type="78cecefe-be7d-4980-86ce-8d6e91fba04b"` all start with `WorkWithWeb` and no extracted object outside that type starts with `WorkWithWeb` -> `WorkWithForWeb`
+- objects using `type="78cecefe-be7d-4980-86ce-8d6e91fba04b"` all start with `WorkWithWeb`; the GeneXus IDE shows this object type as `Work With for Web`, while the extracted XML directory is currently named `WorkWithForWeb`
 - `SdtNfe`, `sdtFatura`, `Messages` use `type="447527b5-9210-4523-898b-5dccb17be60a"` -> `Structured Data Type (SDT)`
 - `Animal` transaction uses `type="1db606f2-af09-4cf9-a3b5-b481519d28f6"` -> `Transaction`
 - `GAMRepository` uses `type="c163e562-42c6-4158-ad83-5b21a14cf30e"` -> `External Object`
+- objects using `type="c88fffcd-b6f8-0000-8fec-00b5497e2117"` appear in the GeneXus IDE as `Module`; in the extracted XML repository the containing directory is named `PackagedModule` because the exported XML also carries packaged-module metadata
 
 ## Internal Model Per Object
 
@@ -326,7 +328,7 @@ Validation evidence:
 ### Generator
 
 Validation evidence:
-- per user confirmation in the GeneXus KB, the extracted object set for `type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0"` is of type `Generator`
+- the GeneXus IDE shows this object type as `Generator`
 
 ### Index
 
@@ -338,6 +340,7 @@ Observed content style:
 Validation evidence:
 - all `228` extracted objects with `type="857ca50e-7905-0000-0007-c5d9ff2975ec"` contained `<Index`
 - no extracted object outside that type contained `<Index`
+- the GeneXus IDE shows this object type as `Index`
 
 ### Panel
 
@@ -385,12 +388,9 @@ Validation evidence:
 - `ThemeElementInternalType` was `GxClass` in `501/501`
 - `ThemeElementThemeTypes` was `idWeb` in `490` objects and `idSD` in `11`
 - names such as `ActionButtons`, `ActionsContainer`, and `BigTitle` were found referenced in generated web output under the web model output directory
+- the GeneXus IDE shows this object type as `Theme Class`
 
-Operational note:
-- `Theme Class` is a practical working label based on current evidence
-- if future GeneXus documentation or broader evidence reveals a more official object-type name for this GUID, this mapping should be revised
-
-### WorkWithForWeb
+### Work With for Web
 
 Observed from the extracted object set for `type="78cecefe-be7d-4980-86ce-8d6e91fba04b"`.
 
@@ -398,6 +398,27 @@ Validation evidence:
 - all `183` extracted objects with this type started with `WorkWithWeb`
 - no extracted object outside that type started with `WorkWithWeb`
 - all extracted objects of this type also contained `<Data Pattern=`, consistent with pattern-generated web artifacts, though that marker was not exclusive to this type
+- the GeneXus IDE shows this object type as `Work With for Web`
+- the extracted XML repository currently uses the directory name `WorkWithForWeb` for this same object type
+
+### Data Store
+
+Validation evidence:
+- the GeneXus IDE shows this object type as `Data Store`
+- the extracted XML repository currently uses the directory name `DataStore` for this same object type
+
+### Module for GUID `c88fffcd-b6f8-0000-8fec-00b5497e2117`
+
+Observed from extracted objects such as `Extensions`, `FB_APIs`, and `GAM`.
+
+Validation evidence:
+- the GeneXus IDE shows these objects under type `Module`
+- the extracted XML repository uses the directory name `PackagedModule` for this same GUID
+- the exported XML carries packaged-module metadata such as `PackagedModuleName`, `moduleVersion`, `author`, and related package descriptors
+
+Interpretation:
+- for documentation purposes, the canonical object type name is `Module`
+- `PackagedModule` should be treated only as an extracted XML directory label or packaging-oriented classification, not as the official object type name shown by the IDE
 
 ### Structured Data Type (SDT)
 
