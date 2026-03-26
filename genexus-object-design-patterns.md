@@ -6,8 +6,8 @@ Este documento registra padrões de nomenclatura para objetos GeneXus custom.
 
 Ele não trata de estrutura de `XPZ`, nem de regras de empacotamento. Esses assuntos permanecem separados em:
 
-- [genexus-xpz-research.md](C:/Dev/Test/genexus-xpz-research.md)
-- [genexus-xpz-generation-rules.md](C:/Dev/Test/genexus-xpz-generation-rules.md)
+- [genexus-xpz-research.md](./genexus-xpz-research.md)
+- [genexus-xpz-generation-rules.md](./genexus-xpz-generation-rules.md)
 
 ## Regra Geral
 
@@ -51,3 +51,4 @@ Os objetos abaixo não devem ser usados como base para inferir convenções cust
 ## Observação
 
 Esta convenção é anterior à geração de `XPZ`. Primeiro o objeto deve ser corretamente nomeado; depois, se necessário, ele pode ser empacotado para intercâmbio.
+
