@@ -1269,8 +1269,8 @@ Destacar estabilidade estrutural relativa e pontos de maior risco para clonagem.
 
 ## DataProvider
 
-- Evidência direta: amostra simples: alias sanitizado em DataProvider\\EXEMPLO-SANITIZADO.xmlDPRegions.xml5 Part e 3 Part nao vazias.
-- Evidência direta: amostra simples: alias sanitizado em DataProvider\\EXEMPLO-SANITIZADO.xmldpCargaPedidos.xml5 Part e 4 Part nao vazias.
+- Evidência direta: amostra simples: alias sanitizado `DPExemploLista.xml` com 5 `Part` e 3 `Part` nao vazias.
+- Evidência direta: amostra simples: alias sanitizado `DPExemploParm.xml` com 5 `Part` e 4 `Part` nao vazias.
 - Evidência direta: amostra complexa: alias sanitizado em DataProvider\\EXEMPLO-SANITIZADO.xmldpSdtTributacaoDadosBasicosSelecaoConformeParametros.xml5 Part e tamanho de 12558 bytes.
 - Evidência direta: amostra complexa: alias sanitizado em DataProvider\\EXEMPLO-SANITIZADO.xmldpFixoSidebarItems.xml5 Part e tamanho de 10713 bytes.
 - Evidência direta: Part type nas amostras simples: 1d8aeb5a-6e98-45a7-92d2-d8de7384e432; 9b0a32a3-de6d-4be1-a4dd-1b85d3741534; ad3ca970-19d0-44e1-a7b7-db05556e820c; babf62c5-0111-49e9-a1c3-cc004d90900a; e4c4ade7-53f0-4a56-bdfd-843735b66f47.
@@ -1321,8 +1321,8 @@ Destacar estabilidade estrutural relativa e pontos de maior risco para clonagem.
 
 ## Procedure
 
-- Evidência direta: amostra simples: alias sanitizado em Procedure\\EXEMPLO-SANITIZADO.xmlprocFingePrecisarExecutarAlgoNoServidor.xml7 Part e 1 Part nao vazias.
-- Evidência direta: amostra simples: alias sanitizado em Procedure\\EXEMPLO-SANITIZADO.xmlprocTipoTituloNulo.xml7 Part e 3 Part nao vazias.
+- Evidência direta: amostra simples: alias sanitizado `PRCExemploMinimo.xml` com 7 `Part` e 1 `Part` nao vazia.
+- Evidência direta: amostra simples: alias sanitizado `PRCExemploParm.xml` com 7 `Part` e 3 `Part` nao vazias.
 - Evidência direta: amostra complexa: alias sanitizado em Procedure\\EXEMPLO-SANITIZADO.xmlprocRelatorioVolumesNumRomaneioEPedido.xml7 Part e tamanho de 1114792 bytes.
 - Evidência direta: amostra complexa: alias sanitizado em Procedure\\EXEMPLO-SANITIZADO.xmlprocRelatorioDeProducaoDeVolumesComRendimento.xml7 Part e tamanho de 1060772 bytes.
 - Evidência direta: Part type nas amostras simples: 528d1c06-a9c2-420d-bd35-21dca83f12ff; 763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9; 9b0a32a3-de6d-4be1-a4dd-1b85d3741534; ad3ca970-19d0-44e1-a7b7-db05556e820c; babf62c5-0111-49e9-a1c3-cc004d90900a; c414ed00-8cc4-4f44-8820-4baf93547173; e4c4ade7-53f0-4a56-bdfd-843735b66f47.
@@ -1397,8 +1397,344 @@ Destacar estabilidade estrutural relativa e pontos de maior risco para clonagem.
 - Inferência forte: blocos recorrentes entre simples e complexos tendem a ser mais estáveis do que blocos exclusivos dos casos complexos.
 - Hipótese: editar primeiro blocos claramente textuais e recorrentes pode ter risco menor do que alterar blocos raros/opacos, mas isso ainda depende de validação posterior.
 
+## Moldes sanitizados completos de Procedure e DataProvider
 
+- Evidencia direta: esta base agora contem 2 moldes XML sanitizados completos de `Procedure` e 2 de `DataProvider`.
+- Inferencia forte: esse conjunto complementa os moldes ja existentes de `WebPanel` e `Transaction`, reduzindo a necessidade de consulta adicional ao acervo bruto para prototipos controlados desses dois tipos.
+- Hipotese: para `Procedure` muito densa ou `DataProvider` com saida muito especializada, ainda pode ser necessario buscar molde bruto comparavel adicional.
 
+### Molde sanitizado de Procedure 1 - `PRCExemploMinimo`
 
+- Perfil: `Procedure` minima, com inventario recorrente de `Part` e quase nenhum conteudo interno.
+- Uso operacional: boa casca para testes de serializacao, stub server-side e verificacao do envelope estrutural do tipo.
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="624fa1ae-7a20-4d68-bc8a-b54254fa3ce7" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2025-03-27T22:31:45.0000000Z" checksum="ac868db7f602aeb0f9d9f1c51a919527" fullyQualifiedName="PRCExemploMinimo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="d6ecd738-8c9a-4361-9a4e-f638fbd98067" name="PRCExemploMinimo" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Procedure Exemplo Minima" parent="PastaExemploProcedure" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+    <Properties />
+  </Part>
+  <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+    <Properties />
+  </Part>
+  <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+    <Properties />
+  </Part>
+  <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+    <Properties />
+  </Part>
+  <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+    <Properties />
+  </Part>
+  <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+    <Help>
+      <HelpItem>
+        <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-Portuguese</Language>
+        <Content />
+      </HelpItem>
+    </Help>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>PRCExemploMinimo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
 
+```
+
+### Molde sanitizado de Procedure 2 - `PRCExemploParm`
+
+- Perfil: `Procedure` curta com `parm(out:...)` e variavel baseada em dominio.
+- Uso operacional: boa referencia para clonagem controlada quando o alvo tiver parametro simples e variavel associada.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="988004e2-6090-42c3-9603-c073172b75a6" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2017-11-30T13:14:40.0000000Z" checksum="f03125659ba83a8972206dfeb9b0dfc8" fullyQualifiedName="PRCExemploParm" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="96caabbb-924a-4d2b-83f9-62e5e192608a" name="PRCExemploParm" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Procedure Exemplo Parm" parent="PastaExemploProcedure" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+    <Properties />
+  </Part>
+  <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+    <Properties />
+  </Part>
+  <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+    <Source><![CDATA[parm(out:&TipoExemplo);
+]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+    <Properties />
+  </Part>
+  <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+    <Variable Name="TipoExemplo">
+      <Documentation />
+      <Properties>
+        <Property>
+          <Name>Name</Name>
+          <Value>TipoExemplo</Value>
+        </Property>
+        <Property>
+          <Name>idBasedOn</Name>
+          <Value>Domain:TipoExemplo</Value>
+        </Property>
+      </Properties>
+    </Variable>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+    <Help>
+      <HelpItem>
+        <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-Portuguese</Language>
+        <Content />
+      </HelpItem>
+    </Help>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>PRCExemploParm</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de DataProvider 1 - `DPExemploLista`
+
+- Perfil: `DataProvider` simples com saida de colecao declarada no proprio `Source`.
+- Uso operacional: boa referencia para saida pequena baseada em estrutura repetida.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="fbf65a0f-f5fe-40b5-9328-ac966656d448" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2009-07-22T19:06:02.0000000Z" checksum="2c78d22a9661e372b2cefb9d31d6018c" fullyQualifiedName="DPExemploLista" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="9fed987b-56be-4e31-9e9f-09f7c9b959c3" name="DPExemploLista" type="2a9e9aba-d2de-4801-ae7f-5e3819222daf" description="DPExemploLista" parent="PastaExemploDP" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="1d8aeb5a-6e98-45a7-92d2-d8de7384e432">
+    <Source><![CDATA[SdtExemploLista
+{
+	SdtExemploListaItem
+	{
+		RValnum =1
+		RValtext = 'RegiaoA'
+		RCountry = 'PaisA'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =1
+		RValtext = 'RegiaoB'
+		RCountry = 'PaisB'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =1
+		RValtext = 'RegiaoC'
+		RCountry = 'PaisC'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =4
+		RValtext = 'RegiaoD'
+		RCountry = 'PaisD'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =1
+		RValtext = 'RegiaoE'
+		RCountry = 'PaisE'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =2
+		RValtext = 'RegiaoF'
+		RCountry = 'PaisF'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =1
+		RValtext = 'RegiaoG'
+		RCountry = 'PaisG'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =1
+		RValtext = 'RegiaoH'
+		RCountry = 'PaisH'
+	}
+	SdtExemploListaItem
+	{
+		RValnum =1
+		RValtext = 'RegiaoI'
+		RCountry = 'PaisI'
+	}
+}
+]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+    <Properties />
+  </Part>
+  <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+    <Help>
+      <HelpItem>
+        <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-Portuguese</Language>
+        <Content />
+      </HelpItem>
+    </Help>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>DPExemploLista</Value>
+    </Property>
+    <Property>
+      <Name>OutputSDT</Name>
+      <Value>447527b5-9210-4523-898b-5dccb17be60a-SdtExemploLista</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de DataProvider 2 - `DPExemploParm`
+
+- Perfil: `DataProvider` com `parm(in:...)`, `OutputCollection=True` e composicao textual mais rica no `Source`.
+- Uso operacional: boa referencia para `DataProvider` orientado por parametros e saida em colecao.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="79a956f5-e947-44fb-9165-5914625207c6" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2019-11-18T18:35:14.0000000Z" checksum="d7d87280290ffc92084066e33abd7c51" fullyQualifiedName="DPExemploParm" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="1ee0e754-a66a-47bf-a7aa-3af9a0da28c0" name="DPExemploParm" type="2a9e9aba-d2de-4801-ae7f-5e3819222daf" description="DataProvider Exemplo Parm" parent="PastaExemploDP" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="1d8aeb5a-6e98-45a7-92d2-d8de7384e432">
+    <Source><![CDATA[SdtExemploChaveValor order ContextoAId, ContextoBId, SequenciaExemplo, RegistroId
+{
+	Chave = RegistroId.ToString()
+	
+	Valor = "CtxA:" + RegistroEmpresaId.ToString().Trim() + 
+	" Chave: " + RegistroId.ToFormattedString() +
+	"| Seq:" + SequenciaExemplo.ToString() + 
+	" | A:" + procLeftExemplo(PessoaAId.ToString()," ",10) +
+	" | B:" + procRightExemplo(PessoaBId.ToString()," ",10) +
+	"-" + PessoaBNome.Trim() + " (" + TipoRegistro.EnumerationDescription() + ")"
+	
+}
+]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+    <Source><![CDATA[parm(in:ContextoAId, in:ContextoBId);
+]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+    <Help>
+      <HelpItem>
+        <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-Portuguese</Language>
+        <Content />
+      </HelpItem>
+    </Help>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>DPExemploParm</Value>
+    </Property>
+    <Property>
+      <Name>OutputSDT</Name>
+      <Value>447527b5-9210-4523-898b-5dccb17be60a-SdtExemploChaveValor</Value>
+    </Property>
+    <Property>
+      <Name>OutputCollection</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```

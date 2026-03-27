@@ -153,6 +153,7 @@ Padronizar quando avançar, quando exigir molde bruto comparável e quando abort
 - Evidência direta: o agente nao deve materializar objeto final a partir de resumo textual sem XML completo
 - Inferência forte: para `WebPanel`, os anexos completos de `04-webpanel-familias-e-templates.md` ja podem servir como molde sanitizado documentado
 - Inferência forte: para `Transaction`, `05-transaction-familias-e-templates.md` ja contem moldes sanitizados completos para as familias `F1`, `F2`, `F5` e `F6`
+- Inferência forte: para `Procedure` e `DataProvider`, `01-base-empirica-geral.md` ja contem moldes sanitizados completos representativos
 - Hipótese: para `Transaction` das familias `F3` e `F4`, continua prudente buscar molde bruto comparavel adicional se a densidade estrutural real do alvo ultrapassar o que os anexos atuais sustentam
 
 ### Transaction
@@ -186,6 +187,7 @@ Padronizar quando avançar, quando exigir molde bruto comparável e quando abort
 - Fonte invalida: reconstrucoes livres baseadas em tabelas, frequencias ou descricoes
 - Inferência forte: esta base documental ja explica o envelope XPZ observado e ja contem moldes sanitizados completos para `WebPanel`
 - Inferência forte: esta base documental ja contem moldes sanitizados completos tambem para `Transaction` em familias representativas
+- Inferência forte: esta base documental ja contem moldes sanitizados completos tambem para `Procedure` e `DataProvider` em perfis representativos
 - Hipótese: nem todos os tipos da base chegaram nesse mesmo nivel de cobertura; para varios deles ainda prevalece a orientacao por familia + molde bruto comparavel
 
 
