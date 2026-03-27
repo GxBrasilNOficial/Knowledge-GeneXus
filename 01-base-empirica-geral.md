@@ -1349,8 +1349,8 @@ Destacar estabilidade estrutural relativa e pontos de maior risco para clonagem.
 
 - Evidência direta: amostra simples: alias sanitizado em Theme\\EXEMPLO-SANITIZADO.xmlSimpleBlackBerry.xml3 Part e 2 Part nao vazias.
 - Evidência direta: amostra simples: alias sanitizado em Theme\\EXEMPLO-SANITIZADO.xmlSimpleAndroid.xml3 Part e 2 Part nao vazias.
-- Evidência direta: amostra complexa: alias sanitizado em Theme\\EXEMPLO-SANITIZADO.xmlCarmine.xml3 Part e tamanho de 323724 bytes.
-- Evidência direta: amostra complexa: alias sanitizado em Theme\\EXEMPLO-SANITIZADO.xmlCarmineGAM.xml3 Part e tamanho de 304258 bytes.
+- Evidência direta: amostra complexa: alias sanitizado em Theme\\EXEMPLO-SANITIZADO.xmlTemaExemploPrincipal.xml 3 Part e tamanho de 323724 bytes.
+- Evidência direta: amostra complexa: alias sanitizado em Theme\\EXEMPLO-SANITIZADO.xmlTemaExemploSeguranca.xml 3 Part e tamanho de 304258 bytes.
 - Evidência direta: Part type nas amostras simples: 43b86e51-163f-44af-ac5a-e101541b1a71; babf62c5-0111-49e9-a1c3-cc004d90900a; c31007a6-01d3-4788-95b3-425921d47758.
 - Evidência direta: Part type nas amostras complexas: 43b86e51-163f-44af-ac5a-e101541b1a71; babf62c5-0111-49e9-a1c3-cc004d90900a; c31007a6-01d3-4788-95b3-425921d47758.
 - Evidência direta: Part type apenas nas amostras complexas: nenhum.
@@ -7072,6 +7072,4112 @@ VolumeMovimentoVolumePesoLiquido.Visible = not VolumeMovimentoVolumePesoLiquido.
     <Property>
       <Name>Name</Name>
       <Value>PaletteExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+## Moldes sanitizados completos de ExternalObject, UserControl e Module
+
+- Evidência direta: o acervo usado nesta base contem 18 ExternalObject, 7 UserControl e 279 Module.
+- Inferência forte: nesses tipos vale separar um perfil minimo e outro mais rico quando houver contrato declarativo ou script suficiente para justificar a diferenca.
+
+### Molde sanitizado de ExternalObject 1 - ObjetoExternoGenerico
+
+- Perfil: ExternalObject minimo, sem metodos declarados, apenas metadados de namespace e tipo externo.
+- Uso operacional: boa referencia para objetos externos nativos ou wrappers muito pequenos.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="620303f9-3859-4530-9c0a-4bd9f092cc07" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2016-07-18T22:08:38.0000000Z" checksum="b7c4fb30d26f475130a01fd8fb48f2d2" fullyQualifiedName="ObjetoExternoGenerico" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="30e2e748-7c30-434a-b7dc-b32a0224caa2" name="ObjetoExternoGenerico" type="c163e562-42c6-4158-ad83-5b21a14cf30e" description="Objeto Externo Generico" parent="PastaExemploExterno" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="00000000-0000-0000-0002-000000000005">
+    <Properties />
+  </Part>
+  <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+    <Help>
+      <HelpItem>
+        <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-Portuguese</Language>
+        <Content />
+      </HelpItem>
+    </Help>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>ObjetoExternoGenerico</Value>
+    </Property>
+    <Property>
+      <Name>ExoType</Name>
+      <Value>Native Object</Value>
+    </Property>
+    <Property>
+      <Name>ObjNamespace</Name>
+      <Value>SANITIZED</Value>
+    </Property>
+    <Property>
+      <Name>ExoName</Name>
+      <Value>ObjetoExternoGenerico</Value>
+    </Property>
+    <Property>
+      <Name>ExoNameCSHARP</Name>
+      <Value>ObjetoExternoGenerico</Value>
+    </Property>
+    <Property>
+      <Name>AssemblyName</Name>
+      <Value />
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de ExternalObject 2 - ServicoEnderecoExemplo
+
+- Perfil: ExternalObject com varios ExternalMethod, parametros, tipos externos e endereco de servico.
+- Uso operacional: boa referencia para integracoes SOAP/RPC ou wrappers declarativos mais ricos.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="9ae73ae9-0f41-4b5e-9397-1231c481b8f3" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2016-02-16T18:13:55.0000000Z" checksum="48449c43470858ba4dd744d9a3a260c3" fullyQualifiedName="ServicoEnderecoExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="9645286e-74c7-4223-bd68-a5b7d15696d9" name="ServicoEnderecoExemplo" type="c163e562-42c6-4158-ad83-5b21a14cf30e" description="Servico Endereco Exemplo" parent="ServicoEnderecoExemplo" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="00000000-0000-0000-0002-000000000005">
+    <ExternalMethods>
+      <ExternalMethod>
+        <Properties>
+          <Property>
+            <Name>IntName</Name>
+            <Value>obterVersaoServico</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemType</Name>
+            <Value>bas:Character</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemLength</Name>
+            <Value>9999</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodStyle</Name>
+            <Value>idRPC</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodInputUse</Name>
+            <Value>idEncoded</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAddress</Name>
+            <Value>https://example.org/ws/address</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeName</Name>
+            <Value>ServicoEnderecoExemploPort</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeNamespace</Name>
+            <Value>urn:ServicoEnderecoExemplo</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAction</Name>
+            <Value>urn:ServicoEnderecoExemploAction</Value>
+          </Property>
+          <Property>
+            <Name>ExoName</Name>
+            <Value>obterVersaoServico</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodRequestNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseElementName</Name>
+            <Value>obterVersaoServicoResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmName</Name>
+            <Value>obterVersaoServicoResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmNamespace</Name>
+            <Value />
+          </Property>
+          <Property>
+            <Name>ExoItemExtType</Name>
+            <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+          </Property>
+        </Properties>
+      </ExternalMethod>
+      <ExternalMethod>
+        <Parameters>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>codigo</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>codigo</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+        </Parameters>
+        <Properties>
+          <Property>
+            <Name>IntName</Name>
+            <Value>obterEndereco</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemType</Name>
+            <Value>bas:Character</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemLength</Name>
+            <Value>9999</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodStyle</Name>
+            <Value>idRPC</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodInputUse</Name>
+            <Value>idEncoded</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAddress</Name>
+            <Value>https://example.org/ws/address</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeName</Name>
+            <Value>ServicoEnderecoExemploPort</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeNamespace</Name>
+            <Value>urn:ServicoEnderecoExemplo</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAction</Name>
+            <Value>urn:ServicoEnderecoExemploAction</Value>
+          </Property>
+          <Property>
+            <Name>ExoName</Name>
+            <Value>obterEndereco</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodRequestNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseElementName</Name>
+            <Value>obterEnderecoResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmName</Name>
+            <Value>obterEnderecoResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmNamespace</Name>
+            <Value />
+          </Property>
+          <Property>
+            <Name>ExoItemExtType</Name>
+            <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+          </Property>
+        </Properties>
+      </ExternalMethod>
+      <ExternalMethod>
+        <Parameters>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>codigo</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>codigo</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>login</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>login</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>segredo</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>segredo</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+        </Parameters>
+        <Properties>
+          <Property>
+            <Name>IntName</Name>
+            <Value>obterEnderecoAuth</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemType</Name>
+            <Value>bas:Character</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemLength</Name>
+            <Value>9999</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodStyle</Name>
+            <Value>idRPC</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodInputUse</Name>
+            <Value>idEncoded</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAddress</Name>
+            <Value>https://example.org/ws/address</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeName</Name>
+            <Value>ServicoEnderecoExemploPort</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeNamespace</Name>
+            <Value>urn:ServicoEnderecoExemplo</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAction</Name>
+            <Value>urn:ServicoEnderecoExemploAction</Value>
+          </Property>
+          <Property>
+            <Name>ExoName</Name>
+            <Value>obterEnderecoAuth</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodRequestNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseElementName</Name>
+            <Value>obterEnderecoAuthResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmName</Name>
+            <Value>obterEnderecoAuthResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmNamespace</Name>
+            <Value />
+          </Property>
+          <Property>
+            <Name>ExoItemExtType</Name>
+            <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+          </Property>
+        </Properties>
+      </ExternalMethod>
+      <ExternalMethod>
+        <Parameters>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>logradouro</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>logradouro</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>localidade</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>localidade</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>UF</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>UF</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+        </Parameters>
+        <Properties>
+          <Property>
+            <Name>IntName</Name>
+            <Value>obterCEP</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemType</Name>
+            <Value>bas:Character</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemLength</Name>
+            <Value>9999</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemIsCollection</Name>
+            <Value>True</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodStyle</Name>
+            <Value>idRPC</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodInputUse</Name>
+            <Value>idEncoded</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAddress</Name>
+            <Value>https://example.org/ws/address</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeName</Name>
+            <Value>ServicoEnderecoExemploPort</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeNamespace</Name>
+            <Value>urn:ServicoEnderecoExemplo</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAction</Name>
+            <Value>urn:ServicoEnderecoExemploAction</Value>
+          </Property>
+          <Property>
+            <Name>ExoName</Name>
+            <Value>obterCEP</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodRequestNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseElementName</Name>
+            <Value>obterCEPResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmName</Name>
+            <Value>obterCEPResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmNamespace</Name>
+            <Value />
+          </Property>
+          <Property>
+            <Name>ExoItemExtType</Name>
+            <Value>urn:ServicoEnderecoExemplo.ArrayOfstring</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemWRAPPEDCOLLECTION</Name>
+            <Value>idXmlCollectionWrapped</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemCollectionItemName</Name>
+            <Value>item</Value>
+          </Property>
+        </Properties>
+      </ExternalMethod>
+      <ExternalMethod>
+        <Parameters>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>logradouro</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>logradouro</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>localidade</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>localidade</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>UF</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>UF</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>login</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>login</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+          <Parameter>
+            <Properties>
+              <Property>
+                <Name>ExoParamAccessType</Name>
+                <Value>in</Value>
+              </Property>
+              <Property>
+                <Name>IntName</Name>
+                <Value>segredo</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemType</Name>
+                <Value>bas:Character</Value>
+              </Property>
+              <Property>
+                <Name>ExoItemLength</Name>
+                <Value>9999</Value>
+              </Property>
+              <Property>
+                <Name>ExoName</Name>
+                <Value>segredo</Value>
+              </Property>
+              <Property>
+                <Name>ExoNamespace</Name>
+                <Value />
+              </Property>
+              <Property>
+                <Name>ExoItemExtType</Name>
+                <Value>http://www.w3.org/2001/XMLSchema.string</Value>
+              </Property>
+            </Properties>
+          </Parameter>
+        </Parameters>
+        <Properties>
+          <Property>
+            <Name>IntName</Name>
+            <Value>obterCEPAuth</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemType</Name>
+            <Value>bas:Character</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemLength</Name>
+            <Value>9999</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemIsCollection</Name>
+            <Value>True</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodStyle</Name>
+            <Value>idRPC</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodInputUse</Name>
+            <Value>idEncoded</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAddress</Name>
+            <Value>https://example.org/ws/address</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeName</Name>
+            <Value>ServicoEnderecoExemploPort</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodPortTypeNamespace</Name>
+            <Value>urn:ServicoEnderecoExemplo</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodAction</Name>
+            <Value>urn:ServicoEnderecoExemploAction</Value>
+          </Property>
+          <Property>
+            <Name>ExoName</Name>
+            <Value>obterCEPAuth</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodRequestNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseElementName</Name>
+            <Value>obterCEPAuthResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodResponseNamespace</Name>
+            <Value>urn:https://example.org</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmName</Name>
+            <Value>obterCEPAuthResponse</Value>
+          </Property>
+          <Property>
+            <Name>ExoMethodReturnParmNamespace</Name>
+            <Value />
+          </Property>
+          <Property>
+            <Name>ExoItemExtType</Name>
+            <Value>urn:ServicoEnderecoExemplo.ArrayOfstring</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemWRAPPEDCOLLECTION</Name>
+            <Value>idXmlCollectionWrapped</Value>
+          </Property>
+          <Property>
+            <Name>ExoItemCollectionItemName</Name>
+            <Value>item</Value>
+          </Property>
+        </Properties>
+      </ExternalMethod>
+    </ExternalMethods>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+    <Help>
+      <HelpItem>
+        <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-Portuguese</Language>
+        <Content />
+      </HelpItem>
+    </Help>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>ServicoEnderecoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>Servico Endereco Exemplo</Value>
+    </Property>
+    <Property>
+      <Name>ExoType</Name>
+      <Value>WSDL</Value>
+    </Property>
+    <Property>
+      <Name>ExoImporterVersion</Name>
+      <Value>GX WSDL Tool version 2.0</Value>
+    </Property>
+    <Property>
+      <Name>ExoSourceURI</Name>
+      <Value>https://example.org/ws/address?WSDL</Value>
+    </Property>
+    <Property>
+      <Name>ExoName</Name>
+      <Value>ServicoEnderecoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>AssemblyName</Name>
+      <Value>https://example.org/ws/address?WSDL</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de UserControl 1 - UCNavegacaoExemplo
+
+- Perfil: UserControl pequeno com alguns scripts utilitarios de navegacao/reload.
+- Uso operacional: boa referencia para controles simples orientados a JavaScript embutido.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="eabf2595-127f-4740-beee-048c9da4cc9a" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2023-05-17T14:08:16.0000000Z" checksum="60441b9eb2f8ca3e38d163f099b653b9" fullyQualifiedName="UCNavegacaoExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="deb7eb7a-747d-4e58-b6e0-0f6077bc5993" name="UCNavegacaoExemplo" type="562f4793-aabe-449f-8821-fc77e550698e" description="Componente para forÃ§ar refresh da pÃ¡gina. Simula F5." parent="UserControls" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="3dd92fe7-b095-44d3-9fa0-8488fa3f0c67">
+    <Source><![CDATA[]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="8e9e4a7c-a4d3-4c36-8e8e-fb6702402f63">
+    <Source><![CDATA[<Definition auto="false">
+	<script name="ReloadPage">
+		document.location.reload();
+	</script>
+	<script name="ReloadPageTo" Parameters = "urlString">
+		document.location.href = urlString;
+	</script>
+	<script name="ReloadPageToAfter" Parameters = "urlString,milliseconds">
+		setTimeout(function(){document.location.href = urlString;return false;}, milliseconds);
+	</script>
+</Definition>
+]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>UCNavegacaoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>Componente para forÃ§ar refresh da pÃ¡gina. Simula F5.</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de UserControl 2 - UCDialogoExemplo
+
+- Perfil: UserControl mais rico, com definicoes, propriedades, eventos e scripts extensos.
+- Uso operacional: boa referencia para componentes customizados com API declarada e comportamento cliente mais complexo.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="26b65cc7-db83-4347-9d57-5c92b5890620" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2020-06-06T14:29:32.0000000Z" checksum="2af1f45c1583606b8178e4c0c3902137" fullyQualifiedName="UCDialogoExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="955e9b8d-b768-4228-9d39-9e137e172746" name="UCDialogoExemplo" type="562f4793-aabe-449f-8821-fc77e550698e" description="UC Dialogo Exemplo" parent="PastaExemploUserControl" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="3dd92fe7-b095-44d3-9fa0-8488fa3f0c67">
+    <Source><![CDATA[]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="8e9e4a7c-a4d3-4c36-8e8e-fb6702402f63">
+    <Source><![CDATA[<Definition auto="false">
+
+<Property Name="DismissReason" Type="string" Default="" />
+<Property Name="Position" Type="enum" Default="center">
+	<Value>top</Value>
+    <Value>top-start</Value>
+    <Value>top-end</Value>
+    <Value>center</Value>
+	<Value>center-start</Value>		
+	<Value>center-end</Value>			
+	<Value>bottom</Value>		
+	<Value>bottom-start</Value>		
+	<Value>bottom-end</Value>		
+</Property>
+  
+<Property Name="EventName" Type="string" Default="" />
+<Property Name="ConvertGxMessages" Type="Boolean" Default="false" />
+
+<Property Name="IconHTML" Type="string" Default="" />
+
+<Property Name="IconMsg" Type="enum" Default="warning">
+    <Value>success</Value>
+    <Value>error</Value>
+    <Value>warning</Value>
+    <Value>info</Value>
+	<Value>question</Value>
+</Property>
+
+<Property Name="IconError" Type="enum" Default="error">
+    <Value>success</Value>
+    <Value>error</Value>
+    <Value>warning</Value>
+    <Value>info</Value>
+	<Value>question</Value>		
+</Property>
+
+<Property Name="TimeoutError" Type="Numeric" Default="3000" />
+<Property Name="TimeoutMsg" Type="Numeric" Default="3000" />
+
+<script name="getDialogAPI" when="BeforeShow">
+	mythis   = this;
+	gx.fx.obs.addObserver('gx.onmessages', this, this._showMessages);
+	//cria uma variavel Global mythis para ser acessado em qualquer script
+</script>
+
+<script Name="_showMessages" Parameters="messages">
+
+	
+		//Precisa habilitar o parametro
+		if(!mythis.ConvertGxMessages)
+			return;
+			
+		//process messages	
+		for (var key in messages) {
+			if (key != undefined) {
+				mythis._renderDialogAPI(messages[key]);
+			}
+		}
+</script>
+<script Name="_renderDialogAPI" Parameters="messages">
+
+//process messages
+var container = messages;
+if (messages.msgs) container = messages.msgs;
+
+jQuery.each(container, function (index, msg) {
+	
+	if (!msg || !msg.text)
+	return;
+	
+	//Conflito com UC da Exemplo
+	var _isJson = (msg.text.substr(0, 1) == "{") ? true : false;
+	
+	if(_isJson)
+		return;
+		
+	if(msg.type == 1)
+    	mythis.FireToast2(msg.text,'',mythis.IconError,mythis.TimeoutError);
+	else
+		mythis.FireToast2(msg.text,'',mythis.IconMsg,mythis.TimeoutMsg);
+		
+	var errViewers = gx.dom.byClass('gx_ev', 'span')
+	$(errViewers).remove();
+	
+});
+
+</script>
+<script Name="Fire" Parameters="Titulo,Texto,DialogAPIIcon,TextoBotaoConfirmar,CorBotaoConfirmar">
+DialogAPI.fire({
+  title: Titulo,
+  text: Texto,
+  icon: DialogAPIIcon,
+  confirmButtonText: TextoBotaoConfirmar,
+  confirmButtonColor: CorBotaoConfirmar,
+  position: mythis.Position
+})     
+</script>
+
+<script Name="FireWithTimer" Parameters="Titulo,Texto,DialogAPIIcon,TextoBotaoConfirmar,CorBotaoConfirmar,Timer">
+DialogAPI.fire({
+  title: Titulo,
+  text: Texto,
+  icon: DialogAPIIcon,
+  confirmButtonText: TextoBotaoConfirmar,
+  confirmButtonColor: CorBotaoConfirmar,
+  timer: Timer,
+  timerProgressBar: true
+})     
+</script>
+
+<script Name="FireToast" Parameters="Titulo,Texto,DialogAPIIcon,Timer">
+DialogAPI.fire({
+  title: Titulo,
+  text: Texto,
+  icon: DialogAPIIcon,
+  position: mythis.Position,
+  showConfirmButton: false,  
+  timer: Timer,
+  timerProgressBar: true,
+  toast: true
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === DialogAPI.DismissReason.timer) {
+    console.log('I was closed by the timer');
+    mythis.DismissReason = result.dismiss;
+    
+	try {
+	mythis.ClosedTimer();	
+	}
+	catch (e) {
+	// declaraÃ§Ãµes para manipular quaisquer exceÃ§Ãµes
+	//logMyErrors(e); // passa o objeto de exceÃ§Ã£o para o manipulador de erro
+	}	
+    	
+  }
+})     
+</script>
+
+<script Name="FireToast2" Parameters="Titulo,Texto,DialogAPIIcon,Timer">
+DialogAPI.fire({
+  title: Titulo,
+  text: Texto,
+  icon: DialogAPIIcon,
+  iconHtml: mythis.IconHTML,
+  position: mythis.Position,
+  showConfirmButton: false,  
+  timer: Timer,
+  timerProgressBar: true
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === DialogAPI.DismissReason.timer) {
+    console.log('I was closed by the timer');
+    mythis.DismissReason = result.dismiss;
+    
+	try {
+	mythis.ClosedTimer();	
+	}
+	catch (e) {
+	// declaraÃ§Ãµes para manipular quaisquer exceÃ§Ãµes
+	//logMyErrors(e); // passa o objeto de exceÃ§Ã£o para o manipulador de erro
+	}	
+    		
+  }
+})     
+</script>
+
+<script Name="Confirm" Parameters="Titulo,Texto,DialogAPIIcon,TextoBotaoConfirmar">
+
+const swalWithBootstrapButtons = DialogAPI.mixin({
+  customClass: {
+	    confirmButton: 'btn btn-success',
+	    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+swalWithBootstrapButtons.fire({
+  title: Titulo,
+  text: Texto,
+  icon: DialogAPIIcon,
+  confirmButtonText: TextoBotaoConfirmar,
+  cancelButtonText: 'Fechar',
+  position: mythis.Position,
+  showCancelButton: true,
+  reverseButtons: false
+}).then((result) => {
+  if (result.value) {
+	  //Responseu Sim	  
+	  mythis.Confirmed();
+    
+  } else {
+    mythis.DismissReason = result.dismiss;
+    
+	try {
+	mythis.Cancel();
+	}
+	catch (e) {
+	// declaraÃ§Ãµes para manipular quaisquer exceÃ§Ãµes
+	//logMyErrors(e); // passa o objeto de exceÃ§Ã£o para o manipulador de erro
+	}	    		
+  }
+})     
+</script>
+
+<Event Name="Confirmed" On="Click"/>
+<Event Name="Cancel" On="Click"/>
+<Event Name="ClosedTimer" On="Click"/>
+
+</Definition>]]></Source>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>UCDialogoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>UC Dialogo Exemplo</Value>
+    </Property>
+    <Property>
+      <Name>FileReferences</Name>
+      <Value />
+    </Property>
+    <Property>
+      <Name>BaseStyle</Name>
+      <Value>dialogo-exemplo-base</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de Module - IntegracoesExemplo
+
+- Perfil: Module enxuto, sem partes internas complexas, funcionando como unidade organizacional declarativa.
+- Uso operacional: boa referencia para modulos simples e hierarquia nominal.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="afa47377-41d5-4ae8-9755-6f53150aa361" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2019-11-23T15:47:54.0000000Z" checksum="" fullyQualifiedName="IntegracoesExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="cb061c3d-a2eb-4335-bb1a-feacbc4a9c6f" name="IntegracoesExemplo" type="00000000-0000-0000-0000-000000000008" description="IntegracoesExemplo">
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>IntegracoesExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+## Moldes sanitizados completos de SubTypeGroup
+
+### Molde sanitizado de SubTypeGroup 1 - `EntidadeProcessoEmpresaExemplo`
+
+- Perfil: SubTypeGroup enxuto com poucos subtypes e foco em equivalencias nominais simples.
+- Uso operacional: boa referencia para grupos de subtype pequenos e declarativos.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="e058c0a2-a969-478b-9f81-77cf1202d227" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2024-10-07T00:25:35.0000000Z" checksum="b43b48a724160626fffcf54236c09d27" fullyQualifiedName="EntidadeProcessoEmpresaExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="ac55b810-d079-4bc2-af29-2625936bb8d0" name="EntidadeProcessoEmpresaExemplo" type="87313f43-5eb2-41d7-9b8c-e8d9f5bf9588" description="Entidade Processo Empresa Exemplo" parent="Processos" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="74203da2-41b1-402c-0001-d8d564a2c2fa">
+    <Subtype guid="3a50f42a-458a-4cce-bd6f-40e9cdadf076">
+      <Name>EntidadeProcessoEmpresaExemploId</Name>
+      <Supertype guid="5668cdba-5e23-4a6c-80b3-ef2a2a97ce24">EntidadeEmpresaId</Supertype>
+    </Subtype>
+    <Subtype guid="27da01a9-97b6-4873-85d2-cd1863af1429">
+      <Name>EntidadeProcessoEmpresaExemploTotalDeAnimaisEmRegistroBaseDeveBaterComTotalDeSuasRegistros</Name>
+      <Supertype guid="faecb545-ec39-4194-896a-88becd5abf73">EntidadeEmpresaRegraQuantidade</Supertype>
+    </Subtype>
+    <Subtype guid="88122744-548c-4148-b52c-206954dc8018">
+      <Name>EntidadeProcessoEmpresaExemploRegraDestinoNotaRegistroBase</Name>
+      <Supertype guid="7627fe2e-8041-4ee5-892f-024e49efbeef">EntidadeEmpresaRegraDestinatarioNota</Supertype>
+    </Subtype>
+    <Subtype guid="9af5a4ab-fd5b-414c-b7db-99ee42abdcab">
+      <Name>EntidadeProcessoEmpresaExemploRegraDestinoDocumento</Name>
+      <Supertype guid="bd5e04ed-c996-4523-8088-110780fe1861">EntidadeEmpresaRegraDestinatarioAbate</Supertype>
+    </Subtype>
+    <Subtype guid="5da64b87-4aac-4487-8c04-eea8b3ea4fc9">
+      <Name>EntidadeProcessoEmpresaExemploSiglaServicoRegulador</Name>
+      <Supertype guid="1c047235-db58-46fa-8ede-6687bc121fe6">EntidadeEmpresaSiglaServico</Supertype>
+    </Subtype>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>EntidadeProcessoEmpresaExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+
+```
+
+### Molde sanitizado de SubTypeGroup 2 - `ProcessoRegistroItemExemplo`
+
+- Perfil: SubTypeGroup mais denso, com varios subtypes encadeando nomes de entidade, parceiro e dados complementares.
+- Uso operacional: boa referencia para grupos de subtype maiores, com varias chaves e nomes derivados.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="e058c0a2-a969-478b-9f81-77cf1202d227" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-02-03T09:57:23.0000000Z" checksum="37282ebb9397103f8b7023648fa4ec5b" fullyQualifiedName="ProcessoRegistroItemExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="e595a90f-3320-4292-bb5f-d88f6cebecfb" name="ProcessoRegistroItemExemplo" type="87313f43-5eb2-41d7-9b8c-e8d9f5bf9588" description="Processo Compra Item Exemplo" parent="Processos" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="74203da2-41b1-402c-0001-d8d564a2c2fa">
+    <Subtype guid="136730e0-5e9c-42ea-a3a0-40c4c598945c">
+      <Name>ProcessoRegistroItemExemploEmpresaId</Name>
+      <Supertype guid="e612571c-8abc-49d4-ae77-e34a3dade15d">RegistroItemEmpresaId</Supertype>
+    </Subtype>
+    <Subtype guid="883cab39-f6a4-48e4-9830-3361cc323dfb">
+      <Name>ProcessoRegistroItemExemploId</Name>
+      <Supertype guid="813c8384-4a41-48df-a5f3-ce518b1a8882">RegistroItemId</Supertype>
+    </Subtype>
+    <Subtype guid="51875e8b-0ba0-420e-a91e-0836eb2ed28f">
+      <Name>ProcessoRegistroItemExemploDataProcesso</Name>
+      <Supertype guid="89587d85-1590-4d2e-b701-3dec2418ea37">RegistroItemDataProcesso</Supertype>
+    </Subtype>
+    <Subtype guid="7a3c0c3c-c574-4b81-be62-402999ba0219">
+      <Name>ProcessoRegistroItemExemploParceiroEmpresaId</Name>
+      <Supertype guid="4743ca97-a219-4644-bb2e-44cc660a5f98">RegistroItemParceiroEmpresaId</Supertype>
+    </Subtype>
+    <Subtype guid="47cc16d4-5bf6-42c0-9c67-866775083a80">
+      <Name>ProcessoRegistroItemExemploParceiroId</Name>
+      <Supertype guid="e03e95ce-7e88-422e-83b6-b76f20316f8a">RegistroItemParceiroId</Supertype>
+    </Subtype>
+    <Subtype guid="a4f15a63-5aba-401d-af15-ca0b7499afff">
+      <Name>ProcessoRegistroItemExemploParceiroNome</Name>
+      <Supertype guid="aa07a9c5-b6eb-4141-9717-2db5b17f656c">RegistroItemParceiroNome</Supertype>
+    </Subtype>
+    <Subtype guid="d147b60e-4a1c-4567-a05b-1b520b5188b9">
+      <Name>ProcessoRegistroItemExemploParceiroRazao</Name>
+      <Supertype guid="a9ddfa43-f5f1-4cdc-9272-71bfe99be547">RegistroItemParceiroRazao</Supertype>
+    </Subtype>
+    <Subtype guid="7fa2112d-69cb-4583-b4b2-2eaf4ab3c868">
+      <Name>ProcessoRegistroItemExemploParceiroPrincipalDocumentoId</Name>
+      <Supertype guid="a8e2757b-48dd-4dd6-ab63-cf4afaedb190">RegistroItemParceiroDocumentoId</Supertype>
+    </Subtype>
+    <Subtype guid="75c9f57d-5388-4bce-bc44-844fe532a220">
+      <Name>ProcessoRegistroItemExemploParceiroTipoContribuinte</Name>
+      <Supertype guid="c9718595-0328-4439-bf54-9ff1c9077a96">RegistroItemParceiroTipoContribuinte</Supertype>
+    </Subtype>
+    <Subtype guid="d816cafc-0c47-4dc9-8a94-0cf33a71c2a8">
+      <Name>ProcessoRegistroItemExemploParceiroPrincipalEnderecosId</Name>
+      <Supertype guid="45022f34-f0c7-4151-b5fa-e60eeedf2d1b">RegistroItemParceiroEnderecoId</Supertype>
+    </Subtype>
+    <Subtype guid="acec979c-7a22-4ba9-b94b-a3839884365b">
+      <Name>ProcessoRegistroItemExemploParceiroPrincipalUfId</Name>
+      <Supertype guid="5899b6e3-eae9-47bd-911e-b6f0a99bdb46">RegistroItemParceiroUfId</Supertype>
+    </Subtype>
+    <Subtype guid="38a0a27c-86b6-4f5d-99ce-73371e4eb376">
+      <Name>ProcessoRegistroItemExemploParceiroEndereco</Name>
+      <Supertype guid="696457e2-160b-40a7-91c1-828a81e5005a">RegistroItemParceiroMapaEndereco</Supertype>
+    </Subtype>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>ProcessoRegistroItemExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+
+```
+
+
+
+## Moldes sanitizados completos de ThemeClass
+
+### Molde sanitizado de ThemeClass 1 - `BotoesAcaoExemplo`
+
+- Perfil: ThemeClass raiz simples, com marcador web e tipo interno de classe visual.
+- Uso operacional: boa referencia para classes tematicas base sem cadeia longa de derivacao.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="abd2de3e-1c96-5681-b52b-bbe33c0dca49" user="SANITIZED" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2014-04-10T14:23:17.0000000Z" checksum="2ef0f3b954ab655aefa1a5f9af5100e0" fullyQualifiedName="BotoesAcaoExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="2d749abc-7cbe-5cd1-b251-f1b289e851ef" name="BotoesAcaoExemplo" type="d4876646-98dd-419b-8c1c-896f83c48368" description="Botoes Acao Exemplo" parent="BotaoBaseExemplo" parentType="d4876646-98dd-419b-8c1c-896f83c48368">
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>BotoesAcaoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>ThemeElementThemeTypes</Name>
+      <Value>idWeb</Value>
+    </Property>
+    <Property>
+      <Name>ThemeElementInternalType</Name>
+      <Value>GxClass</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de ThemeClass 2 - `BotoesAcaoHoverExemplo`
+
+- Perfil: ThemeClass derivada, herdando de outra classe visual do mesmo tipo.
+- Uso operacional: boa referencia para estados visuais ou variantes que preservam a mesma assinatura de propriedades.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="2d749abc-7cbe-5cd1-b251-f1b289e851ef" user="SANITIZED" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2016-03-05T05:44:22.0000000Z" checksum="b99af3293f67839c80125bcf62ad7c05" fullyQualifiedName="BotoesAcaoHoverExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="ef7af9e8-a021-4745-befb-1edded115e19" name="BotoesAcaoHoverExemplo" type="d4876646-98dd-419b-8c1c-896f83c48368" description="Botoes Acao Hover Exemplo" parent="BotoesAcaoExemplo" parentType="d4876646-98dd-419b-8c1c-896f83c48368">
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>BotoesAcaoHoverExemplo</Value>
+    </Property>
+    <Property>
+      <Name>ThemeElementThemeTypes</Name>
+      <Value>idWeb</Value>
+    </Property>
+    <Property>
+      <Name>ThemeElementInternalType</Name>
+      <Value>GxClass</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+
+## Moldes sanitizados completos de Image
+
+### Molde sanitizado de Image 1 - `AcaoCancelarExemplo`
+
+- Perfil: Image simples com um unico item referenciado a tema e caminho original sanitizado.
+- Uso operacional: boa referencia para icones pontuais e imagens pequenas com um unico recurso embutido.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="afa47377-41d5-4ae8-9755-6f53150aa361" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2023-01-28T23:24:21.0000000Z" checksum="da2989de4847257741d0fecb8cb7d90b" fullyQualifiedName="AcaoCancelarExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="ec7bc09c-00fb-486b-9566-4b67fdc76464" name="AcaoCancelarExemplo" type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" description="Acao Cancelar Exemplo">
+  <Part type="36f350de-f768-425f-ac20-773749f331bf">
+    <Images>
+      <ImageItem>
+        <Image name="CancelarExemplo.png" description="CancelarExemplo.png">
+          <Data>
+            <base64Binary>
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3Cc
+ulE8AAAAGFBMVEW4BUW4BUW4BUW4BUW4BUW4BUW4BUX///+GCYqeAAAAB3RSTlMAqT9C60FAQxIVCgAAAAFiS0dEBxZhiOsAAABFSURBVAjXYxBiAAJFBhMF
+BgYmVwZmJwYGlQAGIBfIYQByQRwgF8RhYEhxApFsziEKII4BqxOIw8AA5KYYMDAAucIg+UAAJ4MHj0vqGQkAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTUtMDct
+MDlUMTU6MDg6MTgrMDA6MDDKB3HyAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTA3LTA5VDE1OjA4OjE4KzAwOjAwu1rJTgAAAABJRU5ErkJggg==
+</base64Binary>
+          </Data>
+        </Image>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>CancelarExemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>Description</Name>
+            <Value>CancelarExemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>ThemeReference</Name>
+            <Value>c804fdbd-7c0b-440d-8527-4316c92649a6-7</Value>
+          </Property>
+          <Property>
+            <Name>LanguageReference</Name>
+            <Value>NULL</Value>
+          </Property>
+          <Property>
+            <Name>ImageOriginalFullPath</Name>
+            <Value>C:\\SANITIZED\\Assets\\ImagemExemplo.png</Value>
+          </Property>
+        </Properties>
+        <ThemeReference>c804fdbd-7c0b-440d-8527-4316c92649a6-TemaExemplo</ThemeReference>
+      </ImageItem>
+    </Images>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>AcaoCancelarExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de Image 2 - `AcaoExcluirExemplo`
+
+- Perfil: Image com varios `ImageItem`, misturando referencias com e sem tema.
+- Uso operacional: boa referencia para imagens com multiplas variantes do mesmo ativo visual.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="afa47377-41d5-4ae8-9755-6f53150aa361" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2023-01-28T23:24:16.0000000Z" checksum="1a5af35131c431e837e5ec7110ab9612" fullyQualifiedName="AcaoExcluirExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="7695fe89-52c9-4b7e-871e-0e11548f823e" name="AcaoExcluirExemplo" type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" description="Acao Excluir Exemplo">
+  <Part type="36f350de-f768-425f-ac20-773749f331bf">
+    <Images>
+      <ImageItem>
+        <Image name="AcaoExcluirExemplo.gif" description="Acao Excluir Exemplo.gif">
+          <Data>
+            <base64Binary>
+R0lGODlhEAAQAMQYAMQzM8AyMn4hIXYfH4EiInEeHnMeHnQeHre3t9XV1eTk5MTExLkwMIgkJL29va8uLszMzMg0NHkgIKcrK58pKW8dHZcnJ78yMv///wAA
+AAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABgALAAAAAAQABAAAAVaICaOZGmeaFWVqmlcVzEWsFEelhUM2BDkB5OEQgFIAEQJSjCZNAITAUpEaDAYhCn18Yhk
+p8wJgCk9DYvHpAmn4/mApVdsVjO1SHeRIgFZOBCACA4LEAkKWichADs=
+</base64Binary>
+          </Data>
+        </Image>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>AcaoExcluirExemplo.gif</Value>
+          </Property>
+          <Property>
+            <Name>Description</Name>
+            <Value>Acao Excluir Exemplo.gif</Value>
+          </Property>
+          <Property>
+            <Name>IsExternalImage</Name>
+            <Value>False</Value>
+          </Property>
+          <Property>
+            <Name>ThemeReference</Name>
+            <Value>NULL</Value>
+          </Property>
+          <Property>
+            <Name>LanguageReference</Name>
+            <Value>NULL</Value>
+          </Property>
+        </Properties>
+      </ImageItem>
+      <ImageItem>
+        <Image name="AcaoExcluirExemplo.png" description="Acao Excluir Exemplo.png">
+          <Data>
+            <base64Binary>
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK8AAACvABQqw0mAAAABh0RVh0U29mdHdhcmUAQWRv
+YmUgRmlyZXdvcmtzT7MfTgAAAjdJREFUOI2lkktsTHEUxn/nf+/M6IjUq4JUyHgsBOl4NEKiRCRExcaCSEREIhZdaMOKVnVJJVZ0x9LCRnRjQS0Qj4QwoR4x
+iEZKlYiOeztz57PoDNPBQpzkLP7f+c53Xn+TxP+Yq3y83rBy26umdNffyNmm9MHs+hWHxoGSkMTzTY07Mw0L9WjxPD1ds/RKGS97/7qGzsdL5+vxkpT6m9Ld
+utFjkjBJPNmyNpl7NzhSGAkA8OIeiam1vctuPWoGyKxLdwbDX9sLuVJ8QoLYpGRjw53MPZPE1eRES8ycchJnbQAUi7iYT3Ja7UUX9zPfh750jeZCzLly233k
+o+amt+9HrHKJVxfM6ZbUaoCKwk/4OM8jzAU45xBg0PcxEd+0+8mrAoBVX+FySaRUCQnMGYwlXxuuqdm8N/MiX+b/JgBwcX79bcTqKvhzcnrdjG13HxQqQVdF
+4kKq/nhY1KpQosqnDA99uFTNH9dBT6q+06T2nycukyoShPUeuPmymdkTfgmcWTQPy+ePIzoqk83sisHTonS4UgSj13x/R8uLN4EDiMySgdQRIMoeor6h2uT2
+luy7I6PG6e8VsUDaGkTRsp87aH2Wzcnz94UYoSDErrekl2888fB5EeBwdqAtj50KBaEg77xzu1Jz7wOYN9bU5AiiPbPqWic5W3V+8NPRkUJU8CABEEEEfNk/
+q+5YzDn/7MBgGzAq6atJwjfzgFhBChibvcYDv3LsCCTpWyke9yAqSNEf/8G/2A9gpCdJVtr5yQAAAABJRU5ErkJggg==
+</base64Binary>
+          </Data>
+        </Image>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>AcaoExcluirExemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>Description</Name>
+            <Value>Acao Excluir Exemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>IsExternalImage</Name>
+            <Value>False</Value>
+          </Property>
+          <Property>
+            <Name>ThemeReference</Name>
+            <Value>c804fdbd-7c0b-440d-8527-4316c92649a6-1</Value>
+          </Property>
+          <Property>
+            <Name>LanguageReference</Name>
+            <Value>NULL</Value>
+          </Property>
+          <Property>
+            <Name>ImageOriginalFullPath</Name>
+            <Value>C:\\SANITIZED\\Assets\\ImagemExemplo.png</Value>
+          </Property>
+        </Properties>
+        <ThemeReference>c804fdbd-7c0b-440d-8527-4316c92649a6-TemaExemplo</ThemeReference>
+      </ImageItem>
+      <ImageItem>
+        <Image name="editdeleteM.png" description="Acao Excluir Exemplo.gif">
+          <Data>
+            <base64Binary>
+iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAB3RJTUUH2AkJDxIdUg9CLgAAAAlwSFlzAAAK8AAACvABQqw0mAAACX9JREFUeNrNWGtsVGUa
+fs9l7p3pTG/MUGhpaaUQQVZQWFBQVowRf+wmGjaRBgiJWTdh2V1iFEwMvyAo7mo3Lqs/JAYSg/whIUtEuUQqwWigG9vCECy90Ja2Yzvt3M/Muezznpkp7XTK
+Qthk9yRf5pzzfed9n+99n/fyjWAYBv0/XeL/GkDhJT+sAENVSdc0wdydJBmC/HAiH/hrQ9cpEw7b4sFgTeLmzaZUf38gHQqV8Jy1sjJmnzfvjrOxMehqauqz
++HyKID6YE4QH4ZAyNOQYPHr01+ELF36lj4wskUZHq6R43E2KYiFWbLVmNKczqpWXj4hVVdd8zz57bm5z80mb35/8rwJSJyakoRMn1gx8+umfhK6ude5Mxu2s
+rrbYGhsFed48EktKSJAk0hMJUkdGSAkGjUR3dyYiSVGjvv5i9Y4df/G/8splubRUeyhA4IcQu3ZtTu/7778ePX369z5RLPc+9phgX7+e5PnziQCi6AW3akND
+lGptpfD33xthTRt1v/ji32t37z5csmTJMHg2q9JZATGYSFtbXe+BA7uV8+e3lAcCHs+GDWR74gkw7z6pp2mkXL1KkbNnaXRgIGLbsOFY7d69hzzLl/fMBkra
+t29fUVmpW7cqet5558/KhQs7Kurq3KWbNpH10UfJ5AosYO5GELLP+cHP2CATn8GYCqqqyFJZSdLYmC3W1rYkcfu25HnyySuWsrJEMb1FQ8CAsIGPPtqSPHdu
+m2/uXFfJM8+QBK7omUxWIf+m00QuFwkFg9/xnJFby99I1dXEMnyBgAsyt7JsQytOp6KARr/+uib0+ee73G53mXPlShIhkPkisjII0jo7Sb99m4zx8bzfzWFu
+Bu94jtdwjjK/4W/nziUn3F3idpezbNZxX4C0VEoYPHz4dVsyWeNYuJAsjY0kOZ0kcSRBqfrjj+TasoWY2Hp3NyH8yUilzMH3ek+POedqbiatvZ0EuI+/ZRmW
+hgZyYrBs1sG6CvXPYGf47NlFyba233o9HtH2+OOEUCXZbjd3ngkGybN7N8l1dWQGg8VCqS+/JPL7s9YZHibHCy+Qdc0a4oQolZVR5NAhkpuaSGZLQZYdMl29
+veI4dEDXZxUvvRSc1ULs18j58+ulWMxrrakh65w5JEOpMTFBmY4Ocm3daoJh8rJC29q1ZN+4kfSBAdIHB8n2/POTYMzdYq1r+3bKsPuwIZZlAclt9fXEOlhX
+IZemWUgLhazJjo5fyprmtC9eTBarlQRFISMeJ9FmIx1C2TJmdDF3GNS6ddl8xPcMRrjrBY42LRIhAd+aMrCGZdoXLSL56lVnqrNzNXQekf3+dFFAyuCgF1m5
+Vi4psdjhBiGdXcdZmHmQOnWKCO6zP/XUpBVMUHieTANTwCQvX6bkyZNkAX9Ezl3JJPEKW3k5yV6vJQNdrBOARopbKJXyIYpcMKtggSIBRDUV8YC5Zew0eeKE
+qcwBy0yCEqZzk62YuHSJEsePkxVrRHYxygpbkVda8IxCLCRV1WXqJCoOCJcdH8hWj8d01YyQhKX4g8QXX5AB4c6nn54VTPTDD8kKknNW1xgQLCsGAiT4fOZG
+LG43pSIRFme/V5Rl2FASLCDEYlT0AlCdOTNbHcsFB+cgglUmAYNL+ugoibW1JFRUkJQls5bTWRwQ3DIO9El1eNiAAIHDeuqlAkzS4SDXq6+Ss4DAkzLwzgXL
+oWmj2AcfkAO5Ss6DZ5CISPN2dNRAZk+yzlkBWQOBMYvHM6D09GhGb68sgnzoccwwz4BPSRDbtW0buQqjKZelp0afG6WCORPbv58cyNzWPChYioEpoZBmCQQG
+WOc0WkwDNGdOyv7IIz8oup7Q2P99fUT9/ZTBruIQ7kAeck3JMyYYuDfy7bcUuXgxW1TzlmJQIL5z1y6KI/ewdQUAEVDbtHCYFE1LsC7WeS+X8c6+CZ86NRGN
+xTxl7GfsiNVncC8y2QvATABI/ODBbCHFGi8sMzX6RJA4Ay4xZ/L1LorwNxyOCff69d8IBbSYUctKn3uuw75gQesYSJ3mXWFHMobvzh36+c03KQlOTIKBZWIH
+DpDn+nXyoKzEAGwcTZlpKY62W7co9NZbVB4KkcyBAguxTJbNOqCrcwYHizVo4ePHm3pee+2SXRDK5iGpWXP5Q4PQOyiOFe++S+rYGCUAwHvzpjnPVxrzYcy7
+AELyeimEDVR3dZGEeSM33w9rpQxjbMEnn6z1bd4cvC9A6I2F3ubm/aNffbWzRBRdfhDbyaDgAgVjBK0ElwAfLGAriDSFQaFWMWcq0cbauH9ia+H9EDJ/TNfj
+5Rs3/q322LG9otNp3BcgvhLt7dV9O3cejF658jIyl60SCa6UExpHXE6JdZYjDluCs7OcWzuB5xDcBfYqnhUrTsxvadnjXLasv9i3s7awks8Xt9XUdKnd3f5Y
+f/+CcU2z8C6ZH7xrpqLIipkbUwa3tyLm2b1o7ukOxgjAIPslvKtWnQ68/fZB54oVP6E+FrXEPU8duqLI8dbWRaH33vtD+LvvNidU1cOdM+d6B3bvxC+yFOXj
+hFMul2NulpOQy/HM9HbKcsS3evXxyjfeaEHSvIHOQZ1N5388lxnptJDu7q4cPXLkN2NHj/4xNj7elFOULbq5Ya6dMtiZDLzE6w2WNTf/tXz79pPWurqQYLXe
+U+E0QCqbFiGeRJ7gew3mTqHNzK8ZDwa9rZs3/65BVTfBQvUA4hK4eMPDOUAaRgYjDgvd+kmW/7ns44//Ubt69WR5sNvthgw+cm/kQBmycNOGMZnlGcAAMnE/
+MnJfX584ODgodHZ2iqFQSIpEIuKNGzckRVFYIXKbJsaiUbmSyLNEFBc3iuIvqkVxvlcQzLP9uGHEBnT99k1d/1enrl//GWnVZrerAMEG5UKqNTY2alVVVTrA
+aMuXL9f9fr9eX19v4J2BORJG0Jjv2bNHOHPmjIR7SzqdlnK0kHO/U5+l3G/+niuULGXvBS17GtPo7lBzI1/V1YKRgbVUj8eTWbVqldbS0qLLVuSTlStXGjab
+zejo6NAYYFdXl2m5AmroORBGTkHWalxV7lIpv06n2YGZ93BTZuHChWopzvsNDQ06ABkuPtvpCE/mywQa+WEU1Hg8zlZDlleFaDQqBINBdLJp5qjY3t4uYp2Q
+42whpws3YA4oNJYuXZoHqUM5u0cHINNNzKkynE4qcbpl48yIMiOX9MywB9gUn7dyVZzJrk0/JcxsiKYDg08lk7xTSE1y7r8BJnJhT/Vv0A/SNDwfB8sAAAAA
+SUVORK5CYII=
+</base64Binary>
+          </Data>
+        </Image>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>editdeleteM.png</Value>
+          </Property>
+          <Property>
+            <Name>Description</Name>
+            <Value>Acao Excluir Exemplo.gif</Value>
+          </Property>
+          <Property>
+            <Name>IsExternalImage</Name>
+            <Value>False</Value>
+          </Property>
+          <Property>
+            <Name>ThemeReference</Name>
+            <Value>NULL</Value>
+          </Property>
+          <Property>
+            <Name>LanguageReference</Name>
+            <Value>NULL</Value>
+          </Property>
+        </Properties>
+      </ImageItem>
+      <ImageItem>
+        <Image name="ExcluirExemplo.png" description="ExcluirExemplo.png">
+          <Data>
+            <base64Binary>
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9i
+ZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6
+bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpS
+REYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIg
+eG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5
+cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRp
+ZDoxNDMxREE2MEUwMjE2ODExODIyQUI5QkRBMkI3MTQ0MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0OTdBM0Y3M0E4NzkxMUUzOENFQkM4Qzk2MzBB
+MkRBRCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0OTdBM0Y3MkE4NzkxMUUzOENFQkM4Qzk2MzBBMkRBRCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQ
+aG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTYxMzM1RDgxRTIwNjgxMThB
+NkRCMUM2QTNGM0FGRDciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTQzMURBNjBFMDIxNjgxMTgyMkFCOUJEQTJCNzE0NDAiLz4gPC9yZGY6RGVzY3Jp
+cHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6k7EfoAAAAnklEQVR42sSTMQqAMAxFq4KXceqip3bVzaOoCIIIgjeo
+X2wl1MQMDgbe0JD/oA1NnHPmS6XmY1FBB2ZgX+ZLsIDm7pxX8Mzuqg1Y0g+UYPczQ+jTAevDnISGV1BwAklSSWFOwEnEsCSIJWL4RFpjDjJyznzvWYw1vvP2
+th0tXCjbMVpYXTEVLMqDUcnICVrQS69NJBOoQy/5/TceAgwAjxchrJKTLJQAAAAASUVORK5CYII=
+</base64Binary>
+          </Data>
+        </Image>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>ExcluirExemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>Description</Name>
+            <Value>ExcluirExemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>IsExternalImage</Name>
+            <Value>False</Value>
+          </Property>
+          <Property>
+            <Name>ThemeReference</Name>
+            <Value>NULL</Value>
+          </Property>
+          <Property>
+            <Name>LanguageReference</Name>
+            <Value>NULL</Value>
+          </Property>
+          <Property>
+            <Name>ImageOriginalFullPath</Name>
+            <Value>C:\\SANITIZED\\Assets\\ImagemExemplo.png</Value>
+          </Property>
+        </Properties>
+      </ImageItem>
+      <ImageItem>
+        <Image name="RemoverExemplo.png" description="RemoverExemplo.png">
+          <Data>
+            <base64Binary>
+iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3Cc
+ulE8AAAAAmJLR0QA/4ePzL8AAAJsSURBVDjLjZW9T1NRGMZ/vShBYigECm2iCZAiwZiQqA1Rk8bF1joZBiZdykTQxDhoZKCrwAD/BYSFCRNxcYCQgLAYo6EN
+C0s/INciid5Y8zjQlt5zy8dzl3vPeX553/uec97jkzD1l498YpNdfgKt9BLhEXEue5xyy1ZKnYpqSqvKypGjrFY1ragCSsl2m93wvEJKKq16SiupkObrwyWN
+qUcbOksb6tGYSiZc0rAeqqDzVFBUwxW8Ar9QTM65qCQ5imu8Fl5Qvw4vhErSL/VroQLbCnn+Na2wKD9hTwk3FJItWcAcCSLGCi6RqLA8Zd6YjfCEOfDJ4Tpr
+hKsTUwB85g+PyyMn72+rrgwP2LNYYaAGBZsJDhhkCLv8DDLEARPYNa4wA6z49JJrvHEl1cVXOo1E89wi7xqZZs9im/uGsZ080ITDe97h0ATk6TBc99i22KHP
+GA6SA1o4BOCQFiBH0HDdIG1RpK1uZDe8T7vhaqNo4VUXOcBPsQbOeqoAWPhdVQQIsO+JXCBguGz8Fn2kjeEOsh4464F36LO4w7on7UINXMQPFOgyXOvctoix
+7CmYN3LOU7APxCxifCNjLJX3n/eNyBl+EEdSSqOuM5NXs+cYNivn+h5VSroEvOImX7hbk3aJ165IOUquHbbFMt/BAlqZ5TlHNcu3RGP1WNjYNLLEyY444hmz
+tFJtveNKXLgNJSptyFdu+v8Y4TeLXOVsHTHCFRZpOE7xWA0s0k2ErTPRLSJ0V1Awm35QSWXqpptRUsHTmv6xbE0qoKhmtFa9btY0o6gCmjSvG98pF90Km+xi
+A230EiFGjEbT+B+hOOps9fyhsgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wNy0wM1QxNDozODozNCswMDowMP9FGVMAAAAldEVYdGRhdGU6bW9kaWZ5ADIw
+MTUtMDctMDNUMTQ6Mzg6MzQrMDA6MDCOGKHvAAAAAElFTkSuQmCC
+</base64Binary>
+          </Data>
+        </Image>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>RemoverExemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>Description</Name>
+            <Value>RemoverExemplo.png</Value>
+          </Property>
+          <Property>
+            <Name>IsExternalImage</Name>
+            <Value>False</Value>
+          </Property>
+          <Property>
+            <Name>ThemeReference</Name>
+            <Value>c804fdbd-7c0b-440d-8527-4316c92649a6-7</Value>
+          </Property>
+          <Property>
+            <Name>LanguageReference</Name>
+            <Value>NULL</Value>
+          </Property>
+          <Property>
+            <Name>ImageOriginalFullPath</Name>
+            <Value>C:\\SANITIZED\\Assets\\ImagemExemplo.png</Value>
+          </Property>
+        </Properties>
+        <ThemeReference>c804fdbd-7c0b-440d-8527-4316c92649a6-TemaExemplo</ThemeReference>
+      </ImageItem>
+    </Images>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>True</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>AcaoExcluirExemplo</Value>
+    </Property>
+    <Property>
+      <Name>DefaultImage</Name>
+      <Value>,,</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+
+
+## Moldes sanitizados completos de Index
+
+### Molde sanitizado de Index 1 - `CadastroModeloExemplo`
+
+- Perfil: Index enxuto, com chave simples, um indice unico e poucos indices auxiliares.
+- Uso operacional: boa referencia para tabelas pequenas com ordenacao basica e um indice descendente de apoio.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="afa47377-41d5-4ae8-9755-6f53150aa361" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2025-09-28T12:19:09.0000000Z" checksum="2584cdc993d184b2df1c342335f093f4" fullyQualifiedName="CadastroModeloExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="a8113c94-a85c-47a7-a55c-798e19e16354" name="CadastroModeloExemplo" type="857ca50e-7905-0000-0007-c5d9ff2975ec" description="Cadastro Modelo Exemplo">
+  <Part type="00000000-0000-0000-0002-000000000004">
+    <Key>
+      <Item guid="25fd8782-c70b-477a-beb3-8f61f15cafac">CadastroModeloExemploId</Item>
+    </Key>
+    <Properties />
+  </Part>
+  <Part type="a5c0e770-560d-0001-0001-7fe71c260de3">
+    <Indexes>
+      <TableIndex>
+        <Index Type="Unique" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2021-12-25T04:06:21.0000000Z" checksum="be575917c1e8cc588b26f7399062ab90" fullyQualifiedName="ICadastroModeloExemploPK" moduleGuid="00000000-0000-0000-0000-000000000000" guid="6a639120-0521-48ca-b127-74b2a3d611ff" name="ICadastroModeloExemploPK" type="9e750647-3679-0000-0100-2529de263960" description="ICadastro Modelo Exemplo PK">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">CadastroModeloExemploId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ICadastroModeloExemploPK</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2021-12-25T04:06:21.0000000Z" checksum="8371bc8d6a80e4970855604882e87a0f" fullyQualifiedName="UCadastroModeloExemploIdDescendente" moduleGuid="00000000-0000-0000-0000-000000000000" guid="a1bb2e2f-22bb-40c6-9c97-1494f3921e9c" name="UCadastroModeloExemploIdDescendente" type="9e750647-3679-0000-0100-2529de263960" description="UCadastro Modelo Exemplo Id Descendente">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Descending">CadastroModeloExemploId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>UCadastroModeloExemploIdDescendente</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2021-12-25T04:06:21.0000000Z" checksum="51b7e5a2cb9e3a49b1e54bb3f9ef7ac9" fullyQualifiedName="ICadastroModeloExemploUltimaRevisaoUsuario" moduleGuid="00000000-0000-0000-0000-000000000000" guid="4f646fed-c8c4-48d4-ba68-897095940226" name="ICadastroModeloExemploUltimaRevisaoUsuario" type="9e750647-3679-0000-0100-2529de263960" description="ICadastro Modelo Exemplo Ultima Revisao Usuario">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">CadastroModeloExemploUltimaRevisaoUsuarioId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ICadastroModeloExemploUltimaRevisaoUsuario</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+    </Indexes>
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>CadastroModeloExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>Cadastro Modelo Exemplo</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de Index 2 - `RegistroBaseExemplo`
+
+- Perfil: Index denso, com chave composta e varios `TableIndex` automaticos e de usuario.
+- Uso operacional: boa referencia para estruturas com muitos indices derivados e combinacoes de ordem crescente/descendente.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="afa47377-41d5-4ae8-9755-6f53150aa361" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2026-03-22T12:57:46.0000000Z" checksum="2c02a143c62b21b5d16952bd6d4caaca" fullyQualifiedName="RegistroBaseExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="82d08ad9-d6c9-4bf0-bcaa-65f016c35569" name="RegistroBaseExemplo" type="857ca50e-7905-0000-0007-c5d9ff2975ec" description="RegistroBaseExemplo">
+  <Part type="00000000-0000-0000-0002-000000000004">
+    <Key>
+      <Item guid="2135d656-21ac-49ae-9e5c-6a6dc6d59239">RegistroBaseExemploEmpresaId</Item>
+      <Item guid="9a687eb2-9094-4ae2-9b58-aeb873203ed3">RegistroBaseExemploId</Item>
+    </Key>
+    <Properties />
+  </Part>
+  <Part type="a5c0e770-560d-0001-0001-7fe71c260de3">
+    <Indexes>
+      <TableIndex>
+        <Index Type="Unique" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="1236216bdc4adaed69f269062be11a6d" fullyQualifiedName="IRegistroBaseExemploPK" moduleGuid="00000000-0000-0000-0000-000000000000" guid="57af3161-b819-4f17-8b4f-871b05f150a1" name="IRegistroBaseExemploPK" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo PK">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploPK</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="f381b5caefe2c1a317247864ef99271a" fullyQualifiedName="IRegistroBaseExemploClassificacaoTipo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="811ded12-9d79-415d-93fd-ed8f31acfe83" name="IRegistroBaseExemploClassificacaoTipo" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Classificacao Tipo">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploClassificacaoTipoEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploClassificacaoTipoId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploClassificacaoTipo</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="103e69ca0edee88e341c4890052ff5e8" fullyQualifiedName="IRegistroBaseExemploParceiro" moduleGuid="00000000-0000-0000-0000-000000000000" guid="e66b21f9-c4ab-46c5-b7f6-8ce0a05a5edf" name="IRegistroBaseExemploParceiro" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Parceiro">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploParceiroEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploParceiroId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploParceiro</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="d74efbbcba5b464067b8e3338c469536" fullyQualifiedName="IRegistroBaseExemploGrupoA" moduleGuid="00000000-0000-0000-0000-000000000000" guid="8f889307-839f-4525-bc3d-2163dea0328f" name="IRegistroBaseExemploGrupoA" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Grupo A">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploGrupoAEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploGrupoAId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploGrupoA</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="5b4e10ec2ee4889e3e732c779be4c95c" fullyQualifiedName="IRegistroBaseExemploProcessoOrdem" moduleGuid="00000000-0000-0000-0000-000000000000" guid="75a2d805-45fe-4008-ad3d-53b3db5a1eb9" name="IRegistroBaseExemploProcessoOrdem" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Processo Ordem">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploProcessoOrdemEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploProcessoOrdemId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploProcessoOrdem</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="6a6b876fc990bec5e147d4560fd10755" fullyQualifiedName="IRegistroBaseExemploEmpresa" moduleGuid="00000000-0000-0000-0000-000000000000" guid="6a3e1e95-d4bc-43e8-b0d9-89c7a5f06eb2" name="IRegistroBaseExemploEmpresa" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Empresa">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploEmpresa</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="6bc7ce7e233b4a2abe65f52765d2bf84" fullyQualifiedName="IRegistroBaseExemploRegistroBaseExemploParaAbate" moduleGuid="00000000-0000-0000-0000-000000000000" guid="0ca977f1-e761-41d8-be32-1485062a9245" name="IRegistroBaseExemploRegistroBaseExemploParaAbate" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo RegistroBaseExemplo Para Processo">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateCodigo</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploRegistroBaseExemploParaAbate</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="45129fbd516e664245969240a4bfba9b" fullyQualifiedName="IRegistroBaseExemploLocalBase" moduleGuid="00000000-0000-0000-0000-000000000000" guid="19ac6f5d-0149-4e18-8b25-64fe4e001866" name="IRegistroBaseExemploLocalBase" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Local Base">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploLocalBaseEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploLocalBaseId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploLocalBase</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="06dc81be242add07034266c28591542c" fullyQualifiedName="IRegistroBaseExemploCompraItem" moduleGuid="00000000-0000-0000-0000-000000000000" guid="7a71ebff-91fe-44d6-9625-a7ea688943ad" name="IRegistroBaseExemploCompraItem" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Compra Item">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploCompraItem</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="f54919dfc3f7b3810a8106b0b69c5874" fullyQualifiedName="URegistroBaseExemploDataProcessoDescendenteMaisNumeroControle" moduleGuid="00000000-0000-0000-0000-000000000000" guid="1fe056bf-e620-42be-bd2a-16ea805d0a27" name="URegistroBaseExemploDataProcessoDescendenteMaisNumeroControle" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Data Processo Descendente Mais Numero Serie">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Descending">RegistroBaseExemploDataProcesso</Member>
+              <Member Order="Ascending">RegistroBaseExemploNumeroControle</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploDataProcessoDescendenteMaisNumeroControle</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="aa6c9529e6b99d4c47db369dba73d102" fullyQualifiedName="URegistroBaseExemploIdDescendente" moduleGuid="00000000-0000-0000-0000-000000000000" guid="1fc78f59-17b7-48b4-94c7-dbe065c0344a" name="URegistroBaseExemploIdDescendente" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Id Descendente">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Descending">RegistroBaseExemploId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploIdDescendente</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="14e430e335d8e8f947ea6a961d9bfa2a" fullyQualifiedName="URegistroBaseExemploCompraItemRegistroBaseExemploParaAbatePesoDescendente" moduleGuid="00000000-0000-0000-0000-000000000000" guid="6cf7590a-bad6-467b-ac31-258bc70dfeba" name="URegistroBaseExemploCompraItemRegistroBaseExemploParaAbatePesoDescendente" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Compra Item RegistroBaseExemplo Para Processo Peso Descendente">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemId</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateCodigo</Member>
+              <Member Order="Descending">RegistroBaseExemploPeso</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploCompraItemRegistroBaseExemploParaAbatePesoDescendente</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="73e51bd537287a6c8ebad47e60316b0e" fullyQualifiedName="IRegistroBaseExemploAbatePrestadoValor" moduleGuid="00000000-0000-0000-0000-000000000000" guid="2584071d-d819-46e8-b91f-87109d50b5e3" name="IRegistroBaseExemploAbatePrestadoValor" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Servico Prestado Valor">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploAbatePrestadoValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploAbatePrestadoValor</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="28347480611903a30792c32ee2b9853f" fullyQualifiedName="IRegistroBaseExemploFretePrestadoValor" moduleGuid="00000000-0000-0000-0000-000000000000" guid="cb23b419-5c73-408f-9fad-e37d877ed44f" name="IRegistroBaseExemploFretePrestadoValor" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Frete Prestado Valor">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploFretePrestadoValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploFretePrestadoValor</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="8030c82be87003dbf55a22840d17e889" fullyQualifiedName="IRegistroBaseExemploPeleCompradaValor" moduleGuid="00000000-0000-0000-0000-000000000000" guid="2fffe9c7-9bab-4e8a-a699-ee0e5720d7b2" name="IRegistroBaseExemploPeleCompradaValor" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Pele Comprada Valor">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploPeleCompradaValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploPeleCompradaValor</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="4a2722acd92374c36a644ec77f34d53b" fullyQualifiedName="IRegistroBaseExemploConjuntoViscerasComprado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="838be330-4456-446f-9c54-a12a6285def6" name="IRegistroBaseExemploConjuntoViscerasComprado" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Conjunto Visceras Comprado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploConjuntoViscerasCompradoValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploConjuntoViscerasComprado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="b1e777f1aaf9ea71c5d674e7582fc016" fullyQualifiedName="URegistroBaseExemploDataProcessoRegistroBaseExemploParaAbateCodigoParceiroId" moduleGuid="00000000-0000-0000-0000-000000000000" guid="c1702177-088e-4482-b1d3-9ec5e35d3a7f" name="URegistroBaseExemploDataProcessoRegistroBaseExemploParaAbateCodigoParceiroId" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Data Processo RegistroBaseExemplo Para Processo Codigo Parceiro Id">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploDataProcesso</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateCodigo</Member>
+              <Member Order="Ascending">RegistroBaseExemploParceiroId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploDataProcessoRegistroBaseExemploParaAbateCodigoParceiroId</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="c7e54afe25a85c7bfd14209f129fe838" fullyQualifiedName="URegistroBaseExemploRegistroBaseExemploParaAbateCodigoParceiroIdDataProcesso" moduleGuid="00000000-0000-0000-0000-000000000000" guid="8cc6c7c1-7c86-48be-8a2b-97575bcc3745" name="URegistroBaseExemploRegistroBaseExemploParaAbateCodigoParceiroIdDataProcesso" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo RegistroBaseExemplo Para Processo Codigo Parceiro Id Data Processo">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateCodigo</Member>
+              <Member Order="Ascending">RegistroBaseExemploParceiroId</Member>
+              <Member Order="Ascending">RegistroBaseExemploDataProcesso</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploRegistroBaseExemploParaAbateCodigoParceiroIdDataProcesso</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="916b78fa8107336acad48977d096e686" fullyQualifiedName="URegistroBaseExemploCGEmp_CGId_Canc_AACod_AAEmp_AAnaCompra_CGPeso_Tolerado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="59ebd83e-4332-4006-a47f-569b49e68821" name="URegistroBaseExemploCGEmp_CGId_Canc_AACod_AAEmp_AAnaCompra_CGPeso_Tolerado" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo CGEmp_CGId_Canc_AACod_AAEmp_AAna Compra_CGPeso_Tolerado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCancelado</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateCodigo</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateEmUsoNaCompra</Member>
+              <Member Order="Ascending">RegistroBaseExemploClassificacaoTipoId</Member>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploId</Member>
+              <Member Order="Ascending">RegistroBaseExemploPeso</Member>
+              <Member Order="Ascending">RegistroBaseExemploToleradoNaCompra</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploCGEmp_CGId_Canc_AACod_AAEmp_AAnaCompra_CGPeso_Tolerado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="85b29ea997a09ba19d7ec7467d4b4e7b" fullyQualifiedName="IRegistroBaseExemploSubgrupoA" moduleGuid="00000000-0000-0000-0000-000000000000" guid="851d0268-c94e-40a6-97bf-7e8d3134ec24" name="IRegistroBaseExemploSubgrupoA" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Subgrupo A">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploSubgrupoAValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploSubgrupoA</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="fb76a70438b34401e79f6b6f093f50f2" fullyQualifiedName="URegistroBaseExemploProcessoOrdemMaisRegistroBaseExemploIdDescendente" moduleGuid="00000000-0000-0000-0000-000000000000" guid="67e7d7db-965b-48a4-9d88-afa0c993abae" name="URegistroBaseExemploProcessoOrdemMaisRegistroBaseExemploIdDescendente" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Processo Ordem Mais RegistroBaseExemplo Id Descendente">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploProcessoOrdemEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploProcessoOrdemId</Member>
+              <Member Order="Descending">RegistroBaseExemploId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploProcessoOrdemMaisRegistroBaseExemploIdDescendente</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="8119957896bd159d829e7afa1877d6bc" fullyQualifiedName="URegistroBaseExemploCodigoOrigemUnicoMaisEmpresaIdMaisNumeroControle" moduleGuid="00000000-0000-0000-0000-000000000000" guid="25318cc8-7f0c-41bf-8757-60da5410bf3a" name="URegistroBaseExemploCodigoOrigemUnicoMaisEmpresaIdMaisNumeroControle" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Codigo Origem Unico Mais Empresa Id Mais Numero Serie">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploCodigoOrigemUnico</Member>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploNumeroControle</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploCodigoOrigemUnicoMaisEmpresaIdMaisNumeroControle</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="b21e435a6e63ae0dea69d7b81da36afb" fullyQualifiedName="URegistroBaseExemploEmpresaParceiroDataProcesso" moduleGuid="00000000-0000-0000-0000-000000000000" guid="dedbccd9-fc66-4749-9d72-d1ce8d4d1444" name="URegistroBaseExemploEmpresaParceiroDataProcesso" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Empresa Parceiro Data Processo">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploParceiroId</Member>
+              <Member Order="Ascending">RegistroBaseExemploDataProcesso</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpresaParceiroDataProcesso</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="2c151b7d4662c9737ad6f06cf9cc732f" fullyQualifiedName="URegistroBaseExemploRegistroBaseExemploParaAbateCodidoMaisDataProcesso" moduleGuid="00000000-0000-0000-0000-000000000000" guid="1a91c07f-be02-409b-b155-59b16911ae6d" name="URegistroBaseExemploRegistroBaseExemploParaAbateCodidoMaisDataProcesso" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo RegistroBaseExemplo Para Processo Codido Mais Data Processo">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploRegistroBaseExemploParaAbateCodigo</Member>
+              <Member Order="Ascending">RegistroBaseExemploDataProcesso</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploRegistroBaseExemploParaAbateCodidoMaisDataProcesso</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="776c51050fc952e7df72bcbfbd304aba" fullyQualifiedName="IRegistroBaseExemploConjuntoViscerasVendido" moduleGuid="00000000-0000-0000-0000-000000000000" guid="b13c3acf-7727-4443-afb1-d0faaaedf85d" name="IRegistroBaseExemploConjuntoViscerasVendido" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Conjunto Visceras Vendido">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploConjuntoViscerasVendidoValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploConjuntoViscerasVendido</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="2228d3921c557e6b3db8ae12fc9c5897" fullyQualifiedName="IRegistroBaseExemploCooperado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="2ae2bc31-d7bf-4dee-9a5d-ad1ddf65a076" name="IRegistroBaseExemploCooperado" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Cooperado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploCooperadoEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCooperadoId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploCooperado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="be01045508d62d99e872bd8aa229fd24" fullyQualifiedName="URegistroBaseExemploEmpresaNumeroControleCancelado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="7289e48d-3b98-489e-8e51-06ec0a3d8789" name="URegistroBaseExemploEmpresaNumeroControleCancelado" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Empresa Numero Serie Cancelado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploNumeroControle</Member>
+              <Member Order="Ascending">RegistroBaseExemploCancelado</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpresaNumeroControleCancelado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="735e790f59ddc5bc92e5062384843bdc" fullyQualifiedName="URegistroBaseExemploEmpresaProcessoOrdemCooperado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="2af006ef-8896-4068-9dc3-7c67c6211e19" name="URegistroBaseExemploEmpresaProcessoOrdemCooperado" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Empresa Processo Ordem Cooperado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploProcessoOrdemId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCooperadoId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpresaProcessoOrdemCooperado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="23a06bfac183f9c34b3f44b90e9673a1" fullyQualifiedName="URegistroBaseExemploEmpresaParceiroCooperado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="584c0cb9-35c6-4b67-962b-2edea20fcaa5" name="URegistroBaseExemploEmpresaParceiroCooperado" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Empresa Parceiro Cooperado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploParceiroId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCooperadoId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpresaParceiroCooperado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="841f30e5f08ddbeba891c533a98422ad" fullyQualifiedName="IRegistroBaseExemploRefrigeracaoPrestadaValor" moduleGuid="00000000-0000-0000-0000-000000000000" guid="4b0f36bc-b2f3-4eb0-984b-e66da19a0542" name="IRegistroBaseExemploRefrigeracaoPrestadaValor" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Refrigeracao Prestada Valor">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploRefrigeracaoPrestadaValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploRefrigeracaoPrestadaValor</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="fd9a0bb5a7cf17206800143e527d336c" fullyQualifiedName="IRegistroBaseExemploArmazenamentoPrestadoValor" moduleGuid="00000000-0000-0000-0000-000000000000" guid="04926593-5c0c-4ddd-b0c8-c5d37c05a7ea" name="IRegistroBaseExemploArmazenamentoPrestadoValor" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Armazenamento Prestado Valor">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploArmazenamentoPrestadoValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploArmazenamentoPrestadoValor</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="1e1231ed94947dfca5d19a125b3cfc20" fullyQualifiedName="URegistroBaseExemploEmpresaMaisGrupoA" moduleGuid="00000000-0000-0000-0000-000000000000" guid="6e807d28-0a8c-4ce2-8ed2-c5356afbabd1" name="URegistroBaseExemploEmpresaMaisGrupoA" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Empresa Mais Grupo A">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploGrupoAId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpresaMaisGrupoA</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="8427084e89f2eb5926473ded223f2a6b" fullyQualifiedName="URegistroBaseExemploEmpMaisSeqDoDiaDescMaisNrSerieDescMaisIdDescendente" moduleGuid="00000000-0000-0000-0000-000000000000" guid="b64260f5-bdc7-4a56-b319-94864ac24df0" name="URegistroBaseExemploEmpMaisSeqDoDiaDescMaisNrSerieDescMaisIdDescendente" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Emp Mais Seq Do Dia Desc Mais Nr Serie Desc Mais Id Descendente">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Descending">RegistroBaseExemploSequenciaDoDia</Member>
+              <Member Order="Descending">RegistroBaseExemploNumeroControle</Member>
+              <Member Order="Descending">RegistroBaseExemploId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpMaisSeqDoDiaDescMaisNrSerieDescMaisIdDescendente</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="9e165780556a03ceb19fc7f572369176" fullyQualifiedName="URegistroBaseExemploEmpresaIdMaisParceiroIdMaisCanceladoMaisDataProcesso" moduleGuid="00000000-0000-0000-0000-000000000000" guid="2123feea-503e-4e78-8a70-79500b8cb946" name="URegistroBaseExemploEmpresaIdMaisParceiroIdMaisCanceladoMaisDataProcesso" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Empresa Id Mais Parceiro Id Mais Cancelado Mais Data Processo">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploParceiroId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCancelado</Member>
+              <Member Order="Ascending">RegistroBaseExemploDataProcesso</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpresaIdMaisParceiroIdMaisCanceladoMaisDataProcesso</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="ec2cc3f4ee7571b788e56264370009b5" fullyQualifiedName="URegistroBaseExemploCompraItemMaisCancelado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="f71f7c15-5e4e-4057-9b34-d1a7e02e8994" name="URegistroBaseExemploCompraItemMaisCancelado" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Compra Item Mais Cancelado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCompraItemId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCancelado</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploCompraItemMaisCancelado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="1a9ca256528b1a074c4c2b2d9ae8ae29" fullyQualifiedName="URegistroBaseExemploEmpresaMaisCancelado" moduleGuid="00000000-0000-0000-0000-000000000000" guid="2ed367f7-c110-43da-8bb7-bc9274214ddf" name="URegistroBaseExemploEmpresaMaisCancelado" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Empresa Mais Cancelado">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploEmpresaId</Member>
+              <Member Order="Ascending">RegistroBaseExemploCancelado</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploEmpresaMaisCancelado</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="52f24ab1b7b83cd50ad3983e4eddd85b" fullyQualifiedName="IRegistroBaseExemploRaboCompradoValor" moduleGuid="00000000-0000-0000-0000-000000000000" guid="935ca714-9c55-4d11-a16b-05aaf7363ccb" name="IRegistroBaseExemploRaboCompradoValor" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Rabo Comprado Valor">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploRaboCompradoValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploRaboCompradoValor</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="e888b5ff60e31abbdacfd56b0260752a" fullyQualifiedName="URegistroBaseExemploDataProcessoDescendenteMaisSequenciaDoDiaDescendente" moduleGuid="00000000-0000-0000-0000-000000000000" guid="8ac74c63-7797-425c-94e4-1fcc84ba55a9" name="URegistroBaseExemploDataProcessoDescendenteMaisSequenciaDoDiaDescendente" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Data Processo Descendente Mais Sequencia Do Dia Descendente">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Descending">RegistroBaseExemploDataProcesso</Member>
+              <Member Order="Descending">RegistroBaseExemploSequenciaDoDia</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploDataProcessoDescendenteMaisSequenciaDoDiaDescendente</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="User" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="e13990225fed074737612ed50ad1b2b9" fullyQualifiedName="URegistroBaseExemploDataProcessoDescendenteMaisIdDescendente" moduleGuid="00000000-0000-0000-0000-000000000000" guid="8342ff82-2c7d-424e-ab49-6f029fcdc4a8" name="URegistroBaseExemploDataProcessoDescendenteMaisIdDescendente" type="9e750647-3679-0000-0100-2529de263960" description="URegistroBaseExemplo Data Processo Descendente Mais Id Descendente">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Descending">RegistroBaseExemploDataProcesso</Member>
+              <Member Order="Descending">RegistroBaseExemploId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>URegistroBaseExemploDataProcessoDescendenteMaisIdDescendente</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="17cc926555649856c4e57304c95621be" fullyQualifiedName="IRegistroBaseExemploConjuntoSubprodutosCompradoValor" moduleGuid="00000000-0000-0000-0000-000000000000" guid="b6533850-36d6-4336-8c98-4206ecb5d3ba" name="IRegistroBaseExemploConjuntoSubprodutosCompradoValor" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Conjunto Subprodutos Comprado Valor">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploConjuntoSubprodutosCompradoValorId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploConjuntoSubprodutosCompradoValor</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="98db97e3f9edab4274813961d406e67b" fullyQualifiedName="IRegistroBaseExemploUltimaRevisaoUsuario" moduleGuid="00000000-0000-0000-0000-000000000000" guid="c771277d-2771-4f15-8d31-fd169dc07f50" name="IRegistroBaseExemploUltimaRevisaoUsuario" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Ultima Revisao Usuario">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploUltimaRevisaoUsuarioId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploUltimaRevisaoUsuario</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="7c3c3460e5f4ace653451b99c63c0912" fullyQualifiedName="IRegistroBaseExemploFaixaEtaria" moduleGuid="00000000-0000-0000-0000-000000000000" guid="f0b4226c-9851-4742-b8c6-c759dc62da2b" name="IRegistroBaseExemploFaixaEtaria" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Faixa Etaria">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploFaixaEtariaId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploFaixaEtaria</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+      <TableIndex>
+        <Index Type="Duplicate" Source="Automatic" parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-11-10T17:41:27.0000000Z" checksum="22e6c4b810478f0791a7cdbaad734c5d" fullyQualifiedName="IRegistroBaseExemploSeloDeCertificacao" moduleGuid="00000000-0000-0000-0000-000000000000" guid="aaeae5bc-4d82-44b0-9b4c-db41fd58d27e" name="IRegistroBaseExemploSeloDeCertificacao" type="9e750647-3679-0000-0100-2529de263960" description="IRegistroBaseExemplo Selo De Certificacao">
+          <Part type="62cfa789-c127-0001-0100-77676175e433">
+            <Members>
+              <Member Order="Ascending">RegistroBaseExemploSeloDeCertificacaoId</Member>
+            </Members>
+            <Properties />
+          </Part>
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IRegistroBaseExemploSeloDeCertificacao</Value>
+            </Property>
+          </Properties>
+        </Index>
+      </TableIndex>
+    </Indexes>
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>RegistroBaseExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>RegistroBaseExemplo</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+
+
+## Moldes sanitizados completos de ThemeColor
+
+### Molde sanitizado de ThemeColor 1 - `CorAcaoExemplo`
+
+- Perfil: ThemeColor raiz extremamente enxuto, sem `Part` internas adicionais.
+- Uso operacional: boa referencia para entradas simples de paleta tematica.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2014-03-12T17:40:30.0000000Z" checksum="b17ddaa4991114c1378fcb07dc0c2475" fullyQualifiedName="CorAcaoExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="ce3a249f-a6aa-4ab3-9a13-9663409d441b" name="CorAcaoExemplo" type="5592de59-d30a-499d-9100-a7006d3674f2" description="CorAcaoExemplo">
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>CorAcaoExemplo</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de ThemeColor 2 - `CorAlertaExemplo`
+
+- Perfil: ThemeColor raiz paralela ao primeiro molde, mudando apenas identidade nominal.
+- Uso operacional: boa referencia para duplicacao controlada de entradas de cor com mesma assinatura estrutural.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2014-03-21T15:49:40.0000000Z" checksum="0f7c966ebc90a770da7aaac3a5c86ed3" fullyQualifiedName="CorAlertaExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="08bbf1e9-a441-45a3-abeb-5288e07b0b76" name="CorAlertaExemplo" type="5592de59-d30a-499d-9100-a7006d3674f2" description="CorAlertaExemplo">
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>CorAlertaExemplo</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+
+## Moldes sanitizados completos de Document
+
+### Molde sanitizado de Document 1 - `DocumentoReferenciaExemplo`
+
+- Perfil: Document enxuto, com um unico bloco `InnerHtml` curto e referencia textual simples.
+- Uso operacional: boa referencia para documentos de anotacao, links ou lembretes tecnicos curtos.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="afa47377-41d5-4ae8-9755-6f53150aa361" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2019-11-23T15:47:23.0000000Z" checksum="" fullyQualifiedName="DocumentoReferenciaExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="b8f276b6-f342-4740-901a-94eda21fa7c4" name="DocumentoReferenciaExemplo" type="faeb588c-dcce-4dad-9af3-cdd11b961a32" description="Documento Referencia Exemplo">
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <InnerHtml><![CDATA[https://example.org/tools/xsd-generator]]></InnerHtml>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>DocumentoReferenciaExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de Document 2 - `DocumentoNotasExemplo`
+
+- Perfil: Document mais rico, com HTML maior e varias anotacoes internas.
+- Uso operacional: boa referencia para documentos de observacoes, instrucoes e listas de itens em HTML embutido.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="afa47377-41d5-4ae8-9755-6f53150aa361" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-03-09T01:02:26.0000000Z" checksum="0895e8d40b56f1d73cabc8531bbfc84e" fullyQualifiedName="DocumentoNotasExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="f412243c-32fb-4945-9112-bdd66d0e31d6" name="DocumentoNotasExemplo" type="faeb588c-dcce-4dad-9af3-cdd11b961a32" description="DocumentoNotasExemplo">
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <InnerHtml><![CDATA[<P>AMBIENTE DE EXEMPLO:</P>
+<P>DIRECTORY: SANITIZED-DIRECTORY-ID</P>
+<P>USER ID: SANITIZED-USER-ID</P>
+<P>repository id: SANITIZED-REPOSITORY-ID</P>
+<P>&nbsp;</P>
+<P>Bibliotecas externas que exigem revisao na migracao:</P>
+<P>BibliotecaA.dll e BibliotecaB.dll</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Classes e estilos ajustados em uma revisao de tema:<BR>Attribute, ActionButtons, ActiunButtonsHovered, BtnLogin, WorkWith, PromptGrid, ViewGrid, WWColumn, FormCell, WWGridCell, ViewGridCellAdvanced, WWGridCellExpanded, HeaderContainer, WWAdvancedContainer, WWTabPage, WWTabePageHovered, Label, TextBlockHeader, nav, col-sm-8, col-sm-offset-2, col-xs-offset-1, control-label, Rules, ExtraSmall, Small, form-control-static, form-group, form-horizontal, gx-button, P e WWAdvancedContainer.container-fluid.</P>]]></InnerHtml>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>DocumentoNotasExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDocumentoNotasExemplo</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+
+## Moldes sanitizados completos de DataSelector
+
+### Molde sanitizado de DataSelector 1 - `dsMovimentoAtivoOuCanceladoExemplo`
+
+- Perfil: DataSelector enxuto com duas `Condition`, uma variavel booleana e um `InnerHtml` curto de apoio.
+- Uso operacional: boa referencia para filtros binarios simples e seletores com uma unica variavel de entrada.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="702d2e19-b267-4c25-ae37-0e2ef9e330a6" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2020-12-23T03:16:25.0000000Z" checksum="faa11acd91e9338faa49bd9fd6cd07ea" fullyQualifiedName="dsMovimentoAtivoOuCanceladoExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="438f9146-d6c2-4427-ab41-bf1ed620b571" name="dsMovimentoAtivoOuCanceladoExemplo" type="ffd44be7-3bb4-4d01-9e7e-d1c1a3c095af" description="Movimento Ativo ou Cancelado Exemplo" parent="RegistroMovimento" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="a2bc65a1-999f-4e9b-b837-72285cc9bb16">
+    <Level>
+      <Condition>
+        <Source><![CDATA[RegistroMovimentoCancelado 		= false or RegistroMovimentoCancelado.IsNull() when not &SomenteCancelados
+	
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[RegistroMovimentoCancelado 		= true when &SomenteCancelados
+]]></Source>
+      </Condition>
+    </Level>
+    <Variables type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+      <Variable Name="SomenteCancelados">
+        <Documentation />
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>SomenteCancelados</Value>
+          </Property>
+          <Property>
+            <Name>idBasedOn</Name>
+            <Value>Domain:Logico</Value>
+          </Property>
+        </Properties>
+      </Variable>
+      <Properties>
+        <Property>
+          <Name>IsDefault</Name>
+          <Value>False</Value>
+        </Property>
+      </Properties>
+    </Variables>
+    <Parameters>
+      <Parameter>
+        <Type>Variable</Type>
+        <Name>SomenteCancelados</Name>
+        <Description>Somente Cancelados</Description>
+      </Parameter>
+    </Parameters>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <InnerHtml><![CDATA[https://example.org/docs/data-selector-note]]></InnerHtml>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>dsMovimentoAtivoOuCanceladoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>Movimento Ativo ou Cancelado Exemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de DataSelector 2 - `dsRegistrosPorMovimentoExemplo`
+
+- Perfil: DataSelector denso, com muitas `Condition`, `Variables` customizadas e filtro parametrico mais rico.
+- Uso operacional: boa referencia para seletores baseados em varias condicoes combinadas e SDT de parametros.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="988004e2-6090-42c3-9603-c073172b75a6" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2025-12-23T13:38:47.0000000Z" checksum="70d20e81967466e858649307c9e679f3" fullyQualifiedName="dsRegistrosPorMovimentoExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="3e3c9034-b9dd-44cf-9d5a-97b37c606153" name="dsRegistrosPorMovimentoExemplo" type="ffd44be7-3bb4-4d01-9e7e-d1c1a3c095af" description="ds Registros Por Movimento Exemplo" parent="Registro" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="a2bc65a1-999f-4e9b-b837-72285cc9bb16">
+    <Level>
+      <Condition>
+        <Source><![CDATA[MovimentoEmpresaId = &sdtRegistroParametros.EmpresaId when not &sdtRegistroParametros.EmpresaId.IsEmpty() and not &sdtRegistroParametros.FiltrarPelaEntidadeEmpresaId
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoEmpresaId in &sdtRegistroParametros.listaEmpresaOrcamentosId when &sdtRegistroParametros.EmpresaId.IsEmpty() and not &sdtRegistroParametros.FiltrarPelaEntidadeEmpresaId
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroEntidadeEmpresaId = &sdtRegistroParametros.EntidadeEmpresaId
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroEntidadeAtivoFaturamentoMunicipioId = &sdtRegistroParametros.MunicipioId when not &sdtRegistroParametros.MunicipioId.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoCancelado = false or MovimentoCancelado.IsNull()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroCancelado = false or MovimentoRegistroCancelado.IsNull()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroTipo = &sdtRegistroParametros.TipoRegistro when not &sdtRegistroParametros.TipoRegistro.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoProcessoTipo = TipoProcesso.Composicao or MovimentoProcessoTipo = TipoProcesso.Acrescimo or MovimentoProcessoTipo = TipoProcesso.Reducao when &sdtRegistroParametros.VersaoRelatorioRegistros <> VersaoRelatorioRegistros.PorProcesso and (&sdtRegistroParametros.SituacaoRegistro = SituacaoRegistro.Pendente or &sdtRegistroParametros.SituacaoRegistro = SituacaoRegistro.Entrada);
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoProcessoTipo = TipoProcesso.Baixa when &sdtRegistroParametros.VersaoRelatorioRegistros <> VersaoRelatorioRegistros.PorProcesso and &sdtRegistroParametros.SituacaoRegistro = SituacaoRegistro.Baixado;
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroCodigoHistoricoExterno = &sdtRegistroParametros.codigoHistoricoExterno when not &sdtRegistroParametros.codigoHistoricoExterno.IsEmpty() and &sdtRegistroParametros.codigoHistoricoExterno > 0
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroCodigoHistoricoExterno.IsEmpty() when not &sdtRegistroParametros.codigoHistoricoExterno.IsEmpty() and &sdtRegistroParametros.codigoHistoricoExterno < 0
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroEntidadeId = &sdtRegistroParametros.EntidadeId when not &sdtRegistroParametros.EntidadeId.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[procInscricaoFederalFormatada(MovimentoRegistroEntidadeInscricaoFederal) = &sdtRegistroParametros.EntidadeInscricaoFederal when not &sdtRegistroParametros.EntidadeInscricaoFederal.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDocumentoFiscalDocumentoSaidaId.IsEmpty() or MovimentoRegistroDocumentoFiscalDocumentoSaidaId.IsNull() or MovimentoRegistroDocumentoFiscalTipoDocumentoSaida <> &sdtRegistroParametros.aIgnorarTipoDocumentoSaida when not &sdtRegistroParametros.aIgnorarTipoDocumentoSaida.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDocumentoFiscalTipoDocumentoSaida = &sdtRegistroParametros.TipoDocumentoSaida when not &sdtRegistroParametros.TipoDocumentoSaida.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDocumentoFiscalDocumentoSaidaId = &sdtRegistroParametros.DocumentoSaidaId when &sdtRegistroParametros.DocumentoSaidaId > 0
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[procAgenteIdDeUmEmbarqueSaidaId(MovimentoRegistroDocumentoFiscalDocumentoSaidaEmpresaId, MovimentoRegistroDocumentoFiscalDocumentoSaidaId) = &sdtRegistroParametros.AgenteId when not &sdtRegistroParametros.AgenteId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[(not MovimentoRegistroDocumentoFiscalId.IsEmpty() and not MovimentoRegistroDocumentoFiscalId.IsNull() and 
+	MovimentoRegistroDocumentoFiscalResponsavelId = &sdtRegistroParametros.DFResponsavelId
+) or
+(	(MovimentoRegistroDocumentoFiscalId.IsEmpty() or MovimentoRegistroDocumentoFiscalId.IsNull()) and
+	not MovimentoRegistroDocumentoSaidaTipo.IsEmpty() and not MovimentoRegistroDocumentoSaidaTipo.IsNull() and
+	not MovimentoRegistroPedidoId.IsEmpty() and not MovimentoRegistroPedidoId.IsNull() and
+	procResponsavelDoPedido(MovimentoRegistroDocumentoSaidaTipo, MovimentoRegistroPedidoEmpresaId, MovimentoRegistroPedidoId, MovimentoRegistroPedidoTipo) = &sdtRegistroParametros.DFResponsavelId
+)
+when not &sdtRegistroParametros.DFResponsavelId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroEntidadeResponsavelId = &sdtRegistroParametros.EntidadeResponsavelId or
+(	MovimentoRegistroEntidadeSetorVendedorId = &sdtRegistroParametros.EntidadeResponsavelId and
+	(MovimentoRegistroEntidadeResponsavelId.IsEmpty() or MovimentoRegistroEntidadeResponsavelId.IsNull())
+)
+when not &sdtRegistroParametros.EntidadeResponsavelId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDocumentoFiscalId > 0 and MovimentoRegistroDocumentoFiscalResponsavelId in &sdtRegistroParametros.ResponsaveisDoSupervisor when not &sdtRegistroParametros.DFResponsavelSupervisorId.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroEntidadeResponsavelId in &sdtRegistroParametros.ResponsaveisDoSupervisor or
+(	MovimentoRegistroEntidadeSetorVendedorId in &sdtRegistroParametros.ResponsaveisDoSupervisor and
+	(MovimentoRegistroEntidadeResponsavelId.IsEmpty() or MovimentoRegistroEntidadeResponsavelId.IsNull())
+)
+when not &sdtRegistroParametros.EntidadeResponsavelSupervisorId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoData >= &sdtRegistroParametros.DataInicial when not &sdtRegistroParametros.DataInicial.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoData <= &sdtRegistroParametros.DataFinal when not &sdtRegistroParametros.DataFinal.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroData >= &sdtRegistroParametros.RegistroDataInicial when not &sdtRegistroParametros.RegistroDataInicial.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroData <= &sdtRegistroParametros.RegistroDataFinal when not &sdtRegistroParametros.RegistroDataFinal.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroVencimento >= &sdtRegistroParametros.VencimentoInicial  when not &sdtRegistroParametros.VencimentoInicial.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroVencimento <= &sdtRegistroParametros.VencimentoFinal when not &sdtRegistroParametros.VencimentoFinal.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoProcessoId = &sdtRegistroParametros.ProcessoId when &sdtRegistroParametros.VersaoRelatorioRegistros <> VersaoRelatorioRegistros.PorProcesso and not &sdtRegistroParametros.ProcessoId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[not MovimentoRegistroSaldoValor.IsEmpty() or not MovimentoRegistroDiferencaComposicao.IsEmpty() when &sdtRegistroParametros.SituacaoRegistro = SituacaoRegistro.Pendente;
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDiferencaComposicao.IsEmpty() when &sdtRegistroParametros.SituacaoRegistro = SituacaoRegistro.Entrada
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[procEntidadeTemUmPapel(MovimentoRegistroEntidadeEmpresaId, MovimentoRegistroEntidadeId, &sdtRegistroParametros.EntidadePapel) when not &sdtRegistroParametros.EntidadePapel.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroEntidadeSetorId = &sdtRegistroParametros.SetorId when not &sdtRegistroParametros.SetorId.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoProcessoGrupoId = &sdtRegistroParametros.ProcessoGrupoId when &sdtRegistroParametros.VersaoRelatorioRegistros <> VersaoRelatorioRegistros.PorProcesso and not &sdtRegistroParametros.ProcessoGrupoId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDocumentoFiscalResponsavelId in &sdtRegistroParametros.ResponsaveisDoUsuario or
+MovimentoRegistroEntidadeResponsavelId in &sdtRegistroParametros.ResponsaveisDoUsuario or
+(	MovimentoRegistroEntidadeSetorVendedorId in &sdtRegistroParametros.ResponsaveisDoUsuario and
+	(MovimentoRegistroEntidadeResponsavelId.IsEmpty() or MovimentoRegistroEntidadeResponsavelId.IsNull())
+)
+when not &sdtRegistroParametros.UsuarioTodosResponsaveisLiberados and not &sdtRegistroParametros.semControleResponsaveisDoUsuario;
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroCondicaoOperacional = &sdtRegistroParametros.CondicaoOperacional when not &sdtRegistroParametros.CondicaoOperacional.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroTipoDocumentoOperacionalId = &sdtRegistroParametros.TipoDocumentoId when not &sdtRegistroParametros.TipoDocumentoId.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDocumentoFiscalDocumentoSaidaEmpresaId > 0 and MovimentoRegistroDocumentoFiscalDocumentoSaidaId > 0 and MovimentoRegistroDocumentoFiscalTipoDocumentoSaida = TipoDocumentoSaida.Embarque			 
+when not &sdtRegistroParametros.AgentePrestouContas.IsEmpty() or not &sdtRegistroParametros.PrestacaoContasComObservacao.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoAgenteId = &sdtRegistroParametros.MovimentoAgenteId when not &sdtRegistroParametros.MovimentoAgenteId.IsEmpty()
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroPrevisaoBaixaContaEmpresaId = &sdtRegistroParametros.RegistroPrevisaoBaixaContaEmpresaId 
+when not &sdtRegistroParametros.RegistroPrevisaoBaixaContaEmpresaId.IsEmpty() and not &sdtRegistroParametros.RegistroPrevisaoBaixaContaId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroPrevisaoBaixaContaId = &sdtRegistroParametros.RegistroPrevisaoBaixaContaId 
+when not &sdtRegistroParametros.RegistroPrevisaoBaixaContaId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroEntidadeProprietarioId = &sdtRegistroParametros.EntidadeProprietarioId or MovimentoRegistroEntidadeId = &sdtRegistroParametros.EntidadeProprietarioId
+when not &sdtRegistroParametros.EntidadeProprietarioId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroSaiNoRelatorioMutuoTradicional when &sdtRegistroParametros.RegistroSaiNoRelatorioMutuoTradicional
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoProcessoSaiNoRelatorioResumoFaturamento when &sdtRegistroParametros.VersaoRelatorioRegistros <> VersaoRelatorioRegistros.PorProcesso and &sdtRegistroParametros.SaiNoRelatorioResumoFaturamento;
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[procProcessoComItemAlgumaContaAlmejada(MovimentoProcessoEmpresaId, MovimentoProcessoId, &sdtRegistroParametros.ProcessoItemContaEmpresaId, &sdtRegistroParametros.ProcessoItemContaId, &sdtRegistroParametros.ProcessoItemContaClassificacao, &sdtRegistroParametros.ProcessoItemContaReduzido) 
+when &sdtRegistroParametros.VersaoRelatorioRegistros <> VersaoRelatorioRegistros.PorProcesso and (not &sdtRegistroParametros.ProcessoItemContaId.IsEmpty() or not &sdtRegistroParametros.ProcessoItemContaClassificacao.IsEmpty() or not &sdtRegistroParametros.ProcessoItemContaReduzido.IsEmpty());
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroTipoDocumentoOperacionalFormularioOperacional = FormularioOperacional.DocumentoCobrancaBancario and procDocumentoCobrancaIdDeUmRegistroId(MovimentoRegistroEmpresaId, MovimentoRegistroId, false, false) > 0 
+when &sdtRegistroParametros.ComDocumentoCobranca = SimOuNao.Sim;
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroTipoDocumentoOperacionalFormularioOperacional <> FormularioOperacional.DocumentoCobrancaBancario or procDocumentoCobrancaIdDeUmRegistroId(MovimentoRegistroEmpresaId, MovimentoRegistroId, false, false) = 0 
+when &sdtRegistroParametros.ComDocumentoCobranca = SimOuNao.Nao;
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoCentroResultadoId = &sdtRegistroParametros.CentroResultadoId when &sdtRegistroParametros.VersaoRelatorioRegistros <> VersaoRelatorioRegistros.PorProcesso and not &sdtRegistroParametros.CentroResultadoId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroDocumentoFiscalId.IsEmpty() or MovimentoRegistroDocumentoFiscalId.IsNull() or MovimentoRegistroDocumentoFiscalResponsavelId <> &sdtRegistroParametros.aIgnorarDFResponsavelId when not &sdtRegistroParametros.aIgnorarDFResponsavelId.IsEmpty();
+]]></Source>
+      </Condition>
+      <Condition>
+        <Source><![CDATA[MovimentoRegistroAgrupadorOperacional = &sdtRegistroParametros.AgrupadorOperacional when not &sdtRegistroParametros.AgrupadorOperacional.IsEmpty();
+]]></Source>
+      </Condition>
+    </Level>
+    <Variables type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+      <Variable Name="sdtRegistroParametros">
+        <Documentation />
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>sdtRegistroParametros</Value>
+          </Property>
+          <Property>
+            <Name>ATTCUSTOMTYPE</Name>
+            <Value>sdt:sdtRegistroParametros</Value>
+          </Property>
+        </Properties>
+      </Variable>
+      <Properties>
+        <Property>
+          <Name>IsDefault</Name>
+          <Value>False</Value>
+        </Property>
+      </Properties>
+    </Variables>
+    <Parameters>
+      <Parameter>
+        <Type>Variable</Type>
+        <Name>sdtRegistroParametros</Name>
+        <Description>sdt Registro Parametros</Description>
+      </Parameter>
+    </Parameters>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>dsRegistrosPorMovimentoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>ds Registros Por Movimento Exemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+## Moldes sanitizados completos de Generator
+
+### Molde sanitizado de Generator 1 - `GeneratorPadraoExemplo`
+
+- Perfil: `Generator` minimo com categoria default e sem `DefaultType`.
+- Uso operacional: boa referencia para definicoes basicas de gerador padrao.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-09-05T17:09:46.0000000Z" checksum="4cecd62b7d1aa14890e7e98e0df97a46" fullyQualifiedName="GeneratorPadraoExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="5953b12e-71f1-4020-a9b9-254085cb7061" name="GeneratorPadraoExemplo" type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0" description="Generator Padrao Exemplo">
+  <Properties>
+    <Property>
+      <Name>IsReorg</Name>
+      <Value>False</Value>
+    </Property>
+    <Property>
+      <Name>IsDefaultCategory</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>Name</Name>
+      <Value>GeneratorPadraoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsGeneratedObject</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de Generator 2 - `GeneratorFrontendExemplo`
+
+- Perfil: `Generator` customizado de usuario, sem categoria default.
+- Uso operacional: boa referencia para geradores adicionais definidos na KB.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2023-04-17T21:48:48.0000000Z" checksum="bc1ad3de3f7892e3ac7f7afc41a65044" fullyQualifiedName="GeneratorFrontendExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="1082669b-8306-4b74-8964-552d1c688e05" name="GeneratorFrontendExemplo" type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0" description="Generator Frontend Exemplo">
+  <Properties>
+    <Property>
+      <Name>IsUser</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>IsDefaultCategory</Name>
+      <Value>False</Value>
+    </Property>
+    <Property>
+      <Name>Name</Name>
+      <Value>GeneratorFrontendExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsGeneratedObject</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de Generator 3 - `GeneratorMobileExemplo`
+
+- Perfil: `Generator` com `DefaultType`, representando variante orientada a plataforma.
+- Uso operacional: boa referencia para casos em que o gerador carrega um tipo default numerico.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-09-05T17:09:46.0000000Z" checksum="9acc5ae74e2b862e3010bd733afae29e" fullyQualifiedName="GeneratorMobileExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="d8a1a11c-3259-4d3b-8769-76776bb25ec7" name="GeneratorMobileExemplo" type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0" description="Generator Mobile Exemplo">
+  <Properties>
+    <Property>
+      <Name>IsUser</Name>
+      <Value>False</Value>
+    </Property>
+    <Property>
+      <Name>IsDefaultCategory</Name>
+      <Value>False</Value>
+    </Property>
+    <Property>
+      <Name>DefaultType</Name>
+      <Value>28</Value>
+    </Property>
+    <Property>
+      <Name>Name</Name>
+      <Value>GeneratorMobileExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsGeneratedObject</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+## Moldes sanitizados completos de PatternSettings
+
+### Molde sanitizado de PatternSettings 1 - `PatternWebExemplo`
+
+- Perfil: configuracao enxuta de `PatternSettings` para `Work With for Web`, com `StandardActions`, `Context` e `Security`.
+- Uso operacional: boa referencia para padroes web centralizados que preservam a hierarquia `<Config>`.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2025-10-28T12:27:41.0000000Z" checksum="8fd2b9f45a2b8a0bd391eb086dfb7235" fullyQualifiedName="PatternWebExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="4bb38735-7288-3760-86ce-8d6e91fba04b" name="PatternWebExemplo" type="83476c1e-fa72-4229-9930-f51b954fca2d" description="Pattern Web Exemplo">
+  <Part type="3c89746e-54b1-441a-8f3f-97cc81be06bd">
+    <Data Pattern="78cecefe-be7d-4980-86ce-8d6e91fba04b" Version="15.0.0"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Config>
+  <Template />
+  <Objects />
+  <Theme OptionalColumn="WWOptionalColumn" GridAction="ActionAttribute" />
+  <Labels WorkWithTitle="Work With &lt;Object&gt;" ViewDescription="&lt;Object&gt; - Informacao" OrderedBy="Ordenado por" PreviousTab="Tab Anterior" NextTab="Proxima Tab" RecordNotFound="Registro Nao Encontrado" />
+  <Grid CellSpacing="1" CellPadding="2" />
+  <MasterPages />
+  <StandardActions>
+    <Insert Caption="GXM_insert" Tooltip="GXM_insert" Image="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionInsert" DisabledImage="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionDisabled" ButtonClass="BtnEnter" />
+    <Update Caption="GXM_update" Tooltip="GXM_update" Image="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionUpdate" DisabledImage="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionUpdateDisabled" DisabledClass="DisabledActionAttribute" ButtonClass="BtnEnter" InGridClass="UpdateAttribute" />
+    <Delete Caption="GX_BtnDelete" Tooltip="GX_BtnDelete" DefaultMode="False" Image="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionDelete" DisabledImage="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionDeleteDisabled" DisabledClass="DisabledActionAttribute" ButtonClass="BtnDelete" InGridClass="DeleteAttribute" />
+    <Display Caption="GXM_display" Tooltip="GXM_display" DefaultMode="False" Image="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionDisplay" DisabledImage="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionDisplayDisabled" DisabledClass="DisabledActionAttribute" InGridClass="DisplayAttribute" />
+    <Export Caption="Planilha" Tooltip="Exporta como Planilha" DefaultMode="False" Image="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionExport" DisabledImage="9fb193d9-64a4-4d30-b129-ff7c76830f7e-ActionDisabled" />
+    <Search Caption="GX_BtnSearch" Tooltip="GX_BtnSearch" />
+  </StandardActions>
+  <Context>
+    <ContextVariable Name="Context" Type="447527b5-9210-4523-898b-5dccb17be60a-Context" LoadProcedure="84a12160-f59b-4ad7-a683-ea4481ac23e9-procCarregaContextoExemplo" />
+  </Context>
+  <Security Check="84a12160-f59b-4ad7-a683-ea4481ac23e9-procAutorizacaoExemplo" NotAuthorized="c9584656-94b6-4ccd-890f-332d11fc2c25-PainelNaoAutorizadoExemplo">
+    <Parameters />
+  </Security>
+</Config>]]></Data>
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>PatternWebExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>Pattern Web Exemplo</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de PatternSettings 2 - `PatternDevicesExemplo`
+
+- Perfil: configuracao de `PatternSettings` voltada a multiplas plataformas, com bloco denso de `Platforms`.
+- Uso operacional: boa referencia para padroes mobile/web com segmentacao por dispositivo e tema.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2023-04-17T22:18:24.0000000Z" checksum="567e74ca5f88b8ff29214d2163bea9da" fullyQualifiedName="PatternDevicesExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="d0f701a5-7288-3760-91b5-395d02d79889" name="PatternDevicesExemplo" type="83476c1e-fa72-4229-9930-f51b954fca2d" description="Pattern Devices Exemplo">
+  <Part type="3c89746e-54b1-441a-8f3f-97cc81be06bd">
+    <Data Pattern="15cf49b5-fc38-4899-91b5-395d02d79889" Version="18.5.0"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Config>
+  <Template />
+  <Platforms>
+    <Platform Name="Any Platform" OS="Any Platform" Theme="78b3fa0e-174c-4b2b-8716-718167a428b5-TemaUnificadoExemplo" Predefined="True" />
+    <Platform Name="Any Phone" OS="Any Platform" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="Phone" MaximumShortestBound="599" />
+    <Platform Name="Any Tablet 7&quot;" OS="Any Platform" DeviceKind="Phone or Tablet" Size="Medium" Predefined="True" BoundsName="Tablet 7" MinimumShortestBound="600" MaximumShortestBound="719" />
+    <Platform Name="Any Tablet 10&quot;" OS="Any Platform" DeviceKind="Phone or Tablet" Size="Large" Predefined="True" BoundsName="Tablet 10" MinimumShortestBound="720" />
+    <Platform Name="Any TV" DeviceKind="TV" Size="Large" Predefined="True" />
+    <Platform Name="Any Watch" DeviceKind="Watch" Size="Small" Predefined="True" />
+    <Platform Name="Any Android Device" OS="Android" Theme="c804fdbd-7c0b-440d-8527-4316c92649a6-TemaAndroidExemplo" NavigationStyle="Slide" Predefined="True" />
+    <Platform Name="Android Phone" OS="Android" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="Phone" MaximumShortestBound="599" />
+    <Platform Name="Android Tablet 7&quot;" OS="Android" DeviceKind="Phone or Tablet" Size="Medium" Predefined="True" BoundsName="Tablet 7" MinimumShortestBound="600" MaximumShortestBound="719" />
+    <Platform Name="Android Tablet 10&quot;" OS="Android" DeviceKind="Phone or Tablet" Size="Large" Predefined="True" BoundsName="Tablet 10" MinimumShortestBound="720" />
+    <Platform Name="Any Apple Device" OS="Apple" NavigationStyle="Slide" Predefined="True" />
+    <Platform Name="iPad" OS="Apple" DeviceKind="Phone or Tablet" Size="Large" Predefined="True" BoundsName="iPad" MinimumShortestBound="768" />
+    <Platform Name="iPhone" OS="Apple" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="iPhone" MaximumShortestBound="767" />
+    <Platform Name="iPhone 4&quot;" OS="Apple" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="iPhone 4&quot;" MinimumShortestBound="320" MaximumShortestBound="320" MinimumLongestBound="568" MaximumLongestBound="568" />
+    <Platform Name="iPhone 3.5&quot;" OS="Apple" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="iPhone 3.5&quot;" MinimumShortestBound="320" MaximumShortestBound="320" MinimumLongestBound="480" MaximumLongestBound="480" />
+    <Platform Name="iPhone 4.7&quot;" OS="Apple" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="iPhone 4.7&quot;" MinimumShortestBound="375" MaximumShortestBound="375" MinimumLongestBound="667" MaximumLongestBound="667" />
+    <Platform Name="iPhone 5.5&quot; &amp; 6.1&quot;" OS="Apple" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="iPhone 5.5&quot;" MinimumShortestBound="414" MaximumShortestBound="414" MinimumLongestBound="736" MaximumLongestBound="736" />
+    <Platform Name="iPhone 5.8&quot;" OS="Apple" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="iPhone 5.8&quot;" MinimumShortestBound="375" MaximumShortestBound="375" MinimumLongestBound="812" MaximumLongestBound="812" />
+    <Platform Name="iPhone 6.5&quot;" OS="Apple" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="iPhone 6.5&quot;" MinimumShortestBound="414" MaximumShortestBound="414" MinimumLongestBound="896" MaximumLongestBound="896" />
+    <Platform Name="Apple TV" OS="Apple" DeviceKind="TV" Size="Large" Predefined="True" />
+    <Platform Name="Apple Watch" OS="Apple" DeviceKind="Watch" Size="Small" Predefined="True" />
+    <Platform Name="Apple Watch 38mm" OS="Apple" DeviceKind="Watch" Size="Small" Predefined="True" BoundsName="Apple Watch 38mm" MinimumShortestBound="136" MaximumShortestBound="136" />
+    <Platform Name="Apple Watch 42mm" OS="Apple" DeviceKind="Watch" Size="Small" Predefined="True" BoundsName="Apple Watch 42mm" MinimumShortestBound="156" MaximumShortestBound="156" />
+    <Platform Name="Apple Watch 40mm" OS="Apple" DeviceKind="Watch" Size="Small" Predefined="True" BoundsName="Apple Watch 40mm" MinimumShortestBound="162" MaximumShortestBound="162" />
+    <Platform Name="Apple Watch 44mm" OS="Apple" DeviceKind="Watch" Size="Small" Predefined="True" BoundsName="Apple Watch 44mm" MinimumShortestBound="184" MaximumShortestBound="184" />
+    <Platform Name="Any Web Screen" OS="Web" Predefined="True" />
+    <Platform Name="Web Phone" OS="Web" DeviceKind="Phone or Tablet" Size="Small" Predefined="True" BoundsName="Web Phone" MaximumLongestBound="599" />
+    <Platform Name="Web Small" OS="Web" Size="Medium" Predefined="True" BoundsName="Web Small" MinimumLongestBound="600" MaximumLongestBound="719" />
+    <Platform Name="Web Desktop" OS="Web" Size="Large" Predefined="True" BoundsName="Web Desktop" MinimumLongestBound="720" MaximumLongestBound="1199" />
+    <Platform Name="Web Big Screen" OS="Web" Size="Large" Predefined="True" BoundsName="Web Big Screen" MinimumLongestBound="1200" />
+  </Platforms>
+  <Labels />
+  <StandardActions>
+    <Insert Caption="GXM_insert" />
+    <Update Caption="GXM_update" />
+    <Delete Caption="GX_BtnDelete" />
+    <Search Caption="GX_BtnSearch" />
+  </StandardActions>
+</Config>]]></Data>
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>PatternDevicesExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>Pattern Devices Exemplo</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+## Moldes sanitizados completos de DataStore
+
+### Molde sanitizado de DataStore 1 - `DataStorePadraoExemplo`
+
+- Perfil: `DataStore` minimo com propriedades de categoria default.
+- Uso operacional: boa referencia para definicoes simples de datastore sem metadados adicionais.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2022-09-05T17:09:46.0000000Z" checksum="fc8ae8c25e3951dcd60d9bec160667f5" fullyQualifiedName="DataStorePadraoExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="05dfb0e3-dfc1-478d-82cc-8517bebb2485" name="DataStorePadraoExemplo" type="dcdcdcdc-dfe0-4a57-ae8f-c6e31b0dcbc0" description="DataStore Padrao Exemplo">
+  <Properties>
+    <Property>
+      <Name>IsDefaultCategory</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>Name</Name>
+      <Value>DataStorePadraoExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsGeneratedObject</Name>
+      <Value>True</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+### Molde sanitizado de DataStore 2 - `DataStoreSegurancaExemplo`
+
+- Perfil: `DataStore` simples sem categoria default, util para variação minima de propriedades.
+- Uso operacional: boa referencia para datastores secundarios ou especializados.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2023-04-03T11:38:41.0000000Z" checksum="3647285ee867f5d77a3101085168ed18" fullyQualifiedName="DataStoreSegurancaExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="c54239e9-16ff-40e9-ba98-b97cf2ac2ba4" name="DataStoreSegurancaExemplo" type="dcdcdcdc-dfe0-4a57-ae8f-c6e31b0dcbc0" description="DataStore Seguranca Exemplo">
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>DataStoreSegurancaExemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+## Moldes sanitizados completos de Dashboard
+
+### Molde sanitizado de Dashboard 1 - `DashboardAtividadeExemplo`
+
+- Perfil: `Dashboard` com `Parameters`, `Layout`, `Card`, `Chart` e filtro superior.
+- Uso operacional: boa referencia para dashboards compostos por indicadores e graficos em tabela principal.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="5fa995f2-62aa-4d92-8aeb-197abdd13e89" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2025-04-28T23:29:54.0000000Z" checksum="f647498b2bf609c1667f0a415f2fab27" fullyQualifiedName="DashboardAtividadeExemplo" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="1d0eb41a-7bcf-447e-91dc-75c207e4c2ff" name="DashboardAtividadeExemplo" type="526aba9f-a725-4bc7-b1db-0b9f92ac9550" description="Dashboard Atividade Exemplo" parent="PainelExemplo" parentType="00000000-0000-0000-0000-000000000008">
+  <Part type="a51ced48-7bee-0001-ab12-04e9e32123d1">
+    <Data Pattern="526aba9f-a725-4bc7-b1db-0b9f92ac9550" Version="17.0.1"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Dashboard>
+  <Parameters>
+    <Parameter Name="From" DataType="Date" />
+    <Parameter Name="To" DataType="Date" />
+  </Parameters>
+  <Layout FiltersPosition="Top">
+    <MainTable>
+      <Row ElementId="32">
+        <Cell ElementId="4">
+          <Object ElementId="5" ControlName="NovosRegistros" FrameVisible="True" FrameTitle="CHAVE_NOVOS_REGISTROS" Object="2a9e9aba-d2de-4801-ae7f-5e3819222daf-procDashboardTotalRegistros" OutputType="Card">
+            <ObjectElement Name="CountItems" Type="Datum" Title=" " />
+          </Object>
+        </Cell>
+        <Cell ElementId="53">
+          <Object ElementId="54" ControlName="TotalSessoes" FrameVisible="True" FrameTitle="CHAVE_TOTAL_SESSOES" Object="2a9e9aba-d2de-4801-ae7f-5e3819222daf-procDashboardTotalSessoes" OutputType="Card">
+            <ObjectElement Name="TotalSessions" Type="Datum" Title=" " />
+          </Object>
+        </Cell>
+      </Row>
+      <Row ElementId="42">
+        <Cell ElementId="47">
+          <Object ElementId="48" ControlName="SessoesPorAplicacao" FrameVisible="True" FrameTitle="CHAVE_SESSOES_POR_APLICACAO" Object="2a9e9aba-d2de-4801-ae7f-5e3819222daf-procDashboardSessoesPorAplicacao" OutputType="Chart">
+            <ObjectElement Name="ApplicationId" />
+            <ObjectElement Name="Sessions" Type="Datum" />
+            <ObjectElement Name="ApplicationName" />
+          </Object>
+        </Cell>
+        <Cell ElementId="43">
+          <Object ElementId="44" ControlName="SessoesPorDia" FrameVisible="True" FrameTitle="CHAVE_SESSOES_POR_DIA" Object="2a9e9aba-d2de-4801-ae7f-5e3819222daf-procDashboardSessoesPorDia" OutputType="Chart" ChartType="Timeline" XAxisTitle="Date" YAxisTitle="Sessions">
+            <ObjectElement Name="Date" />
+            <ObjectElement Name="Sessions" Type="Datum" />
+          </Object>
+        </Cell>
+      </Row>
+      <Row ElementId="49">
+        <Cell ElementId="51">
+          <Object ElementId="52" ControlName="UsuariosRegistrados" FrameVisible="True" FrameTitle="CHAVE_USUARIOS_REGISTRADOS" Object="2a9e9aba-d2de-4801-ae7f-5e3819222daf-procDashboardUsuariosRegistrados" OutputType="Card">
+            <ObjectElement Name="TotalUsers" Type="Datum" Title=" " />
+          </Object>
+        </Cell>
+        <Cell ElementId="39">
+          <Object ElementId="40" ControlName="SessoesAtivas" FrameVisible="True" FrameTitle="CHAVE_SESSOES_ATIVAS" Object="2a9e9aba-d2de-4801-ae7f-5e3819222daf-procDashboardSessoesAtivas" OutputType="Card">
+            <ObjectElement Name="ActiveSessions" Type="Datum" Title=" " />
+          </Object>
+        </Cell>
+      </Row>
+    </MainTable>
+    <FiltersTable>
+      <Row ElementId="34">
+        <Cell ElementId="35">
+          <Filter ElementId="36" ControlName="FiltroPeriodo" FilterType="Range" DataType="Date" Name="From" NameLowerValue="From" NameUpperValue="To" Caption="CHAVE_PERIODO" Modified="True" />
+        </Cell>
+      </Row>
+    </FiltersTable>
+  </Layout>
+</Dashboard>]]></Data>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>DashboardAtividadeExemplo</Value>
+    </Property>
+    <Property>
+      <Name>Description</Name>
+      <Value>Dashboard Atividade Exemplo</Value>
+    </Property>
+    <Property>
+      <Name>IsDefault</Name>
+      <Value>False</Value>
+    </Property>
+  </Properties>
+  <Categories>PainelExemplo-web</Categories>
+</Object>
+```
+
+## Moldes sanitizados completos de DeploymentUnit
+
+### Molde sanitizado de DeploymentUnit 1 - `DeploymentUnitExemplo`
+
+- Perfil: `DeploymentUnit` com poucos `Member` e um `Part` principal declarativo.
+- Uso operacional: boa referencia para unidades de deploy que apenas agregam objetos ja existentes.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2026-02-15T14:07:19.0000000Z" checksum="a97c0da3de76a832806f0606ac08aac4" fullyQualifiedName="DeploymentUnitExemplo" moduleGuid="00000000-0000-0000-0000-000000000000" guid="7665e34c-f52d-430c-b113-e76e9cbdf635" name="DeploymentUnitExemplo" type="bf08dfb1-361c-4e7e-ad54-391e56e60b49" description="Deployment Unit Exemplo">
+  <Part type="122ea32d-7ffa-4c47-9cbf-0829c2f060fe">
+    <Definition>
+      <Member object="84a12160-f59b-4ad7-a683-ea4481ac23e9-procServicoExemploA" />
+      <Member object="84a12160-f59b-4ad7-a683-ea4481ac23e9-procServicoExemploB" />
+      <Member object="84a12160-f59b-4ad7-a683-ea4481ac23e9-procServicoExemploC" />
+      <Member object="84a12160-f59b-4ad7-a683-ea4481ac23e9-procServicoExemploD" />
+    </Definition>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <Properties />
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>DeploymentUnitExemplo</Value>
+    </Property>
+  </Properties>
+</Object>
+```
+
+
+## Moldes sanitizados completos de Language
+
+### Molde sanitizado de Language 1 - `IdiomaExemploPT`
+
+- Perfil: `Language` completo com bloco extenso de `Translations`.
+- Uso operacional: boa referencia para objetos de idioma que centralizam mensagens e traducoes de interface.
+
+```xml<?xml version="1.0" encoding="utf-8"?>
+<Object parentGuid="00000000-0000-0000-0000-000000000000" user="SANITIZED\\USER" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="0001-01-01T00:00:00.0000000" checksum="cb04c786ee9f23279149b0a430455587" fullyQualifiedName="IdiomaExemploPT" moduleGuid="00000000-0000-0000-0000-000000000000" guid="6cc49ef5-e1eb-459c-aefd-331de0d9fa8c" name="IdiomaExemploPT" type="88313f43-5eb2-0000-0028-e8d9f5bf9588" description="Idioma Exemplo PT">
+  <Part type="c23f3bb5-1e43-4c6b-b219-4717979df76a">
+    <Translations>
+      <Entry>
+        <Message>Hide Filters</Message>
+        <Type>User</Type>
+        <Translation>Esconder Filtros</Translation>
+      </Entry>
+      <Entry>
+        <Message>MORE</Message>
+        <Type>User</Type>
+        <Translation>MAIS</Translation>
+      </Entry>
+      <Entry>
+        <Message>HIDE FILTERS</Message>
+        <Type>User</Type>
+        <Translation>Esconder Filtros</Translation>
+      </Entry>
+      <Entry>
+        <Message>Hide</Message>
+        <Type>User</Type>
+        <Translation>Esconder</Translation>
+      </Entry>
+      <Entry>
+        <Message>Show Filters</Message>
+        <Type>User</Type>
+        <Translation>Mostrar Filtros</Translation>
+      </Entry>
+      <Entry>
+        <Message>SHOW FILTERS</Message>
+        <Type>User</Type>
+        <Translation>MOSTRAR FILTROS</Translation>
+      </Entry>
+      <Entry>
+        <Message>ShowHide</Message>
+        <Type>User</Type>
+        <Translation>MostrarEsconder</Translation>
+      </Entry>
+      <Entry>
+        <Message>Users</Message>
+        <Type>User</Type>
+        <Translation>Usuários</Translation>
+      </Entry>
+      <Entry>
+        <Message>USERS</Message>
+        <Type>User</Type>
+        <Translation>USUÁRIOS</Translation>
+      </Entry>
+      <Entry>
+        <Message>Users permissions</Message>
+        <Type>User</Type>
+        <Translation>Permissões de usuários</Translation>
+      </Entry>
+      <Entry>
+        <Message>User</Message>
+        <Type>User</Type>
+        <Translation>Usuário</Translation>
+      </Entry>
+      <Entry>
+        <Message>User Name</Message>
+        <Type>User</Type>
+        <Translation>Nome de Usuário</Translation>
+      </Entry>
+      <Entry>
+        <Message>User name</Message>
+        <Type>User</Type>
+        <Translation>Nome de usuário</Translation>
+      </Entry>
+      <Entry>
+        <Message>First name</Message>
+        <Type>User</Type>
+        <Translation>Nome</Translation>
+      </Entry>
+      <Entry>
+        <Message>First Name</Message>
+        <Type>User</Type>
+        <Translation>Nome</Translation>
+      </Entry>
+      <Entry>
+        <Message>Last name</Message>
+        <Type>User</Type>
+        <Translation>Sobrenome</Translation>
+      </Entry>
+      <Entry>
+        <Message>Last Name</Message>
+        <Type>User</Type>
+        <Translation>Sobrenome</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authentication</Message>
+        <Type>User</Type>
+        <Translation>Autenticação</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authorization</Message>
+        <Type>User</Type>
+        <Translation>Autorização</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authorize</Message>
+        <Type>User</Type>
+        <Translation>Autorize</Translation>
+      </Entry>
+      <Entry>
+        <Message>Role</Message>
+        <Type>User</Type>
+        <Translation>Papel</Translation>
+      </Entry>
+      <Entry>
+        <Message>Roles</Message>
+        <Type>User</Type>
+        <Translation>Papéis</Translation>
+      </Entry>
+      <Entry>
+        <Message>ROLES</Message>
+        <Type>User</Type>
+        <Translation>PAPÉIS</Translation>
+      </Entry>
+      <Entry>
+        <Message>Security Policies</Message>
+        <Type>User</Type>
+        <Translation>Políticas de Segurança</Translation>
+      </Entry>
+      <Entry>
+        <Message>Security policies</Message>
+        <Type>User</Type>
+        <Translation>Políticas de Segurança</Translation>
+      </Entry>
+      <Entry>
+        <Message>Security policy</Message>
+        <Type>User</Type>
+        <Translation>Política de Segurança</Translation>
+      </Entry>
+      <Entry>
+        <Message>Security Policy</Message>
+        <Type>User</Type>
+        <Translation>Política de Segurança</Translation>
+      </Entry>
+      <Entry>
+        <Message>Connection</Message>
+        <Type>User</Type>
+        <Translation>Conexão</Translation>
+      </Entry>
+      <Entry>
+        <Message>Connections</Message>
+        <Type>User</Type>
+        <Translation>Conexões</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authentication Types</Message>
+        <Type>User</Type>
+        <Translation>Tipos de Autenticação</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authentication types</Message>
+        <Type>User</Type>
+        <Translation>Tipos de autenticação</Translation>
+      </Entry>
+      <Entry>
+        <Message>Event subscriptions</Message>
+        <Type>User</Type>
+        <Translation>Subscrição de eventos</Translation>
+      </Entry>
+      <Entry>
+        <Message>Event Subscriptions</Message>
+        <Type>User</Type>
+        <Translation>Subscrição de Eventos</Translation>
+      </Entry>
+      <Entry>
+        <Message>Repositories</Message>
+        <Type>User</Type>
+        <Translation>Repositórios</Translation>
+      </Entry>
+      <Entry>
+        <Message>GAM configuration</Message>
+        <Type>User</Type>
+        <Translation>Configuração do GAM</Translation>
+      </Entry>
+      <Entry>
+        <Message>GAM Configuration</Message>
+        <Type>User</Type>
+        <Translation>Configuração do GAM</Translation>
+      </Entry>
+      <Entry>
+        <Message>Dashboard</Message>
+        <Type>User</Type>
+        <Translation>Painel</Translation>
+      </Entry>
+      <Entry>
+        <Message>Role name</Message>
+        <Type>User</Type>
+        <Translation>Nome do papel</Translation>
+      </Entry>
+      <Entry>
+        <Message>Role Name</Message>
+        <Type>User</Type>
+        <Translation>Nome do Papel</Translation>
+      </Entry>
+      <Entry>
+        <Message>EDIT</Message>
+        <Type>User</Type>
+        <Translation>EDITAR</Translation>
+      </Entry>
+      <Entry>
+        <Message>Edit</Message>
+        <Type>User</Type>
+        <Translation>Editar</Translation>
+      </Entry>
+      <Entry>
+        <Message>Copy</Message>
+        <Type>User</Type>
+        <Translation>Copia</Translation>
+      </Entry>
+      <Entry>
+        <Message>COPY</Message>
+        <Type>User</Type>
+        <Translation>COPIA</Translation>
+      </Entry>
+      <Entry>
+        <Message>Active</Message>
+        <Type>User</Type>
+        <Translation>Ativo</Translation>
+      </Entry>
+      <Entry>
+        <Message>Add</Message>
+        <Type>User</Type>
+        <Translation>Adicionar</Translation>
+      </Entry>
+      <Entry>
+        <Message>Application Name</Message>
+        <Type>User</Type>
+        <Translation>Nome do Aplicativo</Translation>
+      </Entry>
+      <Entry>
+        <Message>New User</Message>
+        <Type>User</Type>
+        <Translation>Novo Usuário</Translation>
+      </Entry>
+      <Entry>
+        <Message>New users</Message>
+        <Type>User</Type>
+        <Translation>Novos usuários</Translation>
+      </Entry>
+      <Entry>
+        <Message>Gender</Message>
+        <Type>User</Type>
+        <Translation>Gênero</Translation>
+      </Entry>
+      <Entry>
+        <Message>Gender:</Message>
+        <Type>User</Type>
+        <Translation>Gênero:</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authentication type</Message>
+        <Type>User</Type>
+        <Translation>Tipo de autenticação</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authentication Type</Message>
+        <Type>User</Type>
+        <Translation>Tipo de Autenticação</Translation>
+      </Entry>
+      <Entry>
+        <Message>Rol</Message>
+        <Type>User</Type>
+        <Translation>Papéls</Translation>
+      </Entry>
+      <Entry>
+        <Message>Show users status</Message>
+        <Type>User</Type>
+        <Translation>Status dos Usuários</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authenticated date from</Message>
+        <Type>User</Type>
+        <Translation>Autenticado desde</Translation>
+      </Entry>
+      <Entry>
+        <Message>Authenticated date to</Message>
+        <Type>User</Type>
+        <Translation>Autenticado até</Translation>
+      </Entry>
+      <Entry>
+        <Message>Register date from</Message>
+        <Type>User</Type>
+        <Translation>Registro desde</Translation>
+      </Entry>
+      <Entry>
+        <Message>Register date to</Message>
+        <Type>User</Type>
+        <Translation>Registro até</Translation>
+      </Entry>
+      <Entry>
+        <Message>Clear</Message>
+        <Type>User</Type>
+        <Translation>Limpar</Translation>
+      </Entry>
+      <Entry>
+        <Message>ClearFilters</Message>
+        <Type>User</Type>
+        <Translation>LimparFiltros</Translation>
+      </Entry>
+      <Entry>
+        <Message>Apply</Message>
+        <Type>User</Type>
+        <Translation>Aplicar</Translation>
+      </Entry>
+      <Entry>
+        <Message>Try a Search</Message>
+        <Type>User</Type>
+        <Translation>Digite Texto a Pesquisar</Translation>
+      </Entry>
+      <Entry>
+        <Message>External Id</Message>
+        <Type>User</Type>
+        <Translation>Id Externo</Translation>
+      </Entry>
+      <Entry>
+        <Message>External ID</Message>
+        <Type>User</Type>
+        <Translation>ID Externo</Translation>
+      </Entry>
+      <Entry>
+        <Message>Application GUID</Message>
+        <Type>User</Type>
+        <Translation>GUID do Aplicativo</Translation>
+      </Entry>
+      <Entry>
+        <Message>Company name</Message>
+        <Type>User</Type>
+        <Translation>Nome da Companhia</Translation>
+      </Entry>
+      <Entry>
+        <Message>description</Message>
+        <Type>User</Type>
+        <Translation>descrição</Translation>
+      </Entry>
+      <Entry>
+        <Message>Description</Message>
+        <Type>User</Type>
+        <Translation>Descrição</Translation>
+      </Entry>
+      <Entry>
+        <Message>Client ID</Message>
+        <Type>User</Type>
+        <Translation>ID da Companhia</Translation>
+      </Entry>
+      <Entry>
+        <Message>Client Id.</Message>
+        <Type>User</Type>
+        <Translation>Id da Companhia.</Translation>
+      </Entry>
+      <Entry>
+        <Message>Client Id: Tag</Message>
+        <Type>User</Type>
+        <Translation>Id da Companhia: Marcação</Translation>
+      </Entry>
+      <Entry>
+        <Message>Filters</Message>
+        <Type>User</Type>
+        <Translation>Filtros</Translation>
+      </Entry>
+      <Entry>
+        <Message>Filter by</Message>
+        <Type>User</Type>
+        <Translation>Filtrado por</Translation>
+      </Entry>
+      <Entry>
+        <Message>Filter User Gender</Message>
+        <Type>User</Type>
+        <Translation>Filtro de Gênero do Usuário</Translation>
+      </Entry>
+      <Entry>
+        <Message>Hide filters</Message>
+        <Type>User</Type>
+        <Translation>Esconder filtros</Translation>
+      </Entry>
+      <Entry>
+        <Message>Applications</Message>
+        <Type>User</Type>
+        <Translation>Aplicativos</Translation>
+      </Entry>
+      <Entry>
+        <Message>Application</Message>
+        <Type>User</Type>
+        <Translation>Aplicativo</Translation>
+      </Entry>
+      <Entry>
+        <Message>name</Message>
+        <Type>User</Type>
+        <Translation>nome</Translation>
+      </Entry>
+      <Entry>
+        <Message>Name</Message>
+        <Type>User</Type>
+        <Translation>Nome</Translation>
+      </Entry>
+      <Entry>
+        <Message>Connection name</Message>
+        <Type>User</Type>
+        <Translation>Nome da conexão</Translation>
+      </Entry>
+      <Entry>
+        <Message>Connection Name</Message>
+        <Type>User</Type>
+        <Translation>Nome da Conexão</Translation>
+      </Entry>
+      <Entry>
+        <Message>Keys</Message>
+        <Type>User</Type>
+        <Translation>Chaves</Translation>
+      </Entry>
+      <Entry>
+        <Message>Enabled?</Message>
+        <Type>User</Type>
+        <Translation>Habilitado ?</Translation>
+      </Entry>
+      <Entry>
+        <Message>type</Message>
+        <Type>User</Type>
+        <Translation>tipo</Translation>
+      </Entry>
+      <Entry>
+        <Message>Type</Message>
+        <Type>User</Type>
+        <Translation>Tipo</Translation>
+      </Entry>
+      <Entry>
+        <Message>Event Description</Message>
+        <Type>User</Type>
+        <Translation>Descrição do Evento</Translation>
+      </Entry>
+      <Entry>
+        <Message>Event</Message>
+        <Type>User</Type>
+        <Translation>Evento</Translation>
+      </Entry>
+      <Entry>
+        <Message>File name</Message>
+        <Type>User</Type>
+        <Translation>Nome do arquivo</Translation>
+      </Entry>
+      <Entry>
+        <Message>File Name</Message>
+        <Type>User</Type>
+        <Translation>Nome do Arquivo</Translation>
+      </Entry>
+      <Entry>
+        <Message>ClassName</Message>
+        <Type>User</Type>
+        <Translation>Nome da Classe</Translation>
+      </Entry>
+      <Entry>
+        <Message>Class name</Message>
+        <Type>User</Type>
+        <Translation>Nome da classe</Translation>
+      </Entry>
+      <Entry>
+        <Message>Class Name</Message>
+        <Type>User</Type>
+        <Translation>Nome da Classe</Translation>
+      </Entry>
+      <Entry>
+        <Message>Method name</Message>
+        <Type>User</Type>
+        <Translation>Nome do método</Translation>
+      </Entry>
+      <Entry>
+        <Message>Method Name</Message>
+        <Type>User</Type>
+        <Translation>Nome do Método</Translation>
+      </Entry>
+      <Entry>
+        <Message>Delete</Message>
+        <Type>User</Type>
+        <Translation>Apagar</Translation>
+      </Entry>
+      <Entry>
+        <Message>DELETE</Message>
+        <Type>User</Type>
+        <Translation>APAGAR</Translation>
+      </Entry>
+      <Entry>
+        <Message>Delete permanently</Message>
+        <Type>User</Type>
+        <Translation>Apagar permanentemente</Translation>
+      </Entry>
+      <Entry>
+        <Message>Deleted</Message>
+        <Type>User</Type>
+        <Translation>Apagado</Translation>
+      </Entry>
+      <Entry>
+        <Message>Database version</Message>
+        <Type>User</Type>
+        <Translation>Versão do banco de dados</Translation>
+      </Entry>
+      <Entry>
+        <Message>API version</Message>
+        <Type>User</Type>
+        <Translation>Versão da API</Translation>
+      </Entry>
+      <Entry>
+        <Message>Default repository</Message>
+        <Type>User</Type>
+        <Translation>Repositório padrão</Translation>
+      </Entry>
+      <Entry>
+        <Message>Custom email regular expression</Message>
+        <Type>User</Type>
+        <Translation>Expressão regular personalizada de email</Translation>
+      </Entry>
+      <Entry>
+        <Message>Enable tracing</Message>
+        <Type>User</Type>
+        <Translation>Ativar rastreamento</Translation>
+      </Entry>
+      <Entry>
+        <Message>confirm</Message>
+        <Type>User</Type>
+        <Translation>confirmar</Translation>
+      </Entry>
+      <Entry>
+        <Message>Confirm</Message>
+        <Type>User</Type>
+        <Translation>Confirmar</Translation>
+      </Entry>
+    </Translations>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+    <InnerHtml><![CDATA[<P>&nbsp;</P>]]></InnerHtml>
+    <Properties>
+      <Property>
+        <Name>IsDefault</Name>
+        <Value>False</Value>
+      </Property>
+    </Properties>
+  </Part>
+  <Properties>
+    <Property>
+      <Name>Name</Name>
+      <Value>IdiomaExemploPT</Value>
+    </Property>
+    <Property>
+      <Name>ISOLangCode</Name>
+      <Value>PT</Value>
+    </Property>
+    <Property>
+      <Name>ISOCountryCode</Name>
+      <Value>BR</Value>
+    </Property>
+    <Property>
+      <Name>Codepage</Name>
+      <Value>1252</Value>
+    </Property>
+    <Property>
+      <Name>LangDateFormat</Name>
+      <Value>POR</Value>
+    </Property>
+    <Property>
+      <Name>LangTimeFormat</Name>
+      <Value>24</Value>
+    </Property>
+    <Property>
+      <Name>LangDecimalPoint</Name>
+      <Value>,</Value>
     </Property>
     <Property>
       <Name>IsDefault</Name>

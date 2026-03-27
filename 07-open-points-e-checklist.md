@@ -58,7 +58,7 @@ Servir como local único para conflitos não resolvidos silenciosamente.
 - `Inferência forte`: a raiz deve ser tratada como fonte operacional principal; `docs-kb-md` deve permanecer apenas como histórico de staging para evitar leituras duplicadas.
 - `Evidência direta`: `04-webpanel-familias-e-templates.md` ja contem anexos XML sanitizados completos para `WebPanel`.
 - `Evidência direta`: `05-transaction-familias-e-templates.md` agora tambem contem anexos XML sanitizados completos para familias representativas de `Transaction`.
-- `Evidência direta`: `01-base-empirica-geral.md` agora tambem contem anexos XML sanitizados completos representativos de `Procedure`, `DataProvider`, `Panel`, `API`, `WorkWithForWeb`, `SDT`, `Domain`, `Theme`, `PackagedModule`, `DesignSystem` e `ColorPalette`.
+- `Evidência direta`: `01-base-empirica-geral.md` agora tambem contem anexos XML sanitizados completos representativos de `Procedure`, `DataProvider`, `DataSelector`, `Panel`, `API`, `WorkWithForWeb`, `SDT`, `Domain`, `Theme`, `PackagedModule`, `DesignSystem`, `ColorPalette`, `ThemeClass`, `ThemeColor`, `Image`, `Index`, `Document`, `ExternalObject`, `UserControl`, `Module`, `SubTypeGroup`, `PatternSettings`, `DataStore`, `Dashboard`, `DeploymentUnit`, `Generator` e `Language`.
 - `Hipótese`: ainda vale completar `Transaction` com anexos equivalentes para as familias mais densas (`F3` e `F4`) se a meta for cobertura integral so pelos `.md`, sem recorrer ao acervo bruto.
 
 ## Próximas frentes recomendadas
@@ -102,16 +102,32 @@ Orientar futuras coletas de templates comparáveis.
 
 - Exportar pelo menos 1 template adicional de API com necessidade media, preferindo um caso simples e outro com mais contexto.
 - Exportar pelo menos 1 template adicional de DataProvider com necessidade media, preferindo um caso simples e outro com mais contexto.
+- Exportar pelo menos 1 template adicional de DataStore com necessidade baixa, preferindo um datastore padrao e outro com metadados adicionais.
+- Exportar pelo menos 1 template adicional de Dashboard com necessidade media, preferindo um caso curto e outro com mais objetos analiticos e filtros.
+- Exportar pelo menos 1 template adicional de DeploymentUnit com necessidade baixa, preferindo um caso curto e outro com mais `Member`.
 - Exportar pelo menos 1 template adicional de DesignSystem com necessidade media, preferindo um caso simples e outro com mais contexto.
 - Exportar pelo menos 1 template adicional de ColorPalette com necessidade baixa, preferindo uma paleta curta e outra com mais tons.
 - Exportar pelo menos 1 template adicional de Domain com necessidade baixa, preferindo um caso escalar e outro enumerado mais rico.
+- Exportar pelo menos 1 template adicional de ExternalObject com necessidade media, preferindo um caso nativo simples e outro com varios metodos externos.
+- Exportar pelo menos 1 template adicional de Generator com necessidade baixa, preferindo um caso default e outro com `DefaultType` diferente.
+- Exportar pelo menos 1 template adicional de Language com necessidade media, preferindo um idioma curto e outro com mais chaves de traducao.
+- Exportar pelo menos 1 template adicional de Module com necessidade baixa, preferindo um modulo raiz e outro filho.
+- Exportar pelo menos 1 template adicional de Image com necessidade media, preferindo um caso com item unico e outro com varias variantes e referencias de tema.
+- Exportar pelo menos 1 template adicional de Index com necessidade media, preferindo um caso simples e outro com muitos indices de usuario e combinacoes de ordem.
+- Exportar pelo menos 1 template adicional de Document com necessidade baixa, preferindo um caso curto e outro com HTML mais extenso.
+- Exportar pelo menos 1 template adicional de DataSelector com necessidade media, preferindo um caso simples e outro com conjunto maior de `Condition` e parametros.
 - Exportar pelo menos 1 template adicional de PackagedModule com necessidade baixa, preferindo um caso simples e outro com mais contexto.
+- Exportar pelo menos 1 template adicional de PatternSettings com necessidade media, preferindo um caso web e outro mobile com mais contexto de seguranca.
 - Exportar pelo menos 1 template adicional de Theme com necessidade baixa, preferindo um tema simples e outro com mais classes visuais.
+- Exportar pelo menos 1 template adicional de ThemeClass com necessidade media, preferindo uma classe raiz simples e outra derivada/estado visual.
+- Exportar pelo menos 1 template adicional de ThemeColor com necessidade baixa, preferindo uma cor base e outra cor de destaque/estado.
 - Exportar pelo menos 1 template adicional de Panel com necessidade media, preferindo um caso simples e outro com mais contexto.
 - Exportar pelo menos 1 template adicional de Procedure com necessidade media, preferindo um caso simples e outro com mais contexto.
 - Exportar pelo menos 1 template adicional de SDT com necessidade media, preferindo um caso simples e outro com mais contexto.
+- Exportar pelo menos 1 template adicional de SubTypeGroup com necessidade media, preferindo um caso pequeno e outro mais denso em subtypes derivados.
 - Exportar pelo menos 1 template adicional de Theme com necessidade media, preferindo um caso simples e outro com mais contexto.
 - Exportar pelo menos 1 template adicional de Transaction com necessidade alta, preferindo um caso simples e outro com mais contexto.
+- Exportar pelo menos 1 template adicional de UserControl com necessidade media, preferindo um caso simples e outro com definicoes/eventos mais ricos.
 - Exportar pelo menos 1 template adicional de WebPanel com necessidade alta, preferindo um caso simples e outro com mais contexto.
 - Exportar pelo menos 1 template adicional de WorkWithForWeb com necessidade media, preferindo um caso simples e outro com mais contexto.
 - Exportar casos em que o mesmo tipo exista com e sem parent.
@@ -140,7 +156,8 @@ Orientar futuras coletas de templates comparáveis.
 - Hipótese: `WorkWithForWeb` ja tem anexos representativos suficientes para estudo e prototipo controlado, mas continua sendo um dos melhores candidatos a refinamento por causa da alta dependencia de pattern e parent transacional
 - Hipótese: `SDT` ja tem anexos representativos suficientes para prototipos pequenos e medios, mas vale refinar com exemplos adicionais quando houver dependencia forte de namespace, soaptype ou schema externo muito especifico
 - Hipótese: `Domain` ja tem anexos representativos suficientes para prototipos escalares e enumerados comuns, mas ainda pode valer ampliar a base se surgirem dominios com metadata mais exotica ou comportamento especial de enumeracao
-- Hipótese: `Theme`, `PackagedModule`, `DesignSystem` e `ColorPalette` ja tem anexos representativos suficientes para prototipos controlados, mas `DesignSystem` segue sendo o mais sensivel do grupo por acumular tokens, imports e regras visuais extensas
+- Hipótese: `Theme`, `PackagedModule`, `DesignSystem`, `ColorPalette`, `ThemeClass`, `ThemeColor`, `Image`, `Index`, `Document`, `DataSelector`, `PatternSettings`, `DataStore`, `Dashboard`, `DeploymentUnit`, `Generator` e `Language` ja tem anexos representativos suficientes para prototipos controlados, mas `DesignSystem` segue sendo o mais sensivel do grupo por acumular tokens, imports e regras visuais extensas, `ThemeClass` ainda pede cuidado quando a cadeia de heranca visual for mais longa, `ThemeColor` e `ColorPalette` seguem os mais simples do grupo, `Image` pede preservacao rigorosa do binario e das referencias de tema, `Index` pede cuidado forte com a ordem dos `Members` e a distincao entre indices `Automatic` e `User`, `Document` pede apenas atencao ao conteudo HTML e a qualquer dado embutido sensivel, `DataSelector` pede cuidado com variaveis customizadas, parametros e filtros muito especificos, `PatternSettings` pede preservacao de referencias internas e blocos de plataforma, `DataStore` segue bastante declarativo, `Dashboard` pede cuidado com referencias a objetos analiticos, `DeploymentUnit` pede preservacao integral da lista de `Member`, `Generator` pede preservacao rigorosa das flags de categoria/tipo e `Language` pede preservacao integral das entradas de traducao
+- Hipótese: `ExternalObject`, `UserControl`, `Module` e `SubTypeGroup` ja tem anexos representativos suficientes para prototipos controlados; dentro desse grupo, `ExternalObject` e `UserControl` ainda merecem refinamento quando houver contratos externos, JavaScript embutido ou comportamento cliente mais denso, e `SubTypeGroup` ainda pede cuidado com nomes residuais e pares subtype/supertype extensos
 
 
 
