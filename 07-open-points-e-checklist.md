@@ -77,10 +77,14 @@ Servir como local único para conflitos não resolvidos silenciosamente.
 - `Evidência direta`: o mesmo export tambem trouxe referencias inline `<Attribute key="...">Nome</Attribute>` dentro de `Transaction`; elas chegaram a contaminar a pasta de extraidos ate a limpeza posterior.
 - `Evidência direta`: no teste combinado posterior, `Attribute` com shape top-level valido falhou em `ControlItemDescription`, por apontar para atributo desconhecido no destino.
 - `Inferência forte`: a pendencia de `Attribute` deixou de ser “falta total de shape” e passou a ser “uso de shape top-level correto + controle de propriedades que dependem de atributos reais da KB”.
+- `Evidência direta`: num consolidado revisado posterior, `Attribute 'DocumentoFiscalRemetenteDadosFiscaisAdicionaisId'` importou com sucesso.
+- `Inferência forte`: a pendencia principal de `Attribute` deixa de ser aberta; o tipo passa a exigir selecao de caso semanticamente fechado, nao nova pesquisa de envelope.
 - `Evidência direta`: `Folder` continua pendente de fechamento semantico, porque o caso gerado foi reconhecido pela IDE como `Category`.
 - `Evidência direta`: `Theme` e `Pattern Settings` nao falharam por envelope puro; os resultados apontaram respectivamente inconsistencia de classes visuais e pattern nao registrado.
+- `Evidência direta`: mesmo substituindo o tema sintetico pelo `SimpleIOS` real, o ambiente de teste repetiu a falha nas classes `TableDetail`, `TableSection` e `TextBlockGroupCaption`.
 - `Evidência direta`: `API`, `Transaction`, `Data Selector`, `Index`, `Deployment Unit`, `Theme Class`, `Design System` e `Work With for Web` mostraram dependencia contextual real da KB.
 - `Inferência forte`: a lacuna dominante agora nao e mais "como serializar o XPZ", e sim "quais referencias e dependencias minimas precisam existir na KB para cada tipo contextual".
+- `Inferência forte`: em `Theme`, essa lacuna agora deve ser lida como dependencia de ambiente alvo, nao apenas de recorte do XML.
 
 ## Próximas frentes recomendadas
 
@@ -88,7 +92,7 @@ Servir como local único para conflitos não resolvidos silenciosamente.
 - `Inferência forte`: vale isolar pares de objetos simples e complexos do mesmo grupo para comparação estrutural.
 - `Inferência forte`: vale produzir uma camada de validação cruzando `parent*`, `moduleGuid`, chamadas em código e nomes de objeto.
 - `Inferência forte`: antes de corrigir os `.md` dos tipos problemáticos, vale usar a bateria atual para distinguir "erro de molde" de "erro de dependência de KB" em cada tipo.
-- `Inferência forte`: a proxima coleta em exemplos reais deve priorizar `Folder`, `Theme`, `Pattern Settings`, `API`, `Transaction` e propriedades semanticas de `Attribute` como `ControlItemDescription`.
+- `Inferência forte`: a proxima coleta em exemplos reais deve priorizar `Theme`, `Pattern Settings`, `API`, `Transaction` e, em `Attribute`, apenas propriedades semanticas residuais quando o caso nao for semanticamente fechado.
 
 ## Decisao operacional - Transaction e WebPanel
 

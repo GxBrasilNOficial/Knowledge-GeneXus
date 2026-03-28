@@ -188,6 +188,7 @@ Padronizar quando avançar, quando exigir molde bruto comparável e quando abort
 
 - preservar `PredefinedTypes`, `Styles`, classes visuais base e referencias internas entre classes
 - nao podar classes so porque parecem "sobrando"; classes como `TableDetail`, `TableSection` e `TextBlockGroupCaption` podem ser exigidas por outras referencias do proprio tema
+- mesmo um `Theme` real como `SimpleIOS` pode falhar no destino; tratar `Theme` como dependente do ambiente alvo, nao apenas do XML
 - abortar se a edicao quebrar o grafo minimo de classes referenciadas
 
 ### PatternSettings
@@ -204,6 +205,7 @@ Padronizar quando avançar, quando exigir molde bruto comparável e quando abort
 - ao gerar `Attribute` isolado, partir apenas de molde real top-level comparavel
 - validar propriedades nominais que apontem para atributos reais da KB, como `ControlItemDescription`
 - se `ControlItemDescription`, `idBasedOn` ou referencia equivalente apontarem para atributo inexistente no destino, abortar em vez de tratar isso como problema de envelope
+- se houver opcao, preferir `Attribute` real semanticamente fechado, sem `ControlItemDescription`, porque esse perfil ja demonstrou importacao bem-sucedida
 
 ### WebPanel
 

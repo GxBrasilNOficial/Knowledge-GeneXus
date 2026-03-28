@@ -245,8 +245,8 @@ Separar falha de envelope/shape de falha por dependencia semantica da KB.
 
 - `Folder`: o XML gerado foi importado como `Category`, nao como `Folder`.
 - `Pattern Settings`: a importacao ocorreu como `was not changed`, com aviso de pattern nao registrado; o tipo nao ficou fechado como caso util.
-- `Attribute`: no primeiro teste falhou no load com `Value cannot be null. Parameter name: Field: name`; no teste combinado posterior, ja com shape top-level real, falhou por propriedade semantica `ControlItemDescription` apontando para atributo inexistente.
-- `Theme`: falhou por classes visuais referenciadas que nao existiam no pacote gerado.
+- `Attribute`: no primeiro teste falhou no load com `Value cannot be null. Parameter name: Field: name`; no teste combinado posterior, ja com shape top-level real, falhou por propriedade semantica `ControlItemDescription` apontando para atributo inexistente; em revisao seguinte, um atributo real simples (`DocumentoFiscalRemetenteDadosFiscaisAdicionaisId`) importou com sucesso.
+- `Theme`: falhou por classes visuais referenciadas que nao existiam no pacote gerado; depois, o proprio `SimpleIOS` real repetiu a mesma falha no ambiente de teste.
 
 ## Leitura operacional apos a bateria
 
@@ -265,10 +265,12 @@ Separar falha de envelope/shape de falha por dependencia semantica da KB.
 - Inferência forte: `Theme` vem em seguida porque seu problema principal ja esta isolado e nao depende tanto de semantica de negocio da KB, mas sim de preservar o grafo minimo de classes visuais.
 - Inferência forte: em `Theme`, a hierarquia correta de decisao e `PredefinedTypes e Styles -> classes base existentes -> referencias internas entre classes -> simplificacao visual`.
 - Inferência forte: qualquer tentativa de reduzir `Theme` sem mapear antes as referencias entre classes tende a repetir o erro de `TableDetail`, `TableSection` e `TextBlockGroupCaption` ausentes.
+- `Inferência forte`: como o `SimpleIOS` real repetiu o mesmo erro, `Theme` deve agora ser tratado tambem como dependente do ambiente alvo, e nao apenas como caso de clonagem estrutural incompleta.
 - Inferência forte: `Pattern Settings` vem depois porque o erro principal ja foi isolado em `pattern` registrado e contexto do ambiente, nao no envelope XML.
 - Inferência forte: em `Pattern Settings`, a hierarquia correta de decisao e `Pattern registrado -> ContextVariable e LoadProcedure -> Security e referencias auxiliares -> detalhe declarativo interno`.
 - Inferência forte: qualquer tentativa de tratar `Pattern Settings` como objeto autocontido tende a repetir o sintoma de `was not changed` com pattern nao registrado.
 - Inferência forte: `Attribute` ja nao pertence mais ao grupo de shape desconhecido; ele deve ser lido como tipo estruturalmente provado, mas dependente de propriedades que referenciam atributos reais da KB.
+- `Inferência forte`: quando o `Attribute` escolhido evita referencias nominais problematicas, como `ControlItemDescription`, o tipo ja demonstrou importacao bem-sucedida nesta trilha.
 - Inferência forte: `Folder` fica por ultimo porque o shape minimo ja parece estavel e o problema restante e mais de reconhecimento semantico da IDE do que de XML ou contexto pesado da KB.
 - Inferência forte: em `Folder`, a hierarquia correta de decisao e `shape minimo correto -> contexto pai/modulo -> tipo exibido pela IDE`.
 - Inferência forte: qualquer tentativa de "corrigir" `Folder` mexendo no envelope antes de esclarecer a diferenca entre `Folder` e `Category` tende a atacar o problema errado.

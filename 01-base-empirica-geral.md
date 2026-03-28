@@ -187,7 +187,8 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 - `Evidência direta`: o exemplo real `SimpleIOS.xml` contem `PredefinedTypes` e classes visuais concretas como `TableDetail`, `TableSection` e `TextBlockGroupCaption`.
 - `Evidência direta`: essas classes aparecem referenciadas por outras classes no proprio tema, por exemplo `Group` referencia `TextBlockGroupCaption` e `TableSection` referencia `HorizontalLine`.
 - `Inferência forte`: um tema simples mas valido precisa preservar nao apenas classes isoladas, e sim o grafo minimo de classes referenciadas internamente.
-- `Inferência forte`: a falha do teste de `Theme` na bateria foi coerente com esse achado; o pacote gerado nao preservava o conjunto de classes efetivamente exigido pelo tema base.
+- `Evidência direta`: num consolidado revisado posterior, o proprio `SimpleIOS` real foi importado no ambiente de teste e ainda assim falhou com `Theme class 'TableDetail' does not exist`, `Theme class 'TableSection' does not exist` e `Theme class 'TextBlockGroupCaption' does not exist`.
+- `Inferência forte`: nesta trilha, `Theme` deixou de parecer apenas um problema de serializacao ou de recorte do XML; o comportamento aponta dependencia do ambiente alvo ou de contexto adicional da KB mesmo quando o XML vem de exemplo real.
 
 ### `API`
 
@@ -216,6 +217,8 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 - `Inferência forte`: para montar ou extrair corpus de `Attribute`, o filtro correto nao e “todo no chamado Attribute”, e sim apenas o no raiz completo com `name` e estrutura de `Part` e `Properties`.
 - `Evidência direta`: no teste combinado posterior, `Attribute 'AttrTesteMdPessoaCreditoTipoDocumentoId'` ja nao falhou por shape; falhou em propriedade semantica, com `ControlItemDescription='TipoDocumentoDescricao'` apontando para atributo desconhecido no destino.
 - `Inferência forte`: `Attribute` saiu da zona “shape insuficiente” e entrou na mesma classe metodologica de dependencia contextual de KB em propriedades como `ControlItemDescription`, `idBasedOn` e outras referencias nominais a atributos reais.
+- `Evidência direta`: num consolidado revisado posterior, o `Attribute 'DocumentoFiscalRemetenteDadosFiscaisAdicionaisId'`, extraido do acervo real e sem `ControlItemDescription`, importou com sucesso.
+- `Inferência forte`: `Attribute` passa a ser considerado estruturalmente destravado nesta trilha, desde que o caso escolhido seja top-level real e semanticamente fechado no ambiente de destino.
 
 
 
