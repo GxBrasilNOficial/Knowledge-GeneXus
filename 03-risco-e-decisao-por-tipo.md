@@ -255,6 +255,23 @@ Separar falha de envelope/shape de falha por dependencia semantica da KB.
 - Inferência forte: os tipos em sucesso coerente passam a ter prioridade maior como fonte segura para agente/GPT nesta base.
 - Inferência forte: os tipos com falha contextual pedem complemento por exemplos reais ou regra documental mais especifica, e nao simples extrapolacao a partir do envelope minimo.
 
+## Hierarquia de ataque das pendencias contextuais
+
+- Evidência direta: `Transaction` e `API` concentraram erros semanticos claros, apesar de o envelope ter passado da fase principal de parse/importacao.
+- Inferência forte: a ordem mais util de ataque e `Transaction -> API -> Theme -> Pattern Settings -> Folder`.
+- Inferência forte: `API` vem logo depois de `Transaction` porque compartilha o mesmo tipo de fragilidade principal: dependencia de tipos e referencias reais da KB.
+- Inferência forte: em `API`, a hierarquia correta de decisao e `ATTCUSTOMTYPE` valido -> `EXO` e `SDT` existentes -> `Procedure` chamada -> eventos/codigo.
+- Inferência forte: qualquer tentativa de corrigir `API` pelo fim, mexendo primeiro em codigo ou serializacao, tende a mascarar a causa real do erro.
+- Inferência forte: `Theme` vem em seguida porque seu problema principal ja esta isolado e nao depende tanto de semantica de negocio da KB, mas sim de preservar o grafo minimo de classes visuais.
+- Inferência forte: em `Theme`, a hierarquia correta de decisao e `PredefinedTypes e Styles -> classes base existentes -> referencias internas entre classes -> simplificacao visual`.
+- Inferência forte: qualquer tentativa de reduzir `Theme` sem mapear antes as referencias entre classes tende a repetir o erro de `TableDetail`, `TableSection` e `TextBlockGroupCaption` ausentes.
+- Inferência forte: `Pattern Settings` vem depois porque o erro principal ja foi isolado em `pattern` registrado e contexto do ambiente, nao no envelope XML.
+- Inferência forte: em `Pattern Settings`, a hierarquia correta de decisao e `Pattern registrado -> ContextVariable e LoadProcedure -> Security e referencias auxiliares -> detalhe declarativo interno`.
+- Inferência forte: qualquer tentativa de tratar `Pattern Settings` como objeto autocontido tende a repetir o sintoma de `was not changed` com pattern nao registrado.
+- Inferência forte: `Folder` fica por ultimo porque o shape minimo ja parece estavel e o problema restante e mais de reconhecimento semantico da IDE do que de XML ou contexto pesado da KB.
+- Inferência forte: em `Folder`, a hierarquia correta de decisao e `shape minimo correto -> contexto pai/modulo -> tipo exibido pela IDE`.
+- Inferência forte: qualquer tentativa de "corrigir" `Folder` mexendo no envelope antes de esclarecer a diferenca entre `Folder` e `Category` tende a atacar o problema errado.
+
 
 ## Origem incorporada - 23-mapa-de-risco-por-tipo.md
 

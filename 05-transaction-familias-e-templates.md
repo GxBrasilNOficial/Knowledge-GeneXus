@@ -243,6 +243,32 @@ Permitir escolha repetivel de template interno real, reduzindo risco de vazament
 - Evidencia direta: a consulta posterior ao acervo real confirmou o uso recorrente de variaveis de contexto com `ATTCUSTOMTYPE` como `sdt:Context`, `sdt:TransactionContext` e `sdt:TransactionContext.Attribute`
 - Inferencia forte: para `Transaction`, a validacao de contexto da KB e tao importante quanto a escolha correta da familia estrutural
 
+## Hierarquia de decisao para Transaction
+
+- Evidencia direta: a bateria controlada mostrou que `Transaction` nao e mais um problema principal de envelope; o erro observado foi semantico, ligado a atributos e tipos inexistentes.
+- Inferencia forte: para `Transaction`, a ordem correta de decisao e `familia estrutural -> atributos reais da KB -> variaveis de contexto -> regras/eventos`.
+- Inferencia forte: se os atributos do `Level` nao existirem na KB, nao adianta refinar `Part`, `Source` ou envelope XPZ; o caso continua inviavel no destino.
+- Inferencia forte: se os atributos existirem mas `Context`, `TrnContext` ou `TrnContextAtt` apontarem para tipos ausentes, o problema passa a ser de infraestrutura semantica da KB, nao de serializacao.
+
+## Checklist minimo antes de materializar Transaction
+
+- escolher a familia estrutural correta antes de qualquer edicao nominal
+- listar todos os atributos declarados em cada `Level`
+- confirmar que cada atributo do `Level` existe de fato na KB alvo
+- confirmar que cada `DescriptionAttribute` aponta para atributo do mesmo nivel
+- confirmar que cada nome citado em `AttributeProperties` corresponde a atributo realmente presente no `Level`
+- confirmar se existem variaveis `Context`, `TrnContext` e `TrnContextAtt`
+- se existirem, validar os `ATTCUSTOMTYPE` correspondentes no alvo
+- revisar eventos, regras e defaults apenas depois que a camada de atributos e contexto estiver coerente
+
+## Diagnostico operacional do erro
+
+- `Field: name` nulo no load tende a indicar shape invalido ou elemento incompleto, antes da validacao semantica
+- erro `Attribute 'X' in 'Transaction Y' does not exist` indica que o XML foi aceito estruturalmente, mas os atributos declarados nao existem no destino
+- erro em `ATTCUSTOMTYPE` com `sdt:Context`, `sdt:TransactionContext` ou `sdt:TransactionContext.Attribute` indica ausencia ou nao resolucao desses tipos na KB alvo
+- erro simultaneo de atributo inexistente e `ATTCUSTOMTYPE` invalido deve ser lido como falha de contexto da KB, nao como falha do envelope
+- quando esse ultimo padrao aparecer, a acao correta e trocar o molde por atributos e tipos reais do alvo, e nao simplificar o XML arbitrariamente
+
 ## Validacoes obrigatorias de consistencia interna
 
 ### Para qualquer Transaction clonada
@@ -264,6 +290,13 @@ Permitir escolha repetivel de template interno real, reduzindo risco de vazament
 - `AttributeProperties` referencia atributo ausente
 - variavel de contexto aponta para `sdt` inexistente ou nao resolvido na KB
 - sobra nome residual do template-base em `Level`, `Attribute`, regras ou eventos
+
+## Regra de escalonamento
+
+- se o alvo couber em `F1`, `F2` ou `F3`, nao subir para `F5` ou `F6` por conveniencia
+- se a dificuldade principal estiver em atributos inexistentes, parar a edicao e buscar equivalentes reais na KB
+- se a dificuldade principal estiver em `Context` e `TrnContext`, tratar isso antes de mexer em eventos
+- se o objeto exigir redistribuir atributos entre niveis ou inventar subnivel novo, abortar e escolher outro molde
 
 ## Regras de serializacao XPZ para Transaction
 

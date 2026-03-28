@@ -683,8 +683,42 @@ Funcionar como resumo decisório sem esconder os limites da evidência.
 - Evidência direta: existem 183 `Transaction` no acervo.
 - Inferência forte: usar padrao estrutural inferido da propria base em vez de bloquear execucao por falta de exemplo.
 - Inferência forte: escolher uma familia simples e estruturalmente proxima do alvo.
+- Evidência direta: a bateria de importacao mostrou que `Transaction` pode manter envelope coerente e ainda falhar por atributos inexistentes e tipos de contexto nao resolvidos na KB de destino.
+- Inferência forte: para `Transaction`, a ordem correta de validacao e `familia estrutural -> atributos reais do Level -> tipos de contexto -> regras e eventos`.
 - Inferência forte: nao abortar so por ausencia de template externo; a referencia principal passa a ser molde interno da propria base.
 - Hipótese: os erros por objeto devem ser tratados incrementalmente para refinar os documentos.
+
+## Politica para API
+
+- Evidência direta: o acervo desta trilha traz amostra pequena de `API`, mas a consulta ao caso real confirmou uso pesado de `ATTCUSTOMTYPE`, `EXO`, `SDT` e chamadas a `Procedure`.
+- Evidência direta: a bateria de importacao mostrou que `API` pode falhar sem erro de envelope, apenas por `ATTCUSTOMTYPE` nao conversivel ou tipo inexistente no destino.
+- Inferência forte: para `API`, a ordem correta de validacao e `molde estrutural -> ATTCUSTOMTYPE valido -> EXO e SDT existentes -> Procedure e eventos chamados`.
+- Inferência forte: em `API`, trocar nomes e codigo sem fechar primeiro a camada de tipos tende a produzir falha semantica imediata.
+- Hipótese: os erros por API tambem devem ser tratados incrementalmente, priorizando tipos e referencias antes de mexer em regras ou eventos.
+
+## Politica para Theme
+
+- Evidência direta: a consulta ao acervo real confirmou que `Theme` simples valido preserva `PredefinedTypes`, `Styles` e classes como `TableDetail`, `TableSection` e `TextBlockGroupCaption`.
+- Evidência direta: a bateria de importacao mostrou que `Theme` pode falhar mesmo com envelope correto quando o pacote perde classes visuais referenciadas internamente.
+- Inferência forte: para `Theme`, a ordem correta de validacao e `molde estrutural -> PredefinedTypes e Styles -> classes base existentes -> referencias internas entre classes`.
+- Inferência forte: em `Theme`, podar classe "aparentemente sobrando" antes de mapear as referencias internas e a forma mais comum de quebrar o import.
+- Hipótese: os erros por `Theme` devem ser tratados por reconstrucao do grafo minimo de classes, nao por simplificacao progressiva do XML.
+
+## Politica para PatternSettings
+
+- Evidência direta: a consulta ao acervo real confirmou que `PatternSettings` embute configuracao em `CDATA` com `Pattern="..."`, `ContextVariable`, `LoadProcedure`, `Security` e outros elementos do pattern.
+- Evidência direta: a bateria de importacao mostrou que `PatternSettings` pode ser lido pela IDE e ainda assim resultar em `was not changed`, com aviso de pattern nao registrado.
+- Inferência forte: para `PatternSettings`, a ordem correta de validacao e `Pattern registrado -> contexto e procedures do pattern -> seguranca e referencias auxiliares -> detalhe declarativo interno`.
+- Inferência forte: em `PatternSettings`, editar apenas o XML interno sem garantir pattern e contexto reais tende a produzir objeto estruturalmente aceitavel, mas operacionalmente inutil.
+- Hipótese: os erros por `PatternSettings` devem ser tratados como falta de contexto do pattern no ambiente, e nao como problema principal de serializacao.
+
+## Politica para Folder
+
+- Evidência direta: a consulta ao acervo real confirmou que `Folder` usa um shape XML minimo e estavel, com `Object/@type="00000000-0000-0000-0000-000000000006"` e poucos metadados.
+- Evidência direta: na bateria de importacao, o caso de teste entrou, mas a IDE o exibiu como `Category`, nao como `Folder`.
+- Inferência forte: para `Folder`, a ordem correta de validacao e `shape minimo correto -> parent/module coerentes quando existirem -> leitura semantica da IDE`.
+- Inferência forte: aqui o risco principal nao e quebrar o XML, e sim confundir o nome do tipo exportado com a categoria semantica que a IDE resolve exibir.
+- Hipótese: novos testes devem tratar `Folder` como caso estruturalmente aceito, mas semanticamente ainda ambíguo na exibicao da IDE.
 
 ## Politica para WebPanel
 
@@ -732,8 +766,45 @@ Funcionar como resumo decisório sem esconder os limites da evidência.
 - preservar `Object/@type`, `guid`, `parent*`, `moduleGuid` e inventario completo de `Part` do molde-base
 - nao remover `Part` recorrente nem trocar a ordem dos blocos
 - alterar apenas campos textuais, nomes e trechos internos que tenham paralelo claro em outros `Transaction` da mesma familia
+- validar antes do empacotamento que cada atributo declarado em `Level` exista de fato na KB alvo
+- validar que `DescriptionAttribute` e `AttributeProperties` continuem apontando para atributos presentes no mesmo objeto
+- validar explicitamente `Context`, `TrnContext` e `TrnContextAtt` quando existirem, incluindo seus `ATTCUSTOMTYPE`
 - se um atributo do no `<Object>` nao existir no molde usado, nao inventar esse atributo no clone
+- se o caso exigir inventar atributo, `sdt:Context`, `sdt:TransactionContext` ou `sdt:TransactionContext.Attribute` inexistentes no destino, abortar
 - se surgir referencia a `parent`, modulo ou pattern que nao exista no molde comparavel, abortar
+
+### API
+
+- preservar `Object/@type`, `guid`, `parent*`, `moduleGuid`, inventario de `Part` e blocos estruturais de `Service`, `RestMethod`, `Variables` e eventos do molde-base
+- validar antes do empacotamento cada `ATTCUSTOMTYPE` presente no molde ou introduzido na edicao
+- aceitar apenas `ATTCUSTOMTYPE` comprovado no destino como tipo base suportado, `EXO` existente ou `SDT` existente
+- validar que cada `Procedure` chamada em `Source`, eventos ou metadados exista de fato na KB alvo
+- nao inventar nomes de `EXO`, `SDT` ou `Procedure` para "completar" a API
+- se o caso exigir tipos ou procedures inexistentes no destino, abortar em vez de simplificar o XML arbitrariamente
+
+### Theme
+
+- preservar `Object/@type`, `guid`, inventario de `Part`, `PredefinedTypes`, `Styles` e a organizacao geral do molde-base
+- validar antes do empacotamento que cada classe visual referenciada por outra classe continue existindo no objeto final
+- tratar `TableDetail`, `TableSection`, `TextBlockGroupCaption` e classes equivalentes do molde como candidatas fortes a compor o grafo minimo
+- nao remover classe apenas porque ela nao parece ser usada diretamente pela tela alvo; primeiro validar referencias indiretas no proprio tema
+- se a edicao exigir reduzir o tema abaixo do grafo minimo de classes referenciadas, abortar em vez de simplificar o XML arbitrariamente
+
+### PatternSettings
+
+- preservar `Object/@type`, `guid`, inventario de `Part` e o bloco `<Data Pattern="..."><![CDATA[...]]></Data>` do molde-base
+- validar antes do empacotamento se o `Pattern` referenciado no bloco existe de fato no ambiente de destino
+- validar que `ContextVariable`, `LoadProcedure`, `Security`, `NotAuthorized` e referencias equivalentes apontem para objetos reais do destino
+- nao inventar `Pattern`, `LoadProcedure`, contexto de seguranca ou procedures auxiliares para "completar" o objeto
+- se o ambiente nao reconhecer o pattern ou os objetos referenciados, abortar em vez de tratar o XML como autocontido
+
+### Folder
+
+- preservar `Object/@type`, `guid`, `parent*`, `moduleGuid` e o inventario minimo de `Part` do molde-base
+- preferir o molde mais simples quando a necessidade for apenas organizacao logica de objetos
+- nao inflar `Folder` com propriedades extras sem paralelo claro no molde real
+- registrar separadamente o tipo pretendido no XML e o tipo efetivamente reconhecido pela IDE ao importar
+- se o objetivo depender da distincao semantica exata entre `Folder` e `Category`, tratar o caso como ambíguo e nao como falha de envelope
 
 ### WebPanel
 
