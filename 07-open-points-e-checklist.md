@@ -189,13 +189,13 @@ Orientar futuras coletas de templates comparáveis.
 - `Evidência direta`: `Work With for Web` importa com sucesso quando o pattern usa o convenio real de atributo `adbb33c9-0906-4971-833c-998de27e0676-NomeDoAtributo`.
 - `Evidência direta`: `Table` e familia top-level propria; `Index` aparece embutido em `Table` e o export isolado de `Index` veio vazio nesta trilha.
 - `Inferência forte`: a frente aberta de camada fisica se concentra em `Table/Index`, nao mais em `WorkWithForWeb`.
-- `Evidência direta`: os exports `Table + Transaction + WorkWithForWeb + PatternSettings` e `Table + Transaction + DataSelector` explicitaram a ponte estrutural entre camada logica, camada fisica e camada de pattern.
-- `Evidência direta`: o export `Table + Domain + Transaction + SDT + API + Procedure + DataProvider` mostrou que a `API` relevante desta KB anda com uma subarvore funcional grande.
+- `Evidência direta`: os exports `XPZExemploTabelaTRNWWPatternA.xpz` e `XPZExemploTabelaTRNDataSelectorA.xpz` explicitaram a ponte estrutural entre camada logica, camada fisica e camada de pattern.
+- `Evidência direta`: o export `XPZExemploCadeiaAPIA.xpz` mostrou que a `API` relevante desta KB anda com uma subarvore funcional grande.
 - `Inferência forte`: a frente aberta de `API` e funcional, nao de envelope minimo.
-- `Evidência direta`: o export `Table + Transaction + ColorPalette + DesignSystem + Theme + WebTheme + Category + ThemeClass + ThemeColor` mostrou a pilha visual completa exportada como familia combinada.
-- `Evidência direta`: os exports `Attribute + Domain + Transaction + SubtypeGroup` e `Attribute + Domain + Transaction + SubtypeGroup + Table + Index` mostraram que a IDE tambem serializa familia combinada com `Attributes` top-level no mesmo `.xpz`.
+- `Evidência direta`: o export `XPZExemploTemaA.xpz` mostrou a pilha visual completa exportada como familia combinada.
+- `Evidência direta`: os exports `XPZExemploFamiliaMistaA.xpz` e `XPZExemploFamiliaMistaB.xpz` mostraram que a IDE tambem serializa familia combinada com `Attributes` top-level no mesmo `.xpz`.
 - `Inferência forte`: a frente aberta de `Attribute` deixa de incluir duvida relevante sobre contêiner multiobjeto; o foco remanescente continua sendo dependencia semantica de propriedades e contexto de KB.
-- `Evidência direta`: o par `PaisSemWWweb` e `PaisComWWweb` mostrou, em escala minima e comparavel, o custo estrutural de adicionar `WorkWithForWeb` a uma `Transaction`.
+- `Evidência direta`: o par `XPZExemploTRNWWComparacaoSemWW` e `XPZExemploTRNWWComparacaoComWW` mostrou, em escala minima e comparavel, o custo estrutural de adicionar `WorkWithForWeb` a uma `Transaction`.
 - `Inferência forte`: esse tipo de par minimo comparavel e especialmente valioso para medir expansao de `ObjectsIdentityMapping` e dependencias de contexto sem o ruido dos pacotes grandes.
 - `Inferência forte`: futuras analises devem priorizar combinacoes de familias relacionadas, e nao apenas tipos isolados.
 
