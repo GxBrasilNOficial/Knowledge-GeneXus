@@ -91,6 +91,39 @@ Permitir escolha repetivel de template interno real, reduzindo risco de vazament
 - Inferencia forte: clonar preservando a forma do `Level` e substituindo apenas atributos que tenham paralelo bruto claro
 - Hipotese: abortar se o alvo exigir subnivel, agrupamento de itens ou grande quantidade de atributos derivados
 
+### Caso validado - `Transaction` minima com 2 atributos
+
+- Evidencia direta: foi importado com sucesso um pacote contendo `2` `Attribute` top-level, `1` `Transaction` e `1` `Level` com ambos os atributos.
+- Evidencia direta: nesse caso controlado, os atributos usados foram um atributo chave e um atributo nao chave, sem subnivel, sem `DescriptionAttribute` e sem `AttributeProperties`.
+- Evidencia direta: o GeneXus executou `Updating table information` apos a importacao, indicando materializacao fisica da tabela no caso testado.
+
+### Assinatura do caso validado
+
+- `1 Level`
+- `2 atributos`
+- `1` chave (`key="True"`)
+- `1` nao chave (`key="False"`)
+- sem subnivel
+- sem `DescriptionAttribute`
+- sem `AttributeProperties`
+
+### Shape minimo validado neste caso controlado
+
+```xml
+<Level>
+  <Properties />
+  <Attribute key="True">ProdutoId</Attribute>
+  <Attribute key="False">ProdutoDescricao</Attribute>
+</Level>
+```
+
+- Evidencia direta: este shape foi aceito pelo importador no caso validado, desde que os atributos existissem como `Attribute` top-level no mesmo pacote e o `Part` principal preservasse a estrutura esperada da familia.
+
+### Regra adicional para primeiro pacote minimo de `F1`
+
+- Regra operacional: para primeiro pacote minimo de `Transaction` na familia `F1`, preferir nao incluir `DescriptionAttribute`, `AttributeProperties` nem variaveis de contexto como `Context` e `TrnContext` antes da primeira importacao bem-sucedida.
+- Inferencia forte: adicionar elementos estruturais antes de validar o shape minimo aumenta a chance de erro sem ganho proporcional de validacao incremental.
+
 ## Familia 2 - Um nivel com apoio estrutural moderado
 
 - Evidencia direta: 41 objetos com `1 Level` e entre 7 e 11 blocos `AttributeProperties`.

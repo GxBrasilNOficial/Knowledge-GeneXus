@@ -221,6 +221,9 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 - `Inferência forte`: a falha observada na bateria foi coerente com o acervo real; nao faltava apenas envelope, faltavam atributos reais e tipos de contexto validos.
 - `Evidência direta`: num teste isolado posterior, os `Attribute` reais de `Banco`, o `SDT 'Context'` e o `SDT 'TransactionContext'` importaram com sucesso antes da tentativa da `Transaction`.
 - `Evidência direta`: nesse mesmo teste, `Transaction 'Banco'` importou com sucesso e ainda disparou geracao de pattern bem-sucedida para `WorkWithWebBanco`.
+- `Evidência direta`: em outro teste pratico controlado, uma `Transaction` minima so foi importada com sucesso apos a inclusao explicita dos `Attribute` top-level correspondentes no mesmo pacote.
+- `Evidência direta`: nesse caso, os nos `<Attribute>` dentro de `<Level>` nao bastaram para definir os atributos; eles funcionaram apenas como referencia contextual do `Level`.
+- `Inferência forte`: a distincao entre `Attribute` top-level e `Attribute` inline em `Level` e essencial no caso validado de montagem de pacote minimo valido de `Transaction`.
 - `Inferência forte`: `Transaction` fica destravada nesta trilha quando o pacote inclui os atributos top-level reais do `Level` e os SDTs de contexto exigidos pelo caso.
 
 ### `Attribute`

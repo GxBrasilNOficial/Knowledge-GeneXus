@@ -138,9 +138,15 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 
 - `Evidência direta`: o teste isolado com `Transaction 'Banco'`, seus `Attribute` top-level reais, `SDT 'Context'` e `SDT 'TransactionContext'` importou com sucesso.
 - `Evidência direta`: nesse mesmo teste houve geracao de pattern bem-sucedida para `WorkWithWebBanco`.
+- `Evidência direta`: em teste controlado separado, um pacote contendo apenas `Transaction` falhou com erro do tipo `Attribute 'X' in 'Transaction Y' does not exist` quando os atributos referenciados no `<Level>` nao existiam na KB de destino.
+- `Evidência direta`: no mesmo cenario, ao incluir no mesmo pacote os `Attribute` top-level correspondentes, a importacao passou a reconhecer os atributos e avancou para a validacao estrutural da `Transaction`.
+- `Evidência direta`: apos ajuste do shape do `Level` e dos `Part`, o pacote contendo `Attribute + Transaction` foi importado com sucesso completo, incluindo atualizacao de tabela.
 - `Inferência forte`: quando o molde de `Transaction` usa `Context`, `TrnContext` ou `TrnContextAtt`, os SDTs de contexto correspondentes deixam de ser detalhe auxiliar e passam a ser dependencias de primeira classe do pacote.
+- `Inferência forte`: quando a KB de destino nao contem previamente os atributos referenciados pela `Transaction`, o pacote minimo precisa inclui-los como `Attribute` top-level, e nao apenas como referencias inline no `Level`.
 - `Regra operacional`: antes de materializar `Transaction`, validar nesta ordem: familia estrutural correta, atributos reais do `Level`, `SDT 'Context'`, `SDT 'TransactionContext'` e so depois regras/eventos mais especificos.
+- `Regra operacional`: ao gerar pacote minimo de `Transaction`, verificar primeiro se os atributos do `Level` ja existem na KB de destino; se nao existirem, incluir `Attributes` top-level correspondentes no mesmo pacote.
 - `Regra operacional`: erro em `ATTCUSTOMTYPE` de `sdt:Context`, `sdt:TransactionContext` ou `sdt:TransactionContext.Attribute` deve ser lido como falta de dependencia contextual, nao como falha do envelope XML.
+- `Regra operacional`: nao confiar que o GeneXus criara automaticamente atributos implicitos a partir do `Level`; no caso validado, a ausencia explicita levou a erro de validacao.
 
 ### Politica para `API`
 

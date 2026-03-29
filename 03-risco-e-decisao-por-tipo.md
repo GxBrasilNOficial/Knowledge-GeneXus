@@ -185,6 +185,9 @@ Evitar que “melhor candidato” seja confundido com “tipo comprovadamente se
 - Evidência direta: a trilha ja contem evidência de importacao real bem-sucedida para varios tipos, usando somente os `.md` locais como base documental combinados com o skill `nexa`.
 - Inferência forte: `PackagedModule` deixou de ser apenas candidato relativo e passou a ter importacao bem-sucedida como `Module` em caso controlado.
 - Inferência forte: `Transaction` continua desbloqueada para execucao controlada, mas o teste real mostrou dependencia de atributos e tipos de contexto existentes na KB.
+- Evidência direta: `Transaction` com atributos inexistentes na KB falhou na validacao mesmo quando o shape do `Level` estava no caminho correto.
+- Inferência forte: o risco de `Transaction` nao esta apenas no envelope ou no shape, mas tambem na existencia previa ou inclusao explicita de `Attribute` top-level.
+- Regra operacional: tratar ausencia de `Attribute` top-level correspondente como bloqueio operacional do pacote, e nao apenas como dependencia semantica secundaria.
 - Inferência forte: `WorkWithForWeb` permanece na zona de maior cautela por depender de `Transaction` pai real.
 
 ## Decisao operacional provisoria
