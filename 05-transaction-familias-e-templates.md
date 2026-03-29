@@ -112,8 +112,8 @@ Permitir escolha repetivel de template interno real, reduzindo risco de vazament
 ```xml
 <Level>
   <Properties />
-  <Attribute key="True">ProdutoId</Attribute>
-  <Attribute key="False">ProdutoDescricao</Attribute>
+  <Attribute key="True">AtributoExemploId</Attribute>
+  <Attribute key="False">AtributoExemploDescricao</Attribute>
 </Level>
 ```
 

@@ -1619,7 +1619,7 @@ Destacar estabilidade estrutural relativa e pontos de maior risco para clonagem.
     <Properties />
   </Part>
   <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
-    <Source><![CDATA[parm(out:&TipoExemplo);
+    <Source><![CDATA[parm(out:&DomainExemploTipoOperacaoA);
 ]]></Source>
     <Properties>
       <Property>
@@ -1632,16 +1632,16 @@ Destacar estabilidade estrutural relativa e pontos de maior risco para clonagem.
     <Properties />
   </Part>
   <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
-    <Variable Name="TipoExemplo">
+    <Variable Name="DomainExemploTipoOperacaoA">
       <Documentation />
       <Properties>
         <Property>
           <Name>Name</Name>
-          <Value>TipoExemplo</Value>
+          <Value>DomainExemploTipoOperacaoA</Value>
         </Property>
         <Property>
           <Name>idBasedOn</Name>
-          <Value>Domain:TipoExemplo</Value>
+          <Value>Domain:DomainExemploTipoOperacaoA</Value>
         </Property>
       </Properties>
     </Variable>
