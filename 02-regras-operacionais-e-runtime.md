@@ -47,6 +47,9 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 - `Inferência forte`: para esta base, a forma mais segura de pensar um XPZ e "envelope `<ExportFile>` com secoes top-level recorrentes", e nao "arquivo `Objects.xml` isolado" sem prova local.
 - `Evidência direta`: no lote amplo de `.xpz` reais, o formato normal mais frequente nao traz bloco especial de KB; esse bloco aparece apenas em exportacoes especiais/full e em variacoes antigas de mudanca de versao.
 - `Hipótese`: outros formatos de export GeneXus 18 podem existir; esta base so prova o envelope observado acima.
+- `Evidência direta`: no lote amplo de `.xpz` reais, tambem apareceu pacote valido sem itens exportaveis materializaveis no acervo final.
+- `Regra operacional`: pacote sem itens exportaveis nao deve ser classificado automaticamente como falha de leitura; a interpretacao correta depende do recorte de export efetivamente aceito pela IDE.
+- `Regra operacional`: quando houver relatorio de execucao, distinguir explicitamente entre `no-exportable-items` e erro real de leitura, mapeamento ou verificacao.
 
 ### Exemplo sanitizado do envelope observado
 
@@ -152,6 +155,9 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 - `Evidência direta`: nesses dois recortes, a IDE serializou `Attributes` como bloco top-level proprio no mesmo `.xpz` que tambem carrega `Objects`.
 - `Inferência forte`: quando a familia funcional inclui `Attribute` real, `Transaction`, `Domain` e `SubtypeGroup`, o formato normal observado fica mais forte com `Objects` + `Attributes`, e nao apenas com `Objects`.
 - `Regra operacional`: ao analisar ou materializar pacote centrado em `Attribute` top-level, preservar a separacao entre `Objects` e `Attributes`; nao rebaixar `Attribute` real para pseudo-objeto dentro de `<Objects>`.
+- `Evidência direta`: no acervo extraido para filesystem Windows, apareceu ao menos um caso real de nome logico invalido como nome de arquivo (`ThemeClass` com `name="ImageHandCenter:hover"`), materializado em disco como `ImageHandCenter_hover.xml`.
+- `Regra operacional`: quando o nome logico do objeto ou atributo contiver caractere invalido para o filesystem alvo, aplicar normalizacao minima, deterministica e rastreavel apenas no nome do arquivo em disco, preservando o `name` interno do XML sem alteracao.
+- `Regra operacional`: na auditoria de completude entre o XML total e o acervo extraido, comparar por `tipo + nome logico` e considerar explicitamente a camada de normalizacao de filename quando houver caractere invalido para o filesystem.
 
 ### Politica para `Theme`
 
@@ -818,7 +824,9 @@ Funcionar como resumo decisório sem esconder os limites da evidência.
 
 - Evidência direta: a materializacao final de `Transaction` e `WebPanel` pode partir de um molde XML completo desta base ou de XML bruto real do mesmo `Object/@type`, desde que a estrutura usada seja completa e comparavel.
 - Inferência forte: nunca montar um objeto do zero a partir de descricao em markdown; sempre partir de um molde XML completo e editar o clone.
-
+- Regra operacional: ao materializar um acervo de XMLs individualizados para versionamento, manter serializacao textual consistente entre todos os arquivos do lote.
+- Regra operacional: quando o pipeline controlar a escrita desses arquivos, preferir declaracao XML explicita com `encoding="utf-8"` como convencao operacional do acervo, sem tratar isso como prova de exigencia universal do GeneXus para qualquer XML interno.
+- Regra operacional: a checagem pos-extracao deve validar nao so completude estrutural, mas tambem consistencia de declaracao XML e encoding declarado entre os arquivos materializados.
 ### Transaction
 
 - preservar `Object/@type`, `guid`, `parent*`, `moduleGuid` e inventario completo de `Part` do molde-base
@@ -962,6 +970,8 @@ Funcionar como resumo decisório sem esconder os limites da evidência.
 - Hipótese: mesmo com anexos representativos, `WorkWithForWeb` continua entre os tipos mais sensiveis a `pattern`, `parent` transacional e contexto gerado; por isso, casos muito distantes do molde documentado ainda podem pedir paralelo bruto mais proximo
 - Hipótese: as familias `F3` e `F4` de `Transaction` ainda ficam mais seguras com molde bruto comparavel adicional, por terem densidade estrutural maior e ainda nao terem anexo completo proprio
 - Inferência forte: para o envelope externo do XPZ observado, a especificacao desta propria base ja e suficiente para evitar inventar `Objects.xml` isolado ou hierarquia externa sem prova local
+
+
 
 
 

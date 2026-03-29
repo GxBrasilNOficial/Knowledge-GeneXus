@@ -13,7 +13,7 @@ Este repositório reúne documentação consolidada sobre análise estrutural de
 
 ### O que você vai encontrar aqui
 
-Os documentos principais foram consolidados em 10 arquivos Markdown para facilitar leitura, manutenção e uso controlado:
+Os documentos principais foram consolidados em 10 arquivos Markdown para facilitar leitura, manutenção e uso controlado. A pasta `scripts/` concentra automações reutilizáveis de apoio operacional, incluindo o motor genérico de materialização e verificação de itens exportados a partir de `XPZ/XML`.
 
 - `00-readme-genexus-xpz-xml.md`
 - `01-base-empirica-geral.md`
@@ -61,7 +61,7 @@ Este repositorio reúne documentación consolidada sobre análisis estructural d
 
 ### Qué encontrarás aquí
 
-Los documentos principales fueron consolidados en 10 archivos Markdown para facilitar lectura, mantenimiento y uso controlado:
+Los documentos principales fueron consolidados en 10 archivos Markdown para facilitar lectura, mantenimiento y uso controlado. La carpeta `scripts/` concentra automatizaciones reutilizables de apoyo operacional, incluido el motor genérico de materialización y verificación de ítems exportados desde `XPZ/XML`.
 
 - `00-readme-genexus-xpz-xml.md`
 - `01-base-empirica-geral.md`
@@ -109,7 +109,7 @@ This repository contains consolidated documentation about structural analysis of
 
 ### What you will find here
 
-The main documentation has been consolidated into 10 Markdown files to make reading, maintenance, and controlled use easier:
+The main documentation has been consolidated into 10 Markdown files to make reading, maintenance, and controlled use easier. The `scripts/` folder contains reusable operational automation, including the generic engine for materializing and verifying exported items from `XPZ/XML`.
 
 - `00-readme-genexus-xpz-xml.md`
 - `01-base-empirica-geral.md`
