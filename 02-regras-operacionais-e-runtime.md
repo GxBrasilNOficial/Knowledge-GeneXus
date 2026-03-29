@@ -136,8 +136,8 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 
 ### Politica para `Transaction`
 
-- `Evidência direta`: o teste isolado com `Transaction 'Banco'`, seus `Attribute` top-level reais, `SDT 'Context'` e `SDT 'TransactionContext'` importou com sucesso.
-- `Evidência direta`: nesse mesmo teste houve geracao de pattern bem-sucedida para `WorkWithWebBanco`.
+- `Evidência direta`: o teste isolado com `Transaction 'TRNExemploMinBancoA'`, seus `Attribute` top-level reais, `SDT 'Context'` e `SDT 'TransactionContext'` importou com sucesso.
+- `Evidência direta`: nesse mesmo teste houve geracao de pattern bem-sucedida para `WWExemploMinBancoA`.
 - `Evidência direta`: em teste controlado separado, um pacote contendo apenas `Transaction` falhou com erro do tipo `Attribute 'X' in 'Transaction Y' does not exist` quando os atributos referenciados no `<Level>` nao existiam na KB de destino.
 - `Evidência direta`: no mesmo cenario, ao incluir no mesmo pacote os `Attribute` top-level correspondentes, a importacao passou a reconhecer os atributos e avancou para a validacao estrutural da `Transaction`.
 - `Evidência direta`: apos ajuste do shape do `Level` e dos `Part`, o pacote contendo `Attribute + Transaction` foi importado com sucesso completo, incluindo atualizacao de tabela.
@@ -150,17 +150,17 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 
 ### Politica para `API`
 
-- `Evidência direta`: o teste isolado com `apiPDV_Integracao` e seus SDTs reais resolveu a camada de erro em `ATTCUSTOMTYPE`.
-- `Evidência direta`: depois disso, a `API` passou a falhar por `Procedure` ausente (`procListaSdtProdutoDadosBasicosConformeParametros`) e por contexto de negocio (`TipoProd`, `Produto`).
-- `Evidência direta`: o export real `Table + Domain + Transaction + SDT + API + Procedure + DataProvider` veio com `3904` objetos e mostrou que a `API` desta KB ja sai da IDE acompanhada por uma subarvore funcional grande.
+- `Evidência direta`: o teste isolado com `APIExemploIntegracaoA` e seus SDTs reais resolveu a camada de erro em `ATTCUSTOMTYPE`.
+- `Evidência direta`: depois disso, a `API` passou a falhar por `Procedure` ausente (`PRCExemploListaA`) e por contexto de negocio (`DomainExemploTipoA`, `TRNExemploProdutoA`).
+- `Evidência direta`: o export real `XPZExemploCadeiaAPIA.xpz` veio com `3904` objetos e mostrou que a `API` desta KB ja sai da IDE acompanhada por uma subarvore funcional grande.
 - `Inferência forte`: a hierarquia de validacao de `API` nesta trilha e: primeiro `ATTCUSTOMTYPE`/SDTs, depois `Procedure`, e por fim atributos, dominios ou contexto de negocio usados no codigo/eventos.
 - `Inferência forte`: para `API`, o melhor recorte operacional deixa de ser o objeto isolado e passa a ser uma familia funcional contendo pelo menos `Procedure`, `SDT`, `Domain`, e possivelmente `Transaction`, `Table` e `DataProvider`.
 - `Regra operacional`: nao regenerar `API` “igual” apos erro de `ATTCUSTOMTYPE`; primeiro materializar os SDTs reais e reexecutar. Se o erro remanescente migrar para `Procedure` ou atributo de negocio, tratar a camada semantica seguinte.
 
 ### Politica para `Attribute` em export combinado
 
-- `Evidência direta`: o export `FabricaBrasil18_Attribute_Domain_Transaction_SubtypeGroup.xpz` veio com `1117` objetos, `7646` atributos top-level e `1576` identidades.
-- `Evidência direta`: o export `FabricaBrasil18_Attribute_Domain_Transaction_SubtypeGroup_Table_Index.xpz` veio com `1712` objetos, os mesmos `7646` atributos top-level e `1611` identidades.
+- `Evidência direta`: o export `XPZExemploFamiliaMistaA.xpz` veio com `1117` objetos, `7646` atributos top-level e `1576` identidades.
+- `Evidência direta`: o export `XPZExemploFamiliaMistaB.xpz` veio com `1712` objetos, os mesmos `7646` atributos top-level e `1611` identidades.
 - `Evidência direta`: nesses dois recortes, a IDE serializou `Attributes` como bloco top-level proprio no mesmo `.xpz` que tambem carrega `Objects`.
 - `Inferência forte`: quando a familia funcional inclui `Attribute` real, `Transaction`, `Domain` e `SubtypeGroup`, o formato normal observado fica mais forte com `Objects` + `Attributes`, e nao apenas com `Objects`.
 - `Regra operacional`: ao analisar ou materializar pacote centrado em `Attribute` top-level, preservar a separacao entre `Objects` e `Attributes`; nao rebaixar `Attribute` real para pseudo-objeto dentro de `<Objects>`.
@@ -170,9 +170,9 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 
 ### Politica para `Theme`
 
-- `Evidência direta`: o `Theme 'SimpleIOS'` falhou isoladamente mesmo sendo objeto real, com ausencia de `Theme class 'TableDetail'`, `TableSection` e `TextBlockGroupCaption`.
-- `Evidência direta`: quando essas tres `ThemeClass` reais foram importadas junto, o `Theme 'SimpleIOS'` importou com sucesso.
-- `Evidência direta`: o export real `Table + Transaction + ColorPalette + DesignSystem + Theme + WebTheme + Category + ThemeClass + ThemeColor` mostrou a pilha visual exportada como familia combinada.
+- `Evidência direta`: o `Theme 'ThemeExemploMobileA'` falhou isoladamente mesmo sendo objeto real, com ausencia de `Theme class 'TableDetail'`, `TableSection` e `TextBlockGroupCaption`.
+- `Evidência direta`: quando essas tres `ThemeClass` reais foram importadas junto, o `Theme 'ThemeExemploMobileA'` importou com sucesso.
+- `Evidência direta`: o export real `XPZExemploTemaA.xpz` mostrou a pilha visual exportada como familia combinada.
 - `Inferência forte`: nesta trilha, `Theme` deve ser tratado como dependente de `ThemeClass` materializadas na KB, e nao apenas do XML do proprio tema.
 - `Inferência forte`: quando a meta for engenharia reversa da camada visual, `Theme`, `ThemeClass`, `DesignSystem`, `ColorPalette` e `ThemeColor` devem ser lidos como familia conjunta.
 - `Regra operacional`: antes de materializar `Theme`, levantar as `ThemeClass` referenciadas pelo grafo minimo do tema e inclui-las no pacote.
@@ -183,7 +183,7 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 - `Evidência direta`: o teste sintetico inicial resultou em `was not changed`, mas o teste posterior com `Pattern Settings 'WorkWith'` real importou com sucesso.
 - `Inferência forte`: `PatternSettings` deixa de ser pendencia estrutural aberta e passa a depender principalmente de pattern real compativel com o ambiente.
 - `Regra operacional`: sempre preferir `PatternSettings` reais do pattern alvo; se o log disser `pattern nao registrado`, tratar como incompatibilidade do ambiente, nao como erro do envelope.
-- `Evidência direta`: no par minimo `FabricaBrasil18_PaisSemWWweb.xpz` e `FabricaBrasil18_PaisComWWweb.xpz`, a inclusao de `WorkWithWebPais` elevou o pacote de `25` para `49` identidades em `ObjectsIdentityMapping`, mesmo acrescentando apenas um objeto top-level.
+- `Evidência direta`: no par minimo `XPZExemploTRNWWComparacaoSemWW.xpz` e `XPZExemploTRNWWComparacaoComWW.xpz`, a inclusao de `WWExemploMinPaisA` elevou o pacote de `25` para `49` identidades em `ObjectsIdentityMapping`, mesmo acrescentando apenas um objeto top-level.
 - `Inferência forte`: para `WorkWithForWeb`, o aumento de risco operacional nao esta apenas no XML do pattern; ele tambem aparece como ampliacao do grafo de identidades e dependencias de contexto.
 - `Regra operacional`: ao montar pacote minimo com `WorkWithForWeb`, comparar sempre a lista de `ObjectsIdentityMapping` com a versao sem `WW`; o delta de identidades ajuda a separar dependencia real do pattern de ruido do contêiner.
 
