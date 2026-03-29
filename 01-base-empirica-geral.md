@@ -160,18 +160,18 @@ Servir como base conceitual para os documentos empíricos e operacionais.
 empirico complementar
 
 ## Objetivo
-Registrar o que a leitura direta do acervo real em `C:\Dev\Prod\Gx_FabricaBrasil\ObjetosDaKbEmXml` acrescentou aos resultados da bateria controlada de importacao.
+Registrar o que a leitura direta do acervo real em `C:\SANITIZED\ObjetosDaKbEmXml` acrescentou aos resultados da bateria controlada de importacao.
 Separar com mais precisao o que e falta de shape, o que e dependencia semantica da KB e o que e apenas diferenca de nomenclatura reconhecida pela IDE.
 
 - `Evidência direta`: a consulta real foi direcionada aos tipos que ficaram problemáticos ou ambíguos na bateria: `Folder`, `PatternSettings`, `Theme`, `API`, `Transaction` e depois tambem `Attribute`.
-- `Evidência direta`: numa primeira passada em `C:\Dev\Prod\Gx_FabricaBrasil\ObjetosDaKbEmXml`, `Attribute` nao apareceu como diretório proprio e os atributos observados surgiam principalmente embutidos em `Transaction`.
-- `Evidência direta`: depois foi consultado `C:\Dev\Prod\Gx_FabricaBrasil\XpzExportadosPelaIDE\FabricaBrasil18_Full_20260324a\FabricaBrasil18_Full_20260324a.xml`, onde apareceram objetos `Attribute` top-level com raiz `<Attribute ... name="...">`.
-- `Evidência direta`: esses `Attribute` top-level foram extraidos para `C:\Dev\Prod\Gx_FabricaBrasil\ObjetosDaKbEmXml\Attribute` e a pasta foi saneada para manter apenas os atributos reais, removendo referencias inline.
+- `Evidência direta`: numa primeira passada em `C:\SANITIZED\ObjetosDaKbEmXml`, `Attribute` nao apareceu como diretório proprio e os atributos observados surgiam principalmente embutidos em `Transaction`.
+- `Evidência direta`: depois foi consultado um XML extraido de export full da KB em caminho privado sanitizado, onde apareceram objetos `Attribute` top-level com raiz `<Attribute ... name="...">`.
+- `Evidência direta`: esses `Attribute` top-level foram extraidos para `C:\SANITIZED\ObjetosDaKbEmXml\Attribute` e a pasta foi saneada para manter apenas os atributos reais, removendo referencias inline.
 - `Inferência forte`: `Attribute` deixou de estar sem evidencia top-level; o risco atual passa a ser distinguir definicao real de atributo contra ocorrencia contextual dentro de outros objetos.
 
 ### `Folder`
 
-- `Evidência direta`: exemplos reais em `C:\Dev\Prod\Gx_FabricaBrasil\ObjetosDaKbEmXml\Folder\GAM.xml` usam `Object/@type="00000000-0000-0000-0000-000000000006"`.
+- `Evidência direta`: exemplos reais em `C:\SANITIZED\ObjetosDaKbEmXml\Folder\EXEMPLO-SANITIZADO.xml` usam `Object/@type="00000000-0000-0000-0000-000000000006"`.
 - `Evidência direta`: esses exemplos sao extremamente curtos, com `Part type="babf62c5-0111-49e9-a1c3-cc004d90900a"` vazio e propriedades como `Name` e `IsDefault`.
 - `Evidência direta`: exemplos reais como `Main Programs.xml` e `ToBeDefined.xml` mostram o mesmo `Object/@type` de `Folder` com pequenas variacoes de propriedades, reforcando o mesmo tipo estrutural para pastas organizacionais da KB.
 - `Evidência direta`: as capturas da janela `New Object` da IDE mostram que `Category` e o nome do agrupador visual da lista de tipos, com grupos como `Data Management`, `User Interface`, `BPM`, `Resources`, `Documentation`, `Extensibility`, `Deploy`, `Super App`, `Reporting`, `Test` e `ALL`.
@@ -194,7 +194,7 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 - `Evidência direta`: essas classes aparecem referenciadas por outras classes no proprio tema, por exemplo `Group` referencia `TextBlockGroupCaption` e `TableSection` referencia `HorizontalLine`.
 - `Inferência forte`: um tema simples mas valido precisa preservar nao apenas classes isoladas, e sim o grafo minimo de classes referenciadas internamente.
 - `Evidência direta`: num consolidado revisado posterior, o proprio `SimpleIOS` real foi importado no ambiente de teste e ainda assim falhou com `Theme class 'TableDetail' does not exist`, `Theme class 'TableSection' does not exist` e `Theme class 'TextBlockGroupCaption' does not exist`.
-- `Evidência direta`: a pasta real `C:\Dev\Prod\Gx_FabricaBrasil\ObjetosDaKbEmXml\ThemeClass` contem objetos `ThemeClass` top-level separados para `TableDetail`, `TableSection` e `TextBlockGroupCaption`.
+- `Evidência direta`: a pasta real `C:\SANITIZED\ObjetosDaKbEmXml\ThemeClass` contem objetos `ThemeClass` top-level separados para `TableDetail`, `TableSection` e `TextBlockGroupCaption`.
 - `Evidência direta`: num teste isolado posterior, esses tres `ThemeClass` reais foram importados com sucesso e, logo em seguida, o `Theme 'SimpleIOS'` tambem importou com sucesso.
 - `Inferência forte`: nesta trilha, `Theme` deixa de parecer um problema de serializacao pura; o requisito operacional observado e materializar tambem as `ThemeClass` auxiliares referenciadas pelo tema.
 
@@ -228,12 +228,12 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 
 ### `Attribute`
 
-- `Evidência direta`: o export full `C:\Dev\Prod\Gx_FabricaBrasil\XpzExportadosPelaIDE\FabricaBrasil18_Full_20260324a\FabricaBrasil18_Full_20260324a.xml` contem objetos `Attribute` top-level com raiz `<Attribute ...>`, e nao `<Object ...>`.
+- `Evidência direta`: o XML extraido de export full da KB, mantido em caminho privado sanitizado, contem objetos `Attribute` top-level com raiz `<Attribute ...>`, e nao `<Object ...>`.
 - `Evidência direta`: um atributo real completo, como `PessoaCreditoTipoDocumentoId`, traz atributos XML como `guid`, `name`, `fullyQualifiedName`, `description`, `moduleGuid`, `parentGuid`, alem de `Part` e `Properties`.
 - `Evidência direta`: no mesmo export tambem aparecem nos curtos `<Attribute key="True|False" guid="...">NomeDoAtributo</Attribute>` dentro de `<Level>` de `Transaction`.
 - `Evidência direta`: os nos curtos compartilham o mesmo `guid` do atributo real top-level correspondente; eles funcionam como referencia contextual do atributo no nivel da `Transaction`, nao como definicao top-level.
-- `Evidência direta`: na saneacao da pasta `C:\Dev\Prod\Gx_FabricaBrasil\ObjetosDaKbEmXml\Attribute`, permaneceram `7646` atributos reais top-level e foram removidas `8539` referencias inline `Attribute_*.xml`.
-- `Evidência direta`: na ampliacao da busca para `C:\GxModels\FabricaBrasil18`, nomes sugestivos como `GAMExampleUserCustomAttributes.xml` nao se revelaram objeto `Attribute`; esse arquivo se apresentou como `Web Panel`.
+- `Evidência direta`: na saneacao da pasta `C:\SANITIZED\ObjetosDaKbEmXml\Attribute`, permaneceram `7646` atributos reais top-level e foram removidas `8539` referencias inline `Attribute_*.xml`.
+- `Evidência direta`: na ampliacao da busca para um diretório privado sanitizado do modelo GeneXus, nomes sugestivos como `GAMExampleUserCustomAttributes.xml` nao se revelaram objeto `Attribute`; esse arquivo se apresentou como `Web Panel`.
 - `Evidência direta`: arquivos como `FabricaBrasil18selectAttributes.Filters` se mostraram apenas configuracoes auxiliares de filtro/interface, nao export de objeto `Attribute`.
 - `Inferência forte`: `Attribute` top-level ja esta empiricamente provado nesta trilha, mas exige cuidado extra porque o mesmo nome de elemento XML tambem aparece como referencia inline em `Transaction`.
 - `Inferência forte`: para montar ou extrair corpus de `Attribute`, o filtro correto nao e “todo no chamado Attribute”, e sim apenas o no raiz completo com `name` e estrutura de `Part` e `Properties`.
@@ -244,21 +244,21 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 
 ## Complemento posterior - IDE exportando `Table`, `Index` e `WorkWithForWeb`
 
-- `Evidência direta`: o export isolado `FabricaBrasil18_Table.xpz` contem `228` objetos top-level no tipo `857ca50e-7905-0000-0007-c5d9ff2975ec`.
+- `Evidência direta`: o export isolado `XPZExemploTabelaA.xpz` contem `228` objetos top-level no tipo `857ca50e-7905-0000-0007-c5d9ff2975ec`.
 - `Evidência direta`: esses objetos top-level de `Table` usam nomes iguais aos das `Transaction` correspondentes, como `AbateOrdem`, `Animal`, `Produto` e `Arquivo`.
 - `Evidência direta`: dentro de cada `Table` exportada aparecem blocos `<Indexes>` com filhos `<Index ... type="9e750647-3679-0000-0100-2529de263960">`.
-- `Evidência direta`: o export isolado `FabricaBrasil18_Index.xpz` veio vazio, sem `Objects` nem `Attributes`.
+- `Evidência direta`: o export isolado `XPZExemploIndiceVazioA.xpz` veio vazio, sem `Objects` nem `Attributes`.
 - `Inferência forte`: nesta trilha da IDE, `Table` existe como familia top-level propria, enquanto `Index` aparece subordinado a `Table`, e nao como conjunto top-level isolado.
-- `Evidência direta`: o export `FabricaBrasil18_Table_Index.xpz` repetiu exatamente o mesmo comportamento de `Table`: `228` objetos top-level do tipo `857ca50e-7905-0000-0007-c5d9ff2975ec` e nenhum objeto top-level adicional para `Index`.
+- `Evidência direta`: o export `XPZExemploTabelaIndiceA.xpz` repetiu exatamente o mesmo comportamento de `Table`: `228` objetos top-level do tipo `857ca50e-7905-0000-0007-c5d9ff2975ec` e nenhum objeto top-level adicional para `Index`.
 - `Inferência forte`: pedir `Table + Index` explicitamente na IDE nao muda a forma de serializacao observada; `Index` continua consolidado dentro de `Table`.
 - `Evidência direta`: em `WorkWithForWeb` real, as referencias de atributo dentro do `CDATA` do pattern usam o prefixo estrutural fixo `adbb33c9-0906-4971-833c-998de27e0676-NomeDoAtributo`.
 - `Inferência forte`: para `WorkWithForWeb`, esse formato deve ser tratado como convenio estrutural do pattern, e nao como reflexo do GUID do `Attribute` top-level nem do GUID inline do `Level` da `Transaction`.
-- `Evidência direta`: o export `FabricaBrasil18_Table_Transaction_WorkWithForWeb_PatternSettings.xpz` veio com `596` objetos: `228` `Table`, `183` `Transaction`, `183` `WorkWithForWeb` e `2` `PatternSettings`, sem `Attributes`.
-- `Evidência direta`: o export `FabricaBrasil18_Table_Transaction_DataSelector.xpz` veio com `413` objetos: `228` `Table`, `183` `Transaction` e `2` `DataSelector`, tambem sem `Attributes`.
+- `Evidência direta`: o export `XPZExemploTabelaTRNWWPatternA.xpz` veio com `596` objetos: `228` `Table`, `183` `Transaction`, `183` `WorkWithForWeb` e `2` `PatternSettings`, sem `Attributes`.
+- `Evidência direta`: o export `XPZExemploTabelaTRNDataSelectorA.xpz` veio com `413` objetos: `228` `Table`, `183` `Transaction` e `2` `DataSelector`, tambem sem `Attributes`.
 - `Evidência direta`: no export combinado com `WorkWithForWeb`, a `Transaction` mantem a propriedade `Apply:78cecefe-be7d-4980-86ce-8d6e91fba04b=True`.
 - `Evidência direta`: no mesmo export, `PatternSettings 'WorkWith'` materializa `ContextVariable`, `LoadProcedure`, `Security Check` e `NotAuthorized` no XML interno.
 - `Inferência forte`: a ponte operacional real do pattern web observado fica distribuida entre `Transaction` (aplicacao do pattern), `WorkWithForWeb` (instancia por objeto), `PatternSettings` (configuracao global do pattern) e `Table` (camada fisica com indices internos).
-- `Evidência direta`: o par de exports `FabricaBrasil18_PaisSemWWweb.xpz` e `FabricaBrasil18_PaisComWWweb.xpz` forneceu um recorte minimo comparavel da mesma `Transaction 'Pais'`.
+- `Evidência direta`: o par de exports `XPZExemploTRNWWComparacaoSemWW.xpz` e `XPZExemploTRNWWComparacaoComWW.xpz` forneceu um recorte minimo comparavel da mesma `Transaction 'Pais'`.
 - `Evidência direta`: `PaisSemWWweb` veio com `7` objetos, `10` atributos top-level e `25` identidades; `PaisComWWweb` veio com `8` objetos, os mesmos `10` atributos e `49` identidades.
 - `Evidência direta`: a unica diferenca de objeto entre os dois recortes foi a entrada de `WorkWithWebPais`.
 - `Evidência direta`: apesar disso, a entrada de `WorkWithWebPais` quase dobrou o total de identidades de contexto em `ObjectsIdentityMapping`, incluindo referencias adicionais a `UF`, `PessoaEnderecos`, `wpAtualizaPorOutroServidor` e atributos relacionados.
@@ -268,7 +268,7 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 
 ### `Table + Domain + Transaction + SDT + API + Procedure + DataProvider`
 
-- `Evidência direta`: o export `FabricaBrasil18_Table_Domain_Transaction_SDT_API_Procedure_DataProvider.xpz` veio com `3904` objetos e `0` atributos top-level.
+- `Evidência direta`: o export `XPZExemploCadeiaAPIA.xpz` veio com `3904` objetos e `0` atributos top-level.
 - `Evidência direta`: a distribuicao observada foi `2282` `Procedure`, `594` `SDT`, `592` `Domain`, `228` `Table`, `183` `Transaction`, `24` `DataProvider` e `1` `API`.
 - `Evidência direta`: o `API` exportado nesse pacote e `apiPDV_Integracao`.
 - `Evidência direta`: o mesmo pacote prova que a trilha real de export da IDE para `API` relevante de negocio ja puxa junto uma massa grande de `Procedure`, `SDT`, `Domain`, `Table`, `Transaction` e `DataProvider`.
@@ -279,7 +279,7 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 
 ### `Table + Transaction + ColorPalette + DesignSystem + Theme + WebTheme + Category + ThemeClass + ThemeColor`
 
-- `Evidência direta`: o export `FabricaBrasil18_Table_Transaction_ColorPalette_DesignSystem_Theme_WebTheme_Category_ThemeClass_ThemeColor.xpz` veio com `947` objetos e `0` atributos top-level.
+- `Evidência direta`: o export `XPZExemploTemaA.xpz` veio com `947` objetos e `0` atributos top-level.
 - `Evidência direta`: a distribuicao observada foi `501` `ThemeClass`, `228` `Table`, `183` `Transaction`, `24` `ThemeColor`, `7` `Theme`, `2` `DesignSystem`, `1` `Folder` e `1` `ColorPalette`.
 - `Evidência direta`: o pacote contem uma pasta organizacional `GAM_Samples-web`, reforcando que a familia visual tambem pode carregar o agrupador estrutural junto.
 - `Evidência direta`: o mesmo pacote mostrou `ThemeClass` como `ActionAttribute`, `ActionButtons` e `ActionButtonsHovered`, alem de varios `ThemeColor` e `Theme` reais.
@@ -289,14 +289,14 @@ Separar com mais precisao o que e falta de shape, o que e dependencia semantica 
 
 ### `Attribute + Domain + Transaction + SubtypeGroup`
 
-- `Evidência direta`: o export `FabricaBrasil18_Attribute_Domain_Transaction_SubtypeGroup.xpz` veio com `1117` objetos, `7646` atributos top-level e `1576` identidades em `ObjectsIdentityMapping`.
+- `Evidência direta`: o export `XPZExemploFamiliaMistaA.xpz` veio com `1117` objetos, `7646` atributos top-level e `1576` identidades em `ObjectsIdentityMapping`.
 - `Evidência direta`: o contêiner desse pacote usou `KMW`, `Source`, `Objects`, `Attributes`, `Dependencies` e `ObjectsIdentityMapping`.
 - `Evidência direta`: a presenca simultanea de `Objects` e `Attributes` top-level no mesmo `.xpz` confirma que a trilha normal da IDE tambem pode exportar familia mista de objetos e atributos reais, e nao apenas pacotes com `Objects` sem bloco `Attributes`.
 - `Inferência forte`: para engenharia reversa de `Attribute` top-level e de sua relacao com `Transaction`, `Domain` e `SubtypeGroup`, esse recorte e mais informativo do que os pacotes sem `Attributes`.
 
 ### `Attribute + Domain + Transaction + SubtypeGroup + Table + Index`
 
-- `Evidência direta`: o export `FabricaBrasil18_Attribute_Domain_Transaction_SubtypeGroup_Table_Index.xpz` veio com `1712` objetos, os mesmos `7646` atributos top-level e `1611` identidades.
+- `Evidência direta`: o export `XPZExemploFamiliaMistaB.xpz` veio com `1712` objetos, os mesmos `7646` atributos top-level e `1611` identidades.
 - `Evidência direta`: esse pacote tambem usou o contêiner `KMW`, `Source`, `Objects`, `Attributes`, `Dependencies` e `ObjectsIdentityMapping`.
 - `Evidência direta`: a diferenca de `1117` para `1712` objetos entre os dois pacotes coincide com a entrada da camada fisica `Table`, enquanto o bloco de `Attributes` permaneceu estavel em `7646`.
 - `Inferência forte`: isso reforca que `Table/Index` entram como ampliacao da familia logica anterior, sem deslocar `Attribute` top-level para dentro de `Objects` nem eliminar o bloco `Attributes`.
