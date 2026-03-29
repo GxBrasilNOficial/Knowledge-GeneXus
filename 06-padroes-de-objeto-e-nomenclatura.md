@@ -56,7 +56,7 @@ Este documento registra apenas padrões observáveis no inventário bruto e nos 
 
 ### `SDT`
 
-- `Evidência direta`: nomes com prefixo `sdt` aparecem no acervo, como `SDTExemploTribSelecaoA`, `SdtNfe` e `sdtFatura`.
+- `Evidência direta`: nomes com prefixo `sdt` aparecem no acervo, como `SDTExemploTribSelecaoA`, `SDTExemploDocumentoFiscalA` e `SDTExemploFaturaA`.
 - `Inferência forte`: o prefixo `sdt` parece uma convenção frequente para estruturas de dados, embora a capitalização varie.
 
 ### `WebPanel`

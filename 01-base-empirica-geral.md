@@ -2139,7 +2139,7 @@ Destacar estabilidade estrutural relativa e pontos de maior risco para clonagem.
 		&DomainExemploGrupoA, 
 		&ItemMarcaId, 
 		&ComMarca, 
-		&CorteTipo, 
+		&DomainExemploCorteA, 
 		&DomainExemploLocalA, 
 		&GrupoDeItemId, 
 		&ListaSDTExemploItemBasicoA, 
@@ -2255,7 +2255,7 @@ Endevent
 //Sub 'CompletaMensagensRetorno'
 Sub 'CompletaMensagensRetorno'
 	
-	procAgregaMessages(&MensagensRetorno, &MensagensInicio)
+	PRCExemploAgregaMensagensA(&MensagensRetorno, &MensagensInicio)
 	
 Endsub	
 
@@ -2425,12 +2425,12 @@ Endsub
         </Property>
       </Properties>
     </Variable>
-    <Variable Name="CorteTipo">
+    <Variable Name="DomainExemploCorteA">
       <Documentation />
       <Properties>
         <Property>
           <Name>Name</Name>
-          <Value>CorteTipo</Value>
+          <Value>DomainExemploCorteA</Value>
         </Property>
         <Property>
           <Name>Description</Name>
@@ -2438,7 +2438,7 @@ Endsub
         </Property>
         <Property>
           <Name>idBasedOn</Name>
-          <Value>Attribute:CorteTipo</Value>
+          <Value>Attribute:DomainExemploCorteA</Value>
         </Property>
       </Properties>
     </Variable>
@@ -4012,7 +4012,7 @@ Esqueleto estrutural público:
         margin-bottom: 1px;
     }
 
-    //usado pelo menos em tables de web components como wcVolumeMovimentos, tambem em transacoes
+    //usado pelo menos em tables de web components como WCExemploVolumesA, tambem em transacoes
     .form-horizontal .form-group {
         margin-inline-start: 15px;
         margin-inline-end: 15px;

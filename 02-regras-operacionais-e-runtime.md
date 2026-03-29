@@ -931,7 +931,7 @@ Funcionar como resumo decisório sem esconder os limites da evidência.
 
 ### Pares observados validos
 
-- Evidência direta: em `AJRS_MOSTRA_URL.xpz`, o objeto `procDisplayUrl` usa `moduleGuid=afa47377-41d5-4ae8-9755-6f53150aa361` e o `ObjectsIdentityMapping` contem `ObjectIdentity Name=\"Root Module\"` com o mesmo `Guid`
+- Evidência direta: em `AJRS_MOSTRA_URL.xpz`, o objeto `PRCExemploMostraUrlA` usa `moduleGuid=afa47377-41d5-4ae8-9755-6f53150aa361` e o `ObjectsIdentityMapping` contem `ObjectIdentity Name=\"Root Module\"` com o mesmo `Guid`
 - Evidência direta: em `AJRSgxIonicZip.xpz`, o objeto `DotNetZip` usa `parentGuid=65ff024e-84e1-4042-9321-cd3a230317d6` e o `ObjectsIdentityMapping` contem `ObjectIdentity Name=\"ZipUnzip\"` com o mesmo `Guid`
 - Evidência direta: em `AJRS_ConcatenaPdfEouPoeMarcaDagua-2.xpz`, o objeto `ZipFile` usa `parentGuid=9f21f62d-2d18-4f8d-8ec3-8399f3485298` e o `ObjectsIdentityMapping` contem `ObjectIdentity Name=\"DotNetZip\"` com o mesmo `Guid`
 
