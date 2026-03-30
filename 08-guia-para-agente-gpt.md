@@ -234,6 +234,8 @@ Padronizar quando avançar, quando exigir molde bruto comparável e quando abort
 - ler indices automaticos de auditoria como casos de FK automatica renomeada, nao como familia especial separada
 - tratar indice `User` como tuning manual empirico para ordenacao/performance, especialmente quando a ordenacao real divergir dos indices automaticos disponiveis
 - nao supor que toda `Table` precise de indice `User`; a ausencia de `U...` pode ser a decisao correta quando o volume esperado nao compensa custo extra
+- fora de evidencia comparavel forte, preferir a hipotese conservadora `PK + poucos Automatic Duplicate` antes de inventar `User` adicional
+- nao usar casos excepcionais locais sem `Automatic Duplicate`, como `OperacaoFiscal`, `Pais` e `TipoDocumento`, como molde preferencial para novas inferencias
 - preferir pacotes comparaveis com `Transaction` junto quando a pergunta depender da ponte logica -> fisica
 - abortar se o caso exigir inventar indice novo, chave fisica nova ou tratar `Index` como top-level sem evidencia externa adicional
 
