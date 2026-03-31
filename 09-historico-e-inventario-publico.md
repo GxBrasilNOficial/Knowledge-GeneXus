@@ -20,6 +20,11 @@ Preservar rastreabilidade da consolidacao, inventario documental, inventario bru
 - `Evidência direta`: a raiz desta base passou a priorizar estado atual de trabalho, sem manter no corpo principal a arqueologia completa das rodadas de teste.
 - `Evidência direta`: o historico detalhado de validacoes, rodadas de importacao e reclassificacoes deve ficar separado em `historico/`, para nao competir com os `.md` operacionais da raiz.
 
+## Nota sobre a rastreabilidade privada
+
+- `Evidência direta`: existe uma pasta privada separada, `GeneXus-XPZ-PrivateMap`, usada para manter rastreabilidade editorial entre aliases publicos e artefatos reais.
+- `Regra editorial`: essa rastreabilidade privada nao substitui a documentacao consolidada desta raiz; ela existe apenas como apoio privado de manutencao, sanitizacao e continuidade editorial.
+
 ## Nota sobre o motor operacional compartilhado
 
 - `Evidência direta`: o script `scripts/Sync-GeneXusXpzToXml.ps1` e parte da infraestrutura operacional desta base publica.
