@@ -92,7 +92,6 @@ Consolidar regras de geracao, clonagem conservadora, materializacao, serializaca
 - `Regra operacional`: ao documentar ou raciocinar sobre formato, separar explicitamente `XPZ observado em export real` de `envelope de importacao pela IDE`; ambos compartilham a raiz `ExportFile`, mas nao devem ser tratados como o mesmo artefato sem qualificacao.
 - `Evidência direta`: em teste real de renomeacao de objeto, a importacao preservou historico apenas quando o pacote manteve o mesmo `Object/@guid` do objeto existente.
 - `Regra operacional`: renomeacao, mudanca de propriedades, `source`, `rules`, `variables` ou `folder` de um objeto existente devem preservar o mesmo `guid`; trocar o `guid` significa criar outro objeto.
-- `Regra operacional`: quando uma procedure ou rotina auxiliar expuser `FalhouProcessamento` e `HouveMudanca`, falha impeditiva de `commit` deve forcar `HouveMudanca = false`; mudanca so deve sair `true` quando a alteracao puder ser considerada consolidada com seguranca para o chamador.
 
 ## Vocabulario operacional de fonte e molde
 
